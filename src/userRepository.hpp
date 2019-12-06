@@ -11,6 +11,6 @@ public:
     UserRepository();
     void addUser(User *newUser);
     User *getUser(std::string email);
-    UserRepository *getInstance();
+    // UserRepository *getInstance();
     int getNextId();
 };
