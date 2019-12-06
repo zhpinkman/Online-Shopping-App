@@ -22,3 +22,15 @@ int ProductRepository::getNextOfferId()
 {
     return maxOfferId++;
 }
+
+bool ProductRepository::isDiscountCodeUnique(std::string code)
+{
+    for (Discount *discount : discounts)
+    {
+        if (discount->doesCodesMatches(code))
+        {
+            return false;
+        }
+    }
+    return true;
+}

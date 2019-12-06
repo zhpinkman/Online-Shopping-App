@@ -11,3 +11,8 @@ int Api::getOfferId()
 {
     return productRepository->getNextOfferId();
 }
+
+bool Api::isValidDiscountCode(std::string code)
+{
+    return productRepository->isDiscountCodeUnique(code);
+}
