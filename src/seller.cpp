@@ -2,9 +2,10 @@
 #include "product.hpp"
 #include "system.hpp"
 #include "api.hpp"
+#include "tools.hpp"
 #include <iostream>
 
-Seller::Seller(Api *api, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, userId, username, email, password)
+Seller::Seller(Api *api, Tools *tools, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, tools, userId, username, email, password)
 {
 }
 
@@ -18,6 +19,18 @@ void Seller::getTransactionHistory(int bound)
 }
 void Seller::generateDiscountCode(Offer *offer, int count, int percentage)
 {
+    std::vector<Discount *> generatedDiscounts;
+    std::string code;
+    for (int i = 0; i < count; i++)
+    {
+        do
+        {
+            code = tools->generateRandomString();
+        } while (!api->isValidDiscountCode(code));
+        Discount *discount = new Discount(code, percentage);
+        generatedDiscounts.push_back(discount);
+    }
+    offer->addDiscount(generatedDiscounts);
 }
 void Seller::addOffer(Product *p, int count, int unitPrice)
 {

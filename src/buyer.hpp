@@ -13,7 +13,7 @@ private:
     std::vector<CartItem *> cart;
 
 public:
-    Buyer(Api *api, int userId, int walletId, std::string username, std::string email, std::string password);
+    Buyer(Api *api, Tools *tools, int userId, int walletId, std::string username, std::string email, std::string password);
     bool addToCart(Offer *offer, int amout, std::string discountCode);
     bool submitCart();
     std::vector<std::string> getOrdersHistory(int bound);

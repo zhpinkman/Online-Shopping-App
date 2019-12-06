@@ -9,5 +9,5 @@ private:
     int percentage;
 
 public:
-    Discount();
+    Discount(std::string code, int percentage);
 };

@@ -3,6 +3,7 @@
 #include "constants.hpp"
 
 class Api;
+class Tools;
 
 class System
 {
@@ -10,6 +11,7 @@ private:
     UserRepository *userRepository;
     ProductRepository *productRepository;
     Api *api;
+    Tools *tools;
     User *loggedInUser;
 
 public:

@@ -1,6 +1,7 @@
 #include <string>
 #include "api.hpp"
 
+class Tools;
 class System;
 class User
 {
@@ -12,9 +13,10 @@ private:
 
 protected:
     Api *api;
+    Tools *tools;
 
 public:
-    User(Api *api, int id, std::string username, std::string email, std::string password);
+    User(Api *api, Tools *tools, int id, std::string username, std::string email, std::string password);
     bool emailMatches(std::string email);
     bool passwordMatches(std::string password);
     bool checkAuthorization(std::string endpointID);

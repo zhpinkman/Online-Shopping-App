@@ -11,6 +11,7 @@ private:
 public:
     ProductRepository();
     Product *getProduct(std::string productName);
+    bool isDiscountCodeUnique(std::string code);
     // ProductRepository *getInstance();
     int getNextOfferId();
 };
