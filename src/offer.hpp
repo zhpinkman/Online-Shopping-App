@@ -14,5 +14,6 @@ private:
     std::vector<Discount *> discounts;
 
 public:
-    Offer();
+    Offer(int id, Seller *seller, int count, int unitPrice);
+    void addDiscount(std::vector<Discount *> discounts);
 };

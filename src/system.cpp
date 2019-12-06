@@ -20,14 +20,15 @@ bool System::signup(std::string email, std::string username, std::string passwor
     if (user == nullptr)
     {
         int newUserId = userRepository->getNextUserId();
+        int newWalletId = userRepository->getNextWalletId();
         switch (userType)
         {
         case BUYER:
-            newUser = new Buyer(newUserId, username, email, password);
+            newUser = new Buyer(newUserId, newWalletId, username, email, password);
             userRepository->addUser(newUser);
             return SUCCESS;
         case SELLER:
-            newUser = new Seller(newUserId, username, email, password);
+            newUser = new Seller(newUserId, newWalletId, username, email, password);
             userRepository->addUser(newUser);
             return SUCCESS;
         default:

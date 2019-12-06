@@ -1,5 +1,6 @@
 #include <string>
 
+class System;
 class User
 {
 private:
@@ -7,6 +8,7 @@ private:
     std::string username;
     std::string password;
     std::string email;
+    System *system;
 
 public:
     User(int id, std::string username, std::string email, std::string password);

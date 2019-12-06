@@ -6,8 +6,11 @@ class ProductRepository
 private:
     std::vector<Product *> products;
     std::vector<Discount *> discounts;
+    int maxOfferId;
+
 public:
     ProductRepository();
     Product *getProduct(std::string productName);
-    ProductRepository *getInstance();
+    // ProductRepository *getInstance();
+    int getNextOfferId();
 };
