@@ -1,7 +1,7 @@
 #include "product.hpp"
 #include <string>
 
-class Car
+class Car : public Product
 {
 private:
     enum type : int;
