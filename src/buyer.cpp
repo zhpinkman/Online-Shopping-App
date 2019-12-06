@@ -9,7 +9,7 @@ Buyer::Buyer(Api *api, Tools *tools, int userId, int walletId, std::string usern
 
 bool Buyer::addToCart(Offer *offer, int amount, std::string discountCode = "")
 {
-    if (api->isValidDiscountCode(discountCode) || discountCode == "")
+    if (api->isValidDiscountCode(offer, discountCode) || discountCode == "")
     {
         int discountPercentage;
         if (discountCode != "")
@@ -27,6 +27,19 @@ bool Buyer::addToCart(Offer *offer, int amount, std::string discountCode = "")
 }
 bool Buyer::submitCart()
 {
+    Factor *factor = new Factor(cart);
+    double finalPrice = factor->getFinalPrice();
+    if (wallet->withdraw(finalPrice))
+    {
+
+        std::cout << OK << std::endl;
+        return SUCCESS;
+    }
+    else
+    {
+        std::cout << BAD_REQUEST << std::endl;
+        return FAILED;
+    }
 }
 std::vector<std::string> Buyer::getOrdersHistory(int bound)
 {

@@ -45,3 +45,15 @@ int ProductRepository::useDiscountCode(std::string discountCode)
         }
     }
 }
+
+bool ProductRepository::isDiscountCodeValid(Offer *offer, std::string code)
+{
+    for (Discount *discount : discounts)
+    {
+        if (discount->isValidDiscount(code) && offer->hasDiscountCode(code))
+        {
+            return true;
+        }
+    }
+    return false;
+}

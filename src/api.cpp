@@ -21,3 +21,8 @@ int Api::useDiscountCode(std::string discountCode)
 {
     return productRepository->useDiscountCode(discountCode);
 }
+
+bool Api::isValidDiscountCode(Offer *offer, std::string code)
+{
+    return productRepository->isDiscountCodeValid(offer, code);
+}

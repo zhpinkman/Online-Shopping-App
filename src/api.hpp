@@ -11,6 +11,7 @@ private:
 public:
     Api(UserRepository *userRepository, ProductRepository *productRepository);
     bool isValidDiscountCode(std::string code);
+    bool isValidDiscountCode(Offer *offer, std::string code);
     int useDiscountCode(std::string discountCode);
     int getOfferId();
 };
