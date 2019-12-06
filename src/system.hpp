@@ -2,11 +2,14 @@
 #include "productRepository.hpp"
 #include "constants.hpp"
 
+class Api;
+
 class System
 {
 private:
     UserRepository *userRepository;
     ProductRepository *productRepository;
+    Api *api;
     User *loggedInUser;
 
 public:

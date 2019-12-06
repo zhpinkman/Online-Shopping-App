@@ -1,7 +1,8 @@
 #include "user.hpp"
 
-User::User(int id, std::string _username, std::string _email, std::string _password)
+User::User(Api *_api, int id, std::string _username, std::string _email, std::string _password)
 {
+    api = _api;
     username = _username;
     email = _email;
     password = _password;

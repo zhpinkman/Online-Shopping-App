@@ -3,6 +3,7 @@
 #include "seller.hpp"
 #include "admin.hpp"
 #include "constants.hpp"
+#include "api.hpp"
 
 #include <iostream>
 
@@ -10,6 +11,7 @@ System::System()
 {
     userRepository = new UserRepository();
     productRepository = new ProductRepository();
+    api = new Api(userRepository, productRepository);
     loggedInUser = nullptr;
 }
 
@@ -24,11 +26,11 @@ bool System::signup(std::string email, std::string username, std::string passwor
         switch (userType)
         {
         case BUYER:
-            newUser = new Buyer(newUserId, newWalletId, username, email, password);
+            newUser = new Buyer(api, newUserId, newWalletId, username, email, password);
             userRepository->addUser(newUser);
             return SUCCESS;
         case SELLER:
-            newUser = new Seller(newUserId, newWalletId, username, email, password);
+            newUser = new Seller(api, newUserId, newWalletId, username, email, password);
             userRepository->addUser(newUser);
             return SUCCESS;
         default:

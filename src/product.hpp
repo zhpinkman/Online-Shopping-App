@@ -25,4 +25,5 @@ public:
     void addRate(User *user, int rate);
     int getOverallRating();
     std::vector<Offer *> sortOffersBy(std::string info);
+    void addOffer(Offer *offer);
 };
