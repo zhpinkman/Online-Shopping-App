@@ -10,4 +10,5 @@ private:
 
 public:
     CartItem();
+    double getSoldPrice();
 };

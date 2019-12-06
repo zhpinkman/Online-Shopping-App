@@ -2,6 +2,7 @@
 #include "wallet.hpp"
 
 class Api;
+class Product;
 
 class Seller : public User
 {

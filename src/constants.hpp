@@ -4,6 +4,7 @@
 #define FAILED false
 #define ADMIN_USERNAME "ADMIN"
 #define ADMIN_PASSWORD "ADMIN"
+#define SEPERATOR " | "
 
 enum UserType
 {

@@ -19,6 +19,8 @@ public:
     Product();
     virtual bool operator<(const Product &p) = 0;
     virtual void getProductInfo() = 0;
+    int getId();
+    std::string getName();
     bool productNameMatches(std::string productName);
     std::vector<User *> getProductSellers();
     void addComment(User *user, std::string comment);

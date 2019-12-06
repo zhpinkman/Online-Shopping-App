@@ -1,4 +1,5 @@
 #include "offer.hpp"
+#include "product.hpp"
 
 Offer::Offer(int _id, Seller *_seller, int _count, int _unitPrice)
 {
@@ -11,4 +12,24 @@ Offer::Offer(int _id, Seller *_seller, int _count, int _unitPrice)
 void Offer::addDiscount(std::vector<Discount *> _discounts)
 {
     discounts = _discounts;
+}
+
+int Offer::getProductId()
+{
+    return product->getId();
+}
+
+std::string Offer::getProductName()
+{
+    return product->getName();
+}
+
+int Offer::getId()
+{
+    return id;
+}
+
+int Offer::getSellerId()
+{
+    return seller->getId();
 }

@@ -21,3 +21,8 @@ bool User::emailMatches(std::string _email)
 {
     return email == _email;
 }
+
+int User::getId()
+{
+    return id;
+}

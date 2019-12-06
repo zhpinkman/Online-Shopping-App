@@ -20,4 +20,5 @@ public:
     bool emailMatches(std::string email);
     bool passwordMatches(std::string password);
     bool checkAuthorization(std::string endpointID);
+    int getId();
 };

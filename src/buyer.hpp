@@ -11,6 +11,7 @@ class Buyer : public User
 private:
     Wallet *wallet;
     std::vector<CartItem *> cart;
+    std::vector<std::pair<Offer *, CartItem *>> orders;
 
 public:
     Buyer(Api *api, Tools *tools, int userId, int walletId, std::string username, std::string email, std::string password);
