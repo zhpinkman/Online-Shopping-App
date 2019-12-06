@@ -7,11 +7,14 @@ Buyer::Buyer(Api *api, Tools *tools, int userId, int walletId, std::string usern
 {
 }
 
-bool Buyer::addToCart(Offer *offer, int amount, std::string discountCode)
+bool Buyer::addToCart(Offer *offer, int amount, std::string discountCode = "")
 {
-    if (api->isValidDiscountCode(discountCode))
+    if (api->isValidDiscountCode(discountCode) || discountCode == "")
     {
-        int discountPercentage = api->useDiscountCode(discountCode);
+        int discountPercentage;
+        if (discountCode != "")
+            discountPercentage = api->useDiscountCode(discountCode);
+        discountPercentage = 0;
         CartItem *cartItem = new CartItem(offer, amount, discountPercentage);
         std::cout << OK << std::endl;
         return SUCCESS;
@@ -22,7 +25,9 @@ bool Buyer::addToCart(Offer *offer, int amount, std::string discountCode)
         return FAILED;
     }
 }
-bool Buyer::submitCart() {}
+bool Buyer::submitCart()
+{
+}
 std::vector<std::string> Buyer::getOrdersHistory(int bound)
 {
     for (int i = 0; i < orders.size(); i++)

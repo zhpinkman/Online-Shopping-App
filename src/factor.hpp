@@ -11,4 +11,4 @@ private:
 
 public:
     Factor();
-}
+};
