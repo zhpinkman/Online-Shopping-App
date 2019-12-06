@@ -7,7 +7,7 @@ private:
     Wallet *wallet;
 
 public:
-    Seller();
+    Seller(int id, std::string username, std::string email, std::string password);
     void getTransactionHistory(int bound);
     void generateDiscountCode(Offer *offer, int count, int percentage);
     void addOffer(Product *p, int amount, int unitPrice);

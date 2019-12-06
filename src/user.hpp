@@ -9,6 +9,7 @@ private:
     std::string email;
 
 public:
-    User();
+    User(int id, std::string username, std::string email, std::string password);
+    bool passwordMatches(std::string password);
     bool checkAuthorization(std::string endpointID);
 };

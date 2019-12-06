@@ -5,9 +5,12 @@ class UserRepository
 {
 private:
     std::vector<User *> users;
+    int maxUserId;
 
 public:
     UserRepository();
-    User *getUser(std::string username);
+    void addUser(User *newUser);
+    User *getUser(std::string email);
     UserRepository *getInstance();
+    int getNextId();
 };
