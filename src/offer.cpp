@@ -33,3 +33,8 @@ int Offer::getSellerId()
 {
     return seller->getId();
 }
+
+double Offer::getUnitPrice()
+{
+    return unitPrice;
+}

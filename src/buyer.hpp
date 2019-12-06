@@ -15,7 +15,7 @@ private:
 
 public:
     Buyer(Api *api, Tools *tools, int userId, int walletId, std::string username, std::string email, std::string password);
-    bool addToCart(Offer *offer, int amout, std::string discountCode);
+    bool addToCart(Offer *offer, int amount, std::string discountCode);
     bool submitCart();
     std::vector<std::string> getOrdersHistory(int bound);
     std::vector<std::string> getTransactionHistory(int bound);

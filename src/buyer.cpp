@@ -7,7 +7,7 @@ Buyer::Buyer(Api *api, Tools *tools, int userId, int walletId, std::string usern
 {
 }
 
-bool Buyer::addToCart(Offer *offer, int amout, std::string discountCode)
+bool Buyer::addToCart(Offer *offer, int amount, std::string discountCode)
 {
 }
 bool Buyer::submitCart() {}

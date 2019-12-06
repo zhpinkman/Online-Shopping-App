@@ -22,4 +22,5 @@ public:
     std::string getProductName();
     int getId();
     int getSellerId();
+    double getUnitPrice();
 };

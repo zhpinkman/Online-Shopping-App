@@ -6,9 +6,9 @@ class CartItem
 private:
     Offer *offer;
     int amount;
-    int discount;
+    int discountPercentage;
 
 public:
-    CartItem();
+    CartItem(Offer *offer, int amount, int discountPercentage);
     double getSoldPrice();
 };
