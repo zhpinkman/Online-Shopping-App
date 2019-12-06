@@ -4,12 +4,12 @@
 class Wallet
 {
 private:
-    std::string id;
+    int id;
     double balance;
     std::vector<double> history;
 
 public:
-    Wallet();
+    Wallet(int id);
     std::vector<double> getHistory(int bound);
     bool charge(double amount);
     bool withdraw(double amount);

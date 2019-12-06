@@ -11,7 +11,7 @@ private:
     Seller *seller;
     int count;
     int unitPrice;
-    std::vector<Discount> discounts;
+    std::vector<Discount *> discounts;
 
 public:
     Offer();

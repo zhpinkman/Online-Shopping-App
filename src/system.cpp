@@ -19,7 +19,7 @@ bool System::signup(std::string email, std::string username, std::string passwor
     User *user = userRepository->getUser(email);
     if (user == nullptr)
     {
-        int newUserId = userRepository->getNextId();
+        int newUserId = userRepository->getNextUserId();
         switch (userType)
         {
         case BUYER:

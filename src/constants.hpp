@@ -1,3 +1,4 @@
+#define OK "OK"
 #define BAD_REQUEST "Bad Request"
 #define SUCCESS true
 #define FAILED false
@@ -8,4 +9,10 @@ enum UserType
 {
     BUYER,
     SELLER,
+};
+
+enum DiscountStatus
+{
+    USED,
+    UNUSED
 };

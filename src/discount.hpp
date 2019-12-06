@@ -1,10 +1,11 @@
 #include <string>
+#include "constants.hpp"
 
 class Discount
 {
 private:
     std::string code;
-    enum status : int;
+    DiscountStatus discountStatus;
     int percentage;
 
 public:

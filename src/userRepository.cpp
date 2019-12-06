@@ -22,7 +22,12 @@ User *UserRepository::getUser(std::string email)
     return nullptr;
 }
 
-int UserRepository::getNextId()
+int UserRepository::getNextUserId()
 {
     return maxUserId++;
+}
+
+int UserRepository::getNextWalletId()
+{
+    return maxWalletId++;
 }
