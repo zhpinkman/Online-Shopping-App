@@ -14,4 +14,5 @@ public:
     bool isDiscountCodeUnique(std::string code);
     // ProductRepository *getInstance();
     int getNextOfferId();
+    int useDiscountCode(std::string discountCode);
 };

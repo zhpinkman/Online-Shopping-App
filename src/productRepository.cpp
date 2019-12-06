@@ -27,10 +27,21 @@ bool ProductRepository::isDiscountCodeUnique(std::string code)
 {
     for (Discount *discount : discounts)
     {
-        if (discount->doesCodesMatches(code))
+        if (discount->isValidDiscount(code))
         {
             return false;
         }
     }
     return true;
+}
+
+int ProductRepository::useDiscountCode(std::string discountCode)
+{
+    for (Discount *discount : discounts)
+    {
+        if (discount->isValidDiscount(discountCode))
+        {
+            return discount->useDiscountCode();
+        }
+    }
 }

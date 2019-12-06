@@ -16,3 +16,8 @@ bool Api::isValidDiscountCode(std::string code)
 {
     return productRepository->isDiscountCodeUnique(code);
 }
+
+int Api::useDiscountCode(std::string discountCode)
+{
+    return productRepository->useDiscountCode(discountCode);
+}

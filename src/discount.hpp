@@ -10,5 +10,6 @@ private:
 
 public:
     Discount(std::string code, int percentage);
-    bool doesCodesMatches(std::string code);
+    bool isValidDiscount(std::string code);
+    int useDiscountCode();
 };
