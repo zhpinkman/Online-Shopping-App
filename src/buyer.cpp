@@ -9,7 +9,7 @@ Buyer::Buyer(Api *api, Tools *tools, int userId, int walletId, std::string usern
 
 bool Buyer::addToCart(Offer *offer, int amount, std::string discountCode = "")
 {
-    if (api->isValidDiscountCode(offer, discountCode) || discountCode == "")
+    if ((api->isValidDiscountCode(offer, discountCode) || discountCode == "") && api->canBeAddedToCart(offer, amount))
     {
         int discountPercentage;
         if (discountCode != "")
@@ -31,7 +31,6 @@ bool Buyer::submitCart()
     double finalPrice = factor->getFinalPrice();
     if (wallet->withdraw(finalPrice))
     {
-
         std::cout << OK << std::endl;
         return SUCCESS;
     }

@@ -26,3 +26,8 @@ bool Api::isValidDiscountCode(Offer *offer, std::string code)
 {
     return productRepository->isDiscountCodeValid(offer, code);
 }
+
+bool Api::canBeAddedToCart(Offer *offer, int amount)
+{
+    return productRepository->canBeAddedToCart(offer, amount);
+}

@@ -57,3 +57,8 @@ bool ProductRepository::isDiscountCodeValid(Offer *offer, std::string code)
     }
     return false;
 }
+
+bool ProductRepository::canBeAddedToCart(Offer *offer, int amount)
+{
+    // TODO
+}

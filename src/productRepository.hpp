@@ -16,4 +16,5 @@ public:
     // ProductRepository *getInstance();
     int getNextOfferId();
     int useDiscountCode(std::string discountCode);
+    bool canBeAddedToCart(Offer *offer, int amount);
 };

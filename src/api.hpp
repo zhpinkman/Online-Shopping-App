@@ -14,4 +14,5 @@ public:
     bool isValidDiscountCode(Offer *offer, std::string code);
     int useDiscountCode(std::string discountCode);
     int getOfferId();
+    bool canBeAddedToCart(Offer *offer, int amount);
 };
