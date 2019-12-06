@@ -23,4 +23,5 @@ public:
     int getId();
     int getSellerId();
     double getUnitPrice();
+    bool hasDiscountCode(std::string code);
 };

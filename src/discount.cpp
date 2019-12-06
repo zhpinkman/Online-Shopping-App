@@ -9,7 +9,7 @@ Discount::Discount(std::string _code, int _percentage)
 
 bool Discount::isValidDiscount(std::string _code)
 {
-    return code == _code;
+    return code == _code && discountStatus == UNUSED;
 }
 
 int Discount::useDiscountCode()

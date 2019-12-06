@@ -38,3 +38,15 @@ double Offer::getUnitPrice()
 {
     return unitPrice;
 }
+
+bool Offer::hasDiscountCode(std::string code)
+{
+    for (Discount *discount : discounts)
+    {
+        if (discount->isValidDiscount(code))
+        {
+            return true;
+        }
+    }
+    return false;
+}

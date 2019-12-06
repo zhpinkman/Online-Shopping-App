@@ -13,3 +13,8 @@ double CartItem::getSoldPrice()
     double priceAfterDiscount = (100 - discountPercentage) * initialPrice;
     return priceAfterDiscount;
 }
+
+double CartItem::getInitialPrice()
+{
+    return offer->getUnitPrice();
+}
