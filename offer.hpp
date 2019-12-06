@@ -7,7 +7,7 @@ class Seller;
 class Offer
 {
 private:
-    std::string id;
+    int id;
     Seller *seller;
     int count;
     int unitPrice;
