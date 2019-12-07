@@ -1,18 +1,22 @@
-#include "user.hpp"
+#ifndef _USER_REPOSITORY_H_
+#define _USER_REPOSITORY_H_
+
 #include <vector>
+#include "User.hpp"
 
 class UserRepository
 {
-private:
-    std::vector<User *> users;
-    int maxUserId;
-    int maxWalletId;
-
 public:
     UserRepository();
     void addUser(User *newUser);
     User *getUser(std::string email);
-    // UserRepository *getInstance();
     int getNextUserId();
     int getNextWalletId();
+
+private:
+    std::vector<User*> users;
+    int maxUserId;
+    int maxWalletId;
 };
+
+#endif

@@ -5,12 +5,14 @@
 #define BAD_REQUEST "Bad Request"
 #define SUCCESS true
 #define FAILED false
-#define ADMIN_USERNAME "ADMIN"
-#define ADMIN_PASSWORD "ADMIN"
 #define SEPERATOR " | "
 #define POST "POST"
 #define GET "GET"
 #define MIN_COMMAND_SIZE 2
+#define ADMIN_USERNAME "admin"
+#define ADMIN_PASSWORD "admin"
+#define ADMIN_EMAIL "admin@gmail.com"
+#define ADMIN_ID 1
 
 #define SIGNUP "signup"
 #define LOGIN "login"
@@ -34,6 +36,10 @@
 #define COMMENT "comment"
 #define COMPARE "compare"
 #define OFFER_BUYERS "offerBuyers"
+
+#define SIGNUP_MAX_SIZE 11
+#define SELLER_STR "seller"
+#define BUYER_STR "buyer"
 
 enum UserType
 {

@@ -1,13 +1,14 @@
-#include "user.hpp"
+#include "User.hpp"
+using namespace std;
 
-User::User(Api *_api, Tools *_tools, int id, std::string _username, std::string _email, std::string _password)
+User::User(API*_api, int _id, std::string _username, std::string _email, std::string _password)
 {
     api = _api;
-    tools = _tools;
     username = _username;
     email = _email;
     password = _password;
 }
+
 bool User::checkAuthorization(std::string endpointID)
 {
     // TODO

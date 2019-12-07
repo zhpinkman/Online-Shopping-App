@@ -1,4 +1,5 @@
-#include "userRepository.hpp"
+#include "UserRepository.hpp"
+using namespace std;
 
 UserRepository::UserRepository()
 {
@@ -12,7 +13,7 @@ void UserRepository::addUser(User *newUser)
 
 User *UserRepository::getUser(std::string email)
 {
-    for (User *user : users)
+    for (User* user : users)
     {
         if (user->emailMatches(email))
         {
