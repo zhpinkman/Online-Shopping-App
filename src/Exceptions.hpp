@@ -1,7 +1,7 @@
 #ifndef __EXCEPTIONS_H__
 #define __EXCEPTIONS_H__
 
-#include "exception.hpp"
+#include "Exception.hpp"
 
 class Not_Found_Exception : public Exception 
 {

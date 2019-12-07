@@ -22,8 +22,7 @@ clean:
 	rm -rf $(BUILD_DIR) *.o *.out
 
 
-MainSensitivityList = $(SRC_DIR)/main.cpp
+mainSensitivityList = $(SRC_DIR)/main.cpp
 
-
-$(BUILD_DIR)/main.o: $(MainSensitivityList)
+$(BUILD_DIR)/main.o: $(mainSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.cpp -o $(BUILD_DIR)/main.o
