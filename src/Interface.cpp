@@ -4,6 +4,8 @@
 #include "Interface.hpp"
 #include "Exception.hpp"
 #include "Exceptions.hpp"
+#include "constants.hpp"
+#include "Tools.hpp"
 
 using namespace std;
 
@@ -24,7 +26,8 @@ void Interface::processCommand(string command)
 {
     try
 	{
-		
+        vector<string> commandWords = Tools::splitBySpace(command);
+		validateCommand(commandWords);
 	}		
 	catch(const exception &e)
 	{
@@ -32,17 +35,26 @@ void Interface::processCommand(string command)
 	}
 }
 
-void Interface::validateCommand(string command)
+void Interface::validateCommand(const vector<string> &commandWords)
 {
-    validateCommandType(command);
+    validateCommandSize(commandWords);
+    validateCommandType(commandWords);
+    validateCommandOrder(commandWords);
 }
 
-void Interface::validateCommandType(string command)
+void Interface::validateCommandSize(const vector<string> &commandWords)
 {
-
+    if(commandWords.size() < MIN_COMMAND_SIZE)
+        throw Bad_Request_Exception();
 }
 
-void Interface::validateCommandArgs(string command)
+void Interface::validateCommandType(const vector<string> &commandWords)
 {
+    if(commandWords[0] != POST || commandWords[0] != GET)
+        throw Not_Found_Exception();
+}
 
+void Interface::validateCommandOrder(const vector<string> &commandWords)
+{
+    //TODO
 }

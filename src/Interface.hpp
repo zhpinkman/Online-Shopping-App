@@ -2,6 +2,7 @@
 #define _INTERFACE_H_
 
 #include <string>
+#include <vector>
 
 class Interface
 {
@@ -11,9 +12,10 @@ public:
 private:
     void processCommands();
     void processCommand(std::string command);
-    void validateCommand(std::string command);
-    void validateCommandType(std::string command);
-    void validateCommandArgs(std::string command);
+    void validateCommand(const std::vector<std::string> &commandWords);
+    void validateCommandSize(const std::vector<std::string> &commandWords);
+    void validateCommandType(const std::vector<std::string> &commandWords);
+    void validateCommandOrder(const std::vector<std::string> &commandWords);
 };
 
 #endif
