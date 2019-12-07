@@ -18,7 +18,8 @@ OBJECTS = $(BUILD_DIR)/main.o \
 		  $(BUILD_DIR)/Discount.o \
 		  $(BUILD_DIR)/Seller.o \
 		  $(BUILD_DIR)/Wallet.o \
-		  $(BUILD_DIR)/Buyer.o 
+		  $(BUILD_DIR)/Buyer.o \
+		  $(BUILD_DIR)/Admin.o
 
 
 .PHONY: all build_objects make_build_dir clean
@@ -55,7 +56,8 @@ JomeBazaarHeaderSensitivities = $(SRC_DIR)/JomeBazaar.hpp \
 								$(SRC_DIR)/Buyer.hpp \
 								$(SRC_DIR)/Seller.hpp \
 								$(SRC_DIR)/Tools.hpp \
-								$(SRC_DIR)/Exceptions.hpp
+								$(SRC_DIR)/Exceptions.hpp \
+								$(SRC_DIR)/Admin.hpp
 
 APIHeaderSensitivities = $(SRC_DIR)/API.hpp \
 						 $(SRC_DIR)/Offer.hpp \
@@ -69,7 +71,8 @@ ProductHeaderSensitivities = $(SRC_DIR)/Product.hpp \
 						     $(SRC_DIR)/Offer.hpp
 
 UserRepositoryHeaderSensitivities = $(SRC_DIR)/UserRepository.hpp \
-									$(SRC_DIR)/User.hpp
+									$(SRC_DIR)/User.hpp \
+									$(SRC_DIR)/constants.hpp
 
 ProductRepositoryHeaderSensitivities = $(SRC_DIR)/ProductRepository.hpp
 
@@ -94,6 +97,9 @@ BuyerHeaderSensitivities = $(SRC_DIR)/Buyer.hpp \
 						   $(SRC_DIR)/CartItem.hpp \
 						   $(SRC_DIR)/constants.hpp
 
+AdminHeaderSensitivities = $(SRC_DIR)/Admin.hpp \
+						   $(SRC_DIR)/User.hpp \
+						   $(SRC_DIR)/constants.hpp
 
 mainSensitivityList = $(SRC_DIR)/main.cpp \
 					  $(mainHeaderSensitivities)
@@ -134,8 +140,11 @@ SellerSensitivityList = $(SRC_DIR)/Seller.cpp \
 WalletSensitivityList = $(SRC_DIR)/Wallet.cpp \
 					      $(WalletHeaderSensitivities)
 
-BuyerSensitivityList = $(SRC_DIR)/Wallet.cpp \
+BuyerSensitivityList = $(SRC_DIR)/Buyer.cpp \
 					      $(BuyerHeaderSensitivities)
+
+AdminSensitivityList = $(SRC_DIR)/Admin.cpp \
+					      $(AdminHeaderSensitivities)
 
 $(BUILD_DIR)/main.o: $(mainSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.cpp -o $(BUILD_DIR)/main.o
@@ -178,3 +187,6 @@ $(BUILD_DIR)/Wallet.o: $(WalletSensitivityList)
 
 $(BUILD_DIR)/Buyer.o: $(BuyerSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Buyer.cpp -o $(BUILD_DIR)/Buyer.o
+
+$(BUILD_DIR)/Admin.o: $(AdminSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/Admin.cpp -o $(BUILD_DIR)/Admin.o

@@ -1,9 +1,10 @@
 #include "UserRepository.hpp"
+#include "constants.hpp"
 using namespace std;
 
 UserRepository::UserRepository()
 {
-    maxUserId = 1;
+    maxUserId = USER_ID_BEGIN;
 }
 
 void UserRepository::addUser(User *newUser)
@@ -25,10 +26,10 @@ User *UserRepository::getUser(std::string email)
 
 int UserRepository::getNextUserId()
 {
-    return maxUserId++;
+    return ++maxUserId;
 }
 
 int UserRepository::getNextWalletId()
 {
-    return maxWalletId++;
+    return ++maxWalletId;
 }

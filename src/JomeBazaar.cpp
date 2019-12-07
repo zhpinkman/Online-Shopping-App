@@ -2,6 +2,7 @@
 #include "JomeBazaar.hpp"
 #include "Buyer.hpp"
 #include "Seller.hpp"
+#include "Admin.hpp"
 #include "Tools.hpp"
 #include "Exceptions.hpp"
 
@@ -10,6 +11,7 @@ using namespace std;
 JomeBazaar::JomeBazaar()
 {
     userRepository = new UserRepository();
+    userRepository->addUser(new Admin(api));
     productRepository = new ProductRepository();
     api = new API(userRepository, productRepository);
     loggedInUser = nullptr;

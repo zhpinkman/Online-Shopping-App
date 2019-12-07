@@ -9,10 +9,10 @@
 #define POST "POST"
 #define GET "GET"
 #define MIN_COMMAND_SIZE 2
+#define USER_ID_BEGIN 1
 #define ADMIN_USERNAME "admin"
 #define ADMIN_PASSWORD "admin"
 #define ADMIN_EMAIL "admin@gmail.com"
-#define ADMIN_ID 1
 
 #define SIGNUP "signup"
 #define LOGIN "login"
