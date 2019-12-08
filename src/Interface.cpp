@@ -26,7 +26,7 @@ void Interface::processCommand(string command)
 {
     try
 	{
-        vector<string> commandWords = Tools::splitBySpace(command);
+        vector<string> commandWords = Tools::splitByChar(command, SPACE);
 		validateCommand(commandWords);
         runCommand(commandWords);
         printSuccess();
@@ -61,6 +61,12 @@ void Interface::validateCommandOrder(const vector<string> &commandWords)
     //TODO
 }
 
+
+void Interface::printSuccess()
+{
+    cout << OK << '\n';
+}
+
 void Interface::runCommand(const vector<string> &commandWords)
 {
     string order = commandWords[1];
@@ -71,6 +77,10 @@ void Interface::runCommand(const vector<string> &commandWords)
         runLoginCommand(commandWords);
     else if(order == LOGOUT)
         runLogoutCommand(commandWords);
+    else if(order == IMPORT_PRODUCT)
+        runImportProductCommand(commandWords);
+    else
+        throw Not_Found_Exception();
 }
 
 void Interface::runSignupCommand(const vector<string> &commandWords)
@@ -100,7 +110,10 @@ void Interface::runLogoutCommand(const std::vector<std::string> &commandWords)
     jomeBazaar.logout();
 }
 
-void Interface::printSuccess()
+void Interface::runImportProductCommand(const std::vector<std::string> &commandWords)
 {
-    cout << OK << '\n';
+    string type = commandWords[4];
+    string filePath = commandWords[6];
+
+    jomeBazaar.importProduct(type, filePath);
 }

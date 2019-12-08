@@ -21,7 +21,10 @@ OBJECTS = $(BUILD_DIR)/main.o \
 		  $(BUILD_DIR)/CartItem.o \
 		  $(BUILD_DIR)/Buyer.o \
 		  $(BUILD_DIR)/Factor.o \
-		  $(BUILD_DIR)/Admin.o
+		  $(BUILD_DIR)/Admin.o \
+		  $(BUILD_DIR)/Mobile.o \
+		  $(BUILD_DIR)/TV.o \
+		  $(BUILD_DIR)/Car.o
 
 
 .PHONY: all build_objects make_build_dir clean
@@ -47,7 +50,8 @@ InterfaceHeaderSensitivities = $(SRC_DIR)/Interface.hpp \
 							   $(SRC_DIR)/Tools.hpp \
 							   $(SRC_DIR)/JomeBazaar.hpp
 
-ToolsHeaderSensitivities = $(SRC_DIR)/Tools.hpp
+ToolsHeaderSensitivities = $(SRC_DIR)/Tools.hpp \
+						   $(SRC_DIR)/Exceptions.hpp
 
 JomeBazaarHeaderSensitivities = $(SRC_DIR)/JomeBazaar.hpp \
 								$(SRC_DIR)/API.hpp \
@@ -78,7 +82,12 @@ UserRepositoryHeaderSensitivities = $(SRC_DIR)/UserRepository.hpp \
 ProductRepositoryHeaderSensitivities =  $(SRC_DIR)/ProductRepository.hpp \
 										$(SRC_DIR)/Offer.hpp \
 										$(SRC_DIR)/Product.hpp \
-										$(SRC_DIR)/Discount.hpp
+										$(SRC_DIR)/Discount.hpp \
+										$(SRC_DIR)/constants.hpp \
+										$(SRC_DIR)/Exceptions.hpp \
+										$(SRC_DIR)/Mobile.hpp \
+										$(SRC_DIR)/TV.hpp \
+										$(SRC_DIR)/Car.hpp
 
 OfferHeaderSensitivities = $(SRC_DIR)/Offer.hpp \
 						   $(SRC_DIR)/Discount.hpp \
@@ -115,6 +124,15 @@ BuyerHeaderSensitivities = $(SRC_DIR)/Buyer.hpp \
 AdminHeaderSensitivities = $(SRC_DIR)/Admin.hpp \
 						   $(SRC_DIR)/User.hpp \
 						   $(SRC_DIR)/constants.hpp
+
+MobileHeaderSensitivities = $(SRC_DIR)/Mobile.hpp
+
+AdminHeaderSensitivities = $(SRC_DIR)/TV.hpp \
+						   $(SRC_DIR)/Tools.hpp
+
+CarHeaderSensitivities = $(SRC_DIR)/Car.hpp \
+						 $(SRC_DIR)/Tools.hpp
+
 
 mainSensitivityList = $(SRC_DIR)/main.cpp \
 					  $(mainHeaderSensitivities)
@@ -167,6 +185,15 @@ BuyerSensitivityList = $(SRC_DIR)/Buyer.cpp \
 AdminSensitivityList = $(SRC_DIR)/Admin.cpp \
 					      $(AdminHeaderSensitivities)
 
+MobileSensitivityList = $(SRC_DIR)/Mobile.cpp \
+					      $(MobileHeaderSensitivities)
+
+TVSensitivityList = $(SRC_DIR)/TV.cpp \
+					      $(TVHeaderSensitivities)
+
+CarSensitivityList = $(SRC_DIR)/Car.cpp \
+					      $(CarHeaderSensitivities)
+
 $(BUILD_DIR)/main.o: $(mainSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.cpp -o $(BUILD_DIR)/main.o
 
@@ -217,3 +244,12 @@ $(BUILD_DIR)/Buyer.o: $(BuyerSensitivityList)
 
 $(BUILD_DIR)/Admin.o: $(AdminSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Admin.cpp -o $(BUILD_DIR)/Admin.o
+
+$(BUILD_DIR)/Mobile.o: $(MobileSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/Mobile.cpp -o $(BUILD_DIR)/Mobile.o
+
+$(BUILD_DIR)/TV.o: $(TVSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/TV.cpp -o $(BUILD_DIR)/TV.o
+
+$(BUILD_DIR)/Car.o: $(CarSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/Car.cpp -o $(BUILD_DIR)/Car.o

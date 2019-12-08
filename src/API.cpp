@@ -1,6 +1,7 @@
 #include "API.hpp"
 #include "UserRepository.hpp"
 #include "ProductRepository.hpp"
+using namespace std;
 
 API::API(UserRepository *_userRepository, ProductRepository *_productRepository)
 {
@@ -31,4 +32,9 @@ bool API::isValidDiscountCode(Offer *offer, std::string code)
 bool API::canBeAddedToCart(Offer *offer, int amount)
 {
     return productRepository->canBeAddedToCart(offer, amount);
+}
+
+void API::addProduct(string type, const vector<string> &info)
+{
+    productRepository->addProduct(type, info);
 }

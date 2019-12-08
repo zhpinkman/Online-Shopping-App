@@ -23,6 +23,7 @@ private:
     void runSignupCommand(const std::vector<std::string> &commandWords);
     void runLoginCommand(const std::vector<std::string> &commandWords);
     void runLogoutCommand(const std::vector<std::string> &commandWords);
+    void runImportProductCommand(const std::vector<std::string> &commandWords);
 };
 
 #endif

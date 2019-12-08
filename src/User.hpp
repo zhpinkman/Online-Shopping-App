@@ -13,6 +13,8 @@ public:
     bool passwordMatches(std::string password);
     bool checkAuthorization(std::string endpointID);
 
+    virtual void importProductsFromCSV(std::string type, std::string filePath);
+
 private:
     int id;
     std::string username;

@@ -3,17 +3,17 @@
 
 #include <vector>
 #include <string>
+#include <fstream>
 #include "constants.hpp"
 
 class Tools
 {
-private:
 public:
-    Tools();
-    std::fstream openCSVFile(std::string fileName);
-    std::vector<std::string> parseCSVFile(std::fstream file);
-    static std::vector<std::string> splitBySpace(std::string spacedString);
+    static std::ifstream openCSVFile(std::string filePath);
+    static std::vector < std::vector<std::string> > parseCSVFile(std::ifstream &file);
+    static std::vector<std::string> splitByChar(std::string word, char separator);
     static std::string generateRandomString();
+    static bool stringToBool(std::string word);
 };
 
 #endif

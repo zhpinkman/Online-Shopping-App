@@ -1,20 +1,21 @@
-#ifndef _USER_H_
-#define _USER_H_
+#ifndef _TV_H_
+#define _TV_H_
 
-#include "Product.hpp"
+#include <vector>
 #include <string>
+#include "Product.hpp"
 
-class Tv : public Product
+class TV : public Product
 {
 public:
-    Tv();
-    bool operator<(const Tv &t);
+    TV(int _id, const std::vector<std::string> &info);
+    bool operator<(const TV &t);
     void getProductInfo();
 
 private:
-    int displaySize;
-    std::string displayType;
-    std::string quality;
+    int screenSize;
+    std::string screenType;
+    std::string resolution;
     bool _3D;
     bool HDR;
 };

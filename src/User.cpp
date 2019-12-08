@@ -1,4 +1,6 @@
 #include "User.hpp"
+#include "constants.hpp"
+#include "Exceptions.hpp"
 using namespace std;
 
 User::User(API*_api, int _id, std::string _username, std::string _email, std::string _password)
@@ -27,4 +29,9 @@ bool User::emailMatches(std::string _email)
 int User::getId()
 {
     return id;
+}
+
+void User::importProductsFromCSV(string type, string filePath)
+{
+    throw Permission_Exception();
 }

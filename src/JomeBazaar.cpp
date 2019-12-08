@@ -11,10 +11,16 @@ using namespace std;
 JomeBazaar::JomeBazaar()
 {
     userRepository = new UserRepository();
-    userRepository->addUser(new Admin(api));
     productRepository = new ProductRepository();
     api = new API(userRepository, productRepository);
+    userRepository->addUser(new Admin(api));
     loggedInUser = nullptr;
+}
+
+void JomeBazaar::checkLoggedIn()
+{
+    if(loggedInUser == nullptr)
+        throw Permission_Exception();
 }
 
 void JomeBazaar::signup(std::string email, std::string username, std::string password, UserType userType)
@@ -61,4 +67,10 @@ void JomeBazaar::logout()
         loggedInUser = nullptr;
     else
         throw Permission_Exception();
+}
+
+void JomeBazaar::importProduct(string type, string filePath)
+{
+    checkLoggedIn();
+    loggedInUser->importProductsFromCSV(type, filePath);    
 }

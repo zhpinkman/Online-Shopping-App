@@ -41,6 +41,13 @@
 #define SELLER_STR "seller"
 #define BUYER_STR "buyer"
 
+#define MOBILE_TYPE "mobile"
+#define TV_TYPE "tv"
+#define CAR_TYPE "car"
+
+#define SPACE ' '
+#define COMMA ','
+
 enum UserType
 {
     BUYER,

@@ -14,12 +14,15 @@ public:
     void signup(std::string email, std::string username, std::string password, UserType userType);
     void login(std::string email, std::string password);
     void logout();
+    void importProduct(std::string type, std::string filePath);
 
 private:
     API* api;
     User* loggedInUser;
     UserRepository* userRepository;
     ProductRepository* productRepository;
+
+    void checkLoggedIn();
 };
 
 #endif

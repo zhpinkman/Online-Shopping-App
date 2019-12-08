@@ -1,6 +1,7 @@
 #ifndef _API_H_
 #define _API_H_
 
+#include <vector>
 #include <string>
 
 // #include "Offer.hpp"
@@ -18,6 +19,8 @@ public:
     int useDiscountCode(std::string discountCode);
     int getOfferId();
     bool canBeAddedToCart(Offer *offer, int amount);
+
+    void addProduct(std::string type, const std::vector<std::string> &info);
 
 private:
     UserRepository *userRepository;

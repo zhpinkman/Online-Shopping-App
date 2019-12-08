@@ -8,8 +8,7 @@ class Admin : public User
 {
 public:
     Admin(API* _api);
-    void addProduct(std::string name, std::string description);
-    void importProductsFromCSV(std::string fileName);
+    void importProductsFromCSV(std::string type, std::string filePath);
     void addComment(std::string productName, std::string comment);
     void importCommentsFromCSV(std::string fileName);
     bool checkAuthorization(std::string endpointID);

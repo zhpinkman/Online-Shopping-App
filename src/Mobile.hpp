@@ -1,21 +1,25 @@
 #ifndef _MOBILE_H_
 #define _MOBILE_H_
 
+#include <vector>
+#include <string>
 #include "Product.hpp"
 
-class Moblie : public Product
+class Mobile : public Product
 {
-private:
-    enum color : int;
-    int weight;
-    int simcardNum;
-    int CPU;
-    int RAM;
-
 public:
-    Moblie();
-    bool operator<(const Moblie &m);
+    Mobile(int _id, const std::vector<std::string> &info);
+    bool operator<(const Mobile &m);
     void getProductInfo();
+
+private:
+    double weight;
+    double cpuFrequency;
+    int builtInMemory;
+    int ram;
+    double displaySize;
+    int cameraResolution;
+    std::string os;
 };
 
 #endif
