@@ -6,15 +6,15 @@
 class CartItem
 {
 
-// private:
-//     Offer *offer;
-//     int amount;
-//     int discountPercentage;
+    // private:
+    //     Offer *offer;
+    //     int amount;
+    //     int discountPercentage;
 
-// public:
-//     CartItem(Offer *offer, int amount, int discountPercentage);
-//     double getSoldPrice();
-//     double getInitialPrice();
+    // public:
+    //     CartItem(Offer *offer, int amount, int discountPercentage);
+    //     double getSoldPrice();
+    //     double getInitialPrice();
 };
 
 #endif
