@@ -18,7 +18,9 @@ OBJECTS = $(BUILD_DIR)/main.o \
 		  $(BUILD_DIR)/Discount.o \
 		  $(BUILD_DIR)/Seller.o \
 		  $(BUILD_DIR)/Wallet.o \
+		  $(BUILD_DIR)/CartItem.o \
 		  $(BUILD_DIR)/Buyer.o \
+		  $(BUILD_DIR)/Factor.o \
 		  $(BUILD_DIR)/Admin.o
 
 
@@ -94,7 +96,13 @@ SellerHeaderSensitivities = $(SRC_DIR)/Seller.hpp \
 							$(SRC_DIR)/Offer.hpp \
 							$(SRC_DIR)/Discount.hpp 
 
+CartItemHeaderSensitivities = $(SRC_DIR)/CartItem.hpp \
+							  $(SRC_DIR)/Offer.hpp
+
 WalletHeaderSensitivities = $(SRC_DIR)/Wallet.hpp
+
+FactorHeaderSensitivities = $(SRC_DIR)/Factor.hpp \
+							$(SRC_DIR)/CartItem.hpp
 
 BuyerHeaderSensitivities = $(SRC_DIR)/Buyer.hpp \
 						   $(SRC_DIR)/User.hpp \
@@ -147,6 +155,12 @@ SellerSensitivityList = $(SRC_DIR)/Seller.cpp \
 WalletSensitivityList = $(SRC_DIR)/Wallet.cpp \
 					      $(WalletHeaderSensitivities)
 
+FactorSensitivityList = $(SRC_DIR)/Factor.cpp \
+					    $(FactorHeaderSensitivities)
+
+CartItemSensitivityList = $(SRC_DIR)/CartItem.cpp \
+					     $(CartItemHeaderSensitivities)
+
 BuyerSensitivityList = $(SRC_DIR)/Buyer.cpp \
 					      $(BuyerHeaderSensitivities)
 
@@ -191,6 +205,12 @@ $(BUILD_DIR)/Seller.o: $(SellerSensitivityList)
 
 $(BUILD_DIR)/Wallet.o: $(WalletSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Wallet.cpp -o $(BUILD_DIR)/Wallet.o
+
+$(BUILD_DIR)/CartItem.o: $(CartItemSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/CartItem.cpp -o $(BUILD_DIR)/CartItem.o
+
+$(BUILD_DIR)/Factor.o: $(FactorSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/Factor.cpp -o $(BUILD_DIR)/Factor.o
 
 $(BUILD_DIR)/Buyer.o: $(BuyerSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Buyer.cpp -o $(BUILD_DIR)/Buyer.o
