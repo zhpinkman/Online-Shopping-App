@@ -15,6 +15,7 @@ public:
     void login(std::string email, std::string password);
     void logout();
     void importProduct(std::string type, std::string filePath);
+    void getProducts();
 
 private:
     API* api;

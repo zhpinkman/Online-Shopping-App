@@ -79,6 +79,8 @@ void Interface::runCommand(const vector<string> &commandWords)
         runLogoutCommand(commandWords);
     else if(order == IMPORT_PRODUCT)
         runImportProductCommand(commandWords);
+    else if(order == GET_PRODUCTS)
+        runGetProductsCommand(commandWords);
     else
         throw Not_Found_Exception();
 }
@@ -116,4 +118,9 @@ void Interface::runImportProductCommand(const std::vector<std::string> &commandW
     string filePath = commandWords[6];
 
     jomeBazaar.importProduct(type, filePath);
+}
+
+void Interface::runGetProductsCommand(const std::vector<std::string> &commandWords)
+{
+    jomeBazaar.getProducts();
 }

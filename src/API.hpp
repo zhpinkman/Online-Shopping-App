@@ -21,6 +21,7 @@ public:
     bool canBeAddedToCart(Offer *offer, int amount);
 
     void addProduct(std::string type, const std::vector<std::string> &info);
+    void printProducts();
 
 private:
     UserRepository *userRepository;

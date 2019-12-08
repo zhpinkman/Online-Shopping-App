@@ -1,3 +1,4 @@
+#include <iostream>
 #include "ProductRepository.hpp"
 #include "Offer.hpp"
 #include "constants.hpp"
@@ -90,4 +91,15 @@ void ProductRepository::addProduct(std::string type, const std::vector<std::stri
         throw Bad_Request_Exception();
 
     products.push_back(newProduct);
+}
+
+void ProductRepository::printProducts()
+{
+    cout << PRODUCT_ID << SPACE << OUTPUT_SEPARATOR << SPACE << PRODUCT_NAME << '\n';
+    for(Product* product : products)
+    {
+        int productId = product->getId();
+        string productName = product->getName();
+        cout << productId << SPACE << productName << '\n';
+    }
 }

@@ -35,3 +35,8 @@ void User::importProductsFromCSV(string type, string filePath)
 {
     throw Permission_Exception();
 }
+
+void User::printProducts()
+{
+    throw Permission_Exception();
+}

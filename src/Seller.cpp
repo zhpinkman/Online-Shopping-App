@@ -39,4 +39,10 @@ void Seller::addOffer(Product *p, int count, int unitPrice)
     Offer *newOffer = new Offer(offerId, this, count, unitPrice);
     p->addOffer(newOffer);
 }
+
 bool Seller::checkAuthorization(std::string endpointID) {}
+
+void Seller::printProducts()
+{
+    api->printProducts();
+}

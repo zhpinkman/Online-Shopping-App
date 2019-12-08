@@ -5,6 +5,7 @@
 #include "Admin.hpp"
 #include "Tools.hpp"
 #include "Exceptions.hpp"
+#include <iostream>
 
 using namespace std;
 
@@ -73,4 +74,10 @@ void JomeBazaar::importProduct(string type, string filePath)
 {
     checkLoggedIn();
     loggedInUser->importProductsFromCSV(type, filePath);    
+}
+
+void JomeBazaar::getProducts()
+{
+    checkLoggedIn();
+    loggedInUser->printProducts();
 }

@@ -48,6 +48,10 @@
 #define SPACE ' '
 #define COMMA ','
 
+#define OUTPUT_SEPARATOR '|'
+#define PRODUCT_ID "productId"
+#define PRODUCT_NAME "productName"
+
 enum UserType
 {
     BUYER,

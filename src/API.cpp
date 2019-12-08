@@ -38,3 +38,8 @@ void API::addProduct(string type, const vector<string> &info)
 {
     productRepository->addProduct(type, info);
 }
+
+void API::printProducts()
+{
+    productRepository->printProducts();
+}

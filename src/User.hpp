@@ -14,6 +14,7 @@ public:
     bool checkAuthorization(std::string endpointID);
 
     virtual void importProductsFromCSV(std::string type, std::string filePath);
+    virtual void printProducts();
 
 private:
     int id;
