@@ -80,3 +80,8 @@ void User::comments(int productId)
 {
     throw Permission_Exception();void comments(int productId);
 }
+
+void User::addToCart(int offerId, int amount, string discountCode)
+{
+    throw Permission_Exception();
+}

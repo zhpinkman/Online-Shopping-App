@@ -95,6 +95,8 @@ void Interface::runCommand(const vector<string> &commandWords)
         runProductDetailCommand(commandWords);
     else if(order == COMMENTS)
         runCommentsCommand(commandWords);
+    else if(order == ADD_TO_CART)
+        runAddToCartCommand(commandWords);
     else
         throw Not_Found_Exception();
 }
@@ -189,4 +191,13 @@ void Interface::runCommentsCommand(const std::vector<std::string> &commandWords)
     int productId = stoi(commandWords[4]);
 
     jomeBazaar.comments(productId);
+}
+
+void Interface::runAddToCartCommand(const std::vector<std::string> &commandWords)
+{
+    int offerId = stoi(commandWords[4]);
+    int amount = stoi(commandWords[6]);
+    string discountCode = (commandWords.size() == ADD_TO_CARD_MAX_SIZE ? commandWords[8] : "");
+
+    jomeBazaar.addToCart(offerId, amount, discountCode);
 }

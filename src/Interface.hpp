@@ -32,6 +32,7 @@ private:
     void runOffersOnProductCommand(const std::vector<std::string> &commandWords);
     void runProductDetailCommand(const std::vector<std::string> &commandWords);
     void runCommentsCommand(const std::vector<std::string> &commandWords);
+    void runAddToCartCommand(const std::vector<std::string> &commandWords);
 };
 
 #endif

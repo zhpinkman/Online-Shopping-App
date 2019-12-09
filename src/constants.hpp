@@ -59,6 +59,8 @@
 #define ASCEND "ASCEND"
 #define DESCEND "DESCEND"
 
+#define ADD_TO_CARD_MAX_SIZE 9
+
 enum UserType
 {
     BUYER,

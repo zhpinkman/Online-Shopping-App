@@ -4,28 +4,28 @@
 #include "CartItem.hpp"
 #include "constants.hpp"
 #include "PrintTools.hpp"
+#include "Exceptions.hpp"
 using namespace std;
 
 Buyer::Buyer(API *api, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, userId, username, email, password)
 {
 }
 
-bool Buyer::addToCart(Offer *offer, int amount, std::string discountCode = "")
+void Buyer::addToCart(int offerId, int amount, string discountCode = "")
 {
+    Offer* offer = api->getOffer(offerId);
+
     if ((api->isValidDiscountCode(offer, discountCode) || discountCode == "") && api->canBeAddedToCart(offer, amount))
     {
-        int discountPercentage;
+        int discountPercentage = 0;
         if (discountCode != "")
             discountPercentage = api->useDiscountCode(discountCode);
-        discountPercentage = 0;
-        CartItem *cartItem = new CartItem(offer, amount, discountPercentage);
-        std::cout << OK << std::endl;
-        return SUCCESS;
+        CartItem* cartItem = new CartItem(offer, amount, discountPercentage);
+        cart.push_back(cartItem);
     }
     else
     {
-        std::cout << BAD_REQUEST << std::endl;
-        return FAILED;
+       throw Bad_Request_Exception();
     }
 }
 bool Buyer::submitCart()

@@ -23,6 +23,7 @@ public:
     void offersOnProduct(int productId);
     void productDetail(int productId);
     void comments(int productId);
+    void addToCart(int offerId, int amount, std::string discountCode);
 
 private:
     API* api;

@@ -13,7 +13,6 @@ class Buyer : public User
 {
 public:
     Buyer(API *api, int userId, int walletId, std::string username, std::string email, std::string password);
-    bool addToCart(Offer *offer, int amount, std::string discountCode);
     bool submitCart();
     std::vector<std::string> getOrdersHistory(int bound);
     std::vector<std::string> getTransactionHistory(int bound);
@@ -25,6 +24,7 @@ public:
     void printOffersOnProduct(int productId);
     void productDetail(int productId);
     void comments(int productId);
+    void addToCart(int offerId, int amount, std::string discountCode);
 
 private:
     Wallet *wallet;

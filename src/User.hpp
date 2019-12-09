@@ -23,6 +23,7 @@ public:
     virtual void printOffersOnProduct(int productId);
     virtual void productDetail(int productId);
     virtual void comments(int productId);
+    virtual void addToCart(int offerId, int amount, std::string discountCode);
 
 private:
     int id;

@@ -123,3 +123,9 @@ void JomeBazaar::comments(int productId)
     checkLoggedIn();
     loggedInUser->comments(productId);
 }
+
+void JomeBazaar::addToCart(int offerId, int amount, string discountCode)
+{
+    checkLoggedIn();
+    loggedInUser->addToCart(offerId, amount, discountCode);
+}
