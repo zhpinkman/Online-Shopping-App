@@ -81,6 +81,8 @@ void Interface::runCommand(const vector<string> &commandWords)
         runImportProductCommand(commandWords);
     else if(order == GET_PRODUCTS)
         runGetProductsCommand(commandWords);
+    else if(order == OFFER)
+        runOfferCommand(commandWords);
     else
         throw Not_Found_Exception();
 }
@@ -123,4 +125,13 @@ void Interface::runImportProductCommand(const std::vector<std::string> &commandW
 void Interface::runGetProductsCommand(const std::vector<std::string> &commandWords)
 {
     jomeBazaar.getProducts();
+}
+
+void Interface::runOfferCommand(const std::vector<std::string> &commandWords)
+{
+    int productId = stoi(commandWords[4]);
+    double offerUnitPrice = stod(commandWords[6]);
+    int offerAmount = stoi(commandWords[8]);
+
+    jomeBazaar.offer(productId, offerUnitPrice, offerAmount);
 }

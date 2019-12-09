@@ -43,3 +43,8 @@ void API::printProducts()
 {
     productRepository->printProducts();
 }
+
+Product* API::getProduct(int productId)
+{
+    return productRepository->getProduct(productId);
+}

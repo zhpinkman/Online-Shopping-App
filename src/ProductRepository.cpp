@@ -14,17 +14,18 @@ ProductRepository::ProductRepository()
     maxProductId = 1;
 }
 
-Product *ProductRepository::getProduct(std::string productName)
+Product* ProductRepository::getProduct(int productId)
 {
-    Product *product;
+    Product *product = nullptr;
     for (Product *currProduct : products)
     {
-        if (currProduct->productNameMatches(productName))
+        if (currProduct->productIdMatches(productId))
         {
-            return currProduct;
+            product = currProduct;
+            break;
         }
     }
-    return nullptr;
+    return product;
 }
 
 int ProductRepository::getNextOfferId()

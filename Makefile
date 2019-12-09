@@ -67,13 +67,16 @@ JomeBazaarHeaderSensitivities = $(SRC_DIR)/JomeBazaar.hpp \
 
 APIHeaderSensitivities = $(SRC_DIR)/API.hpp \
 						 $(SRC_DIR)/UserRepository.hpp \
-						 $(SRC_DIR)/ProductRepository.hpp
+						 $(SRC_DIR)/ProductRepository.hpp \
+						 $(SRC_DIR)/Product.hpp \
+						 $(SRC_DIR)/Offer.hpp
 
 UserHeaderSensitivities = $(SRC_DIR)/User.hpp \
 						  $(SRC_DIR)/API.hpp
 
 ProductHeaderSensitivities = $(SRC_DIR)/Product.hpp \
-						     $(SRC_DIR)/Offer.hpp
+						     $(SRC_DIR)/Offer.hpp \
+							 $(SRC_DIR)/Seller.hpp
 
 UserRepositoryHeaderSensitivities = $(SRC_DIR)/UserRepository.hpp \
 									$(SRC_DIR)/User.hpp \
@@ -103,7 +106,9 @@ SellerHeaderSensitivities = $(SRC_DIR)/Seller.hpp \
 							$(SRC_DIR)/API.hpp \
 							$(SRC_DIR)/Tools.hpp \
 							$(SRC_DIR)/Offer.hpp \
-							$(SRC_DIR)/Discount.hpp 
+							$(SRC_DIR)/Discount.hpp \
+							$(SRC_DIR)/Exceptions.hpp
+
 
 CartItemHeaderSensitivities = $(SRC_DIR)/CartItem.hpp \
 							  $(SRC_DIR)/Offer.hpp

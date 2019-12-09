@@ -25,6 +25,7 @@ private:
     void runLogoutCommand(const std::vector<std::string> &commandWords);
     void runImportProductCommand(const std::vector<std::string> &commandWords);
     void runGetProductsCommand(const std::vector<std::string> &commandWords);
+    void runOfferCommand(const std::vector<std::string> &commandWords);
 };
 
 #endif

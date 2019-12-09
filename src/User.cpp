@@ -40,3 +40,8 @@ void User::printProducts()
 {
     throw Permission_Exception();
 }
+
+void User::addOffer(int productId, double offerUnitPrice, int offerAmount)
+{
+    throw Permission_Exception();
+}

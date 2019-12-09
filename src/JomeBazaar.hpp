@@ -16,6 +16,7 @@ public:
     void logout();
     void importProduct(std::string type, std::string filePath);
     void getProducts();
+    void offer(int productId, double offerUnitPrice, int offerAmount);
 
 private:
     API* api;

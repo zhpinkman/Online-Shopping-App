@@ -5,6 +5,7 @@
 #include <vector>
 
 class User;
+class Seller;
 class Offer;
 
 class Product
@@ -15,13 +16,14 @@ public:
     // virtual void getProductInfo() = 0;
     int getId();
     std::string getName();
-    bool productNameMatches(std::string productName);
+    bool productIdMatches(int productId);
     std::vector<User *> getProductSellers();
     void addComment(User *user, std::string comment);
     void addRate(User *user, int rate);
     int getOverallRating();
     std::vector<Offer *> sortOffersBy(std::string info);
     void addOffer(Offer *offer);
+    Offer* getOffer(Seller* seller);
 
 private:
     int id;

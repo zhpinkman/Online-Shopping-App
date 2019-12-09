@@ -5,6 +5,7 @@
 #include <string>
 
 // #include "Offer.hpp"
+#include "Product.hpp"
 
 class Offer;
 class UserRepository;
@@ -22,6 +23,8 @@ public:
 
     void addProduct(std::string type, const std::vector<std::string> &info);
     void printProducts();
+
+    Product* getProduct(int productId);
 
 private:
     UserRepository *userRepository;

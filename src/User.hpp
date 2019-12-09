@@ -15,6 +15,7 @@ public:
 
     virtual void importProductsFromCSV(std::string type, std::string filePath);
     virtual void printProducts();
+    virtual void addOffer(int productId, double offerUnitPrice, int offerAmount);
 
 private:
     int id;

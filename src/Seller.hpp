@@ -13,9 +13,9 @@ public:
     Seller(API *api, int userId, int walletId, std::string username, std::string email, std::string password);
     void getTransactionHistory(int bound);
     void generateDiscountCode(Offer *offer, int count, int percentage);
-    void addOffer(Product *p, int count, int unitPrice);
     bool checkAuthorization(std::string endpointID);
     void printProducts();
+    void addOffer(int productId, double offerUnitPrice, int offerAmount);
 
 private:
     Wallet *wallet;

@@ -12,7 +12,7 @@ class ProductRepository
 {
 public:
     ProductRepository();
-    Product *getProduct(std::string productName);
+    Product* getProduct(int productId);
     bool isDiscountCodeUnique(std::string code);
     bool isDiscountCodeValid(Offer *offer, std::string code);
     int getNextOfferId();
