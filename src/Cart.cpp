@@ -16,3 +16,11 @@ double Cart::getFinalPrice()
     }
     return result;
 }
+
+void Cart::printCart()
+{
+    for (int i = 0; i < cartItems.size(); i++)
+    {
+        cartItems[i]->printCartItem();
+    }
+}

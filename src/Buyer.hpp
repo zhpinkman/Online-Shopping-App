@@ -16,7 +16,7 @@ class Buyer : public User
 public:
     Buyer(API *api, int userId, int walletId, std::string username, std::string email, std::string password);
     bool submitCart();
-    std::vector<std::string> getOrdersHistory(int bound);
+    void getOrdersHistory(int bound);
     std::vector<std::string> getTransactionHistory(int bound);
     void chargeWallet(double amount);
     bool payFactor(Factor *factor);
@@ -31,9 +31,9 @@ public:
     void compare(int productId1, int productId2);
 
 private:
-    Cart* cart;
-    Wallet* wallet;
-    std::vector<Cart*> orders;
+    Cart *cart;
+    Wallet *wallet;
+    std::vector<Cart *> orders;
 };
 
 #endif

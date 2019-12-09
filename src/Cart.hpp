@@ -8,6 +8,7 @@ class Cart
 {
 public:
     void addCartItem(CartItem *cartItem);
+    void printCart();
     double getFinalPrice();
 
 private:

@@ -1,4 +1,5 @@
 #include "CartItem.hpp"
+#include <iostream>
 using namespace std;
 
 CartItem::CartItem(Offer *_offer, int _amount, int _discountPercentage)
@@ -18,4 +19,10 @@ double CartItem::getSoldPrice()
 double CartItem::getInitialPrice()
 {
     return offer->getUnitPrice();
+}
+
+void CartItem::printCartItem()
+{
+    cout << offer->getProductId() << SEPERATOR << offer->getProductName() << SEPERATOR
+         << offer->getId() << SEPERATOR << offer->getSellerId() << SEPERATOR << getSoldPrice() << endl;
 }

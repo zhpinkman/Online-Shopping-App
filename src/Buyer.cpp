@@ -16,45 +16,43 @@ Buyer::Buyer(API *api, int userId, int walletId, string username, string email, 
 
 void Buyer::addToCart(int offerId, int amount, string discountCode = "")
 {
-    Offer* offer = api->getOffer(offerId);
+    Offer *offer = api->getOffer(offerId);
 
     if ((api->isValidDiscountCode(offer, discountCode) || discountCode == "") && api->canBeAddedToCart(offer, amount))
     {
         int discountPercentage = 0;
         if (discountCode != "")
             discountPercentage = api->useDiscountCode(discountCode);
-        CartItem* cartItem = new CartItem(offer, amount, discountPercentage);
+        CartItem *cartItem = new CartItem(offer, amount, discountPercentage);
         cart->addCartItem(cartItem);
     }
     else
     {
-       throw Bad_Request_Exception();
+        throw Bad_Request_Exception();
     }
 }
 
 bool Buyer::submitCart()
 {
-    // Factor *factor = new Factor(cart);
-    // double finalPrice = factor->getFinalPrice();
-    // if (wallet->withdraw(finalPrice))
-    // {
-    //     cout << OK << endl;
-    //     return SUCCESS;
-    // }
-    // else
-    // {
-    //     cout << BAD_REQUEST << endl;
-    //     return FAILED;
-    // }
+    Factor *factor = new Factor(cart);
+    double finalPrice = factor->getFinalPrice();
+    if (wallet->withdraw(finalPrice))
+    {
+        cout << OK << endl;
+        return SUCCESS;
+    }
+    else
+    {
+        cout << BAD_REQUEST << endl;
+        return FAILED;
+    }
 }
-vector<string> Buyer::getOrdersHistory(int bound)
+void Buyer::getOrdersHistory(int bound)
 {
-    // for (int i = 0; i < orders.size(); i++)
-    // {
-    //     cout << orders[i].first->getProductId() << SEPERATOR << orders[i].first->getProductName() << SEPERATOR;
-    //     cout << orders[i].first->getId() << SEPERATOR << orders[i].first->getSellerId() << SEPERATOR;
-    //     cout << orders[i].second->getSoldPrice() << endl;
-    // }
+    for (int i = 0; i < (bound < orders.size() ? bound : orders.size()); i++)
+    {
+        orders[i]->printCart();
+    }
 }
 
 vector<string> Buyer::getTransactionHistory(int bound)
@@ -80,18 +78,18 @@ void Buyer::printProducts()
 
 void Buyer::printOffersOnProduct(int productId)
 {
-    Product* product = api->getProduct(productId);
-    vector <Offer*> offers = product->getOffers();
+    Product *product = api->getProduct(productId);
+    vector<Offer *> offers = product->getOffers();
 
     PrintTools::printOffersInitBuyer();
 
-    for(Offer* offer : offers)
+    for (Offer *offer : offers)
         PrintTools::printOfferInfoBuyer(offer);
 }
 
 void Buyer::productDetail(int productId)
 {
-    Product* product = api->getProduct(productId);
+    Product *product = api->getProduct(productId);
     string productInfo = product->getProductInfo();
 
     cout << productInfo << '\n';
@@ -99,13 +97,13 @@ void Buyer::productDetail(int productId)
 
 void Buyer::comments(int productId)
 {
-    Product* product = api->getProduct(productId);
-    vector<Comment*> comments = product->getComments();
+    Product *product = api->getProduct(productId);
+    vector<Comment *> comments = product->getComments();
 
     cout << product->getName() << '\n';
-    for(Comment* comment : comments)
+    for (Comment *comment : comments)
     {
-        User* user = comment->getUser();
+        User *user = comment->getUser();
         string commentMessage = comment->getText();
         cout << user->getUsername() << OUTPUT_SEPARATOR << commentMessage << '\n';
     }
@@ -126,8 +124,8 @@ void Buyer::showWallet(int count)
 
 void Buyer::addComment(int productId, string comment)
 {
-    Product* product = api->getProduct(productId);
-    if(product == nullptr)
+    Product *product = api->getProduct(productId);
+    if (product == nullptr)
         throw Not_Found_Exception();
 
     product->addComment(this, comment);
@@ -135,8 +133,8 @@ void Buyer::addComment(int productId, string comment)
 
 void Buyer::compare(int productId1, int productId2)
 {
-    Product* product1 = api->getProduct(productId1);
-    Product* product2 = api->getProduct(productId2);
+    Product *product1 = api->getProduct(productId1);
+    Product *product2 = api->getProduct(productId2);
 
     string compareResult = product1->compare(product2);
     cout << compareResult << '\n';

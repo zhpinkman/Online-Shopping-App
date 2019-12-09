@@ -9,7 +9,8 @@ public:
     CartItem(Offer *offer, int amount, int discountPercentage);
     double getSoldPrice();
     double getInitialPrice();
-    
+    void printCartItem();
+
 private:
     Offer *offer;
     int amount;
