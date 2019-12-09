@@ -1,4 +1,5 @@
 #include <iostream>
+#include <utility>
 #include "Buyer.hpp"
 #include "CartItem.hpp"
 #include "constants.hpp"
@@ -89,4 +90,18 @@ void Buyer::productDetail(int productId)
     string productInfo = product->getProductInfo();
 
     cout << productInfo << '\n';
+}
+
+void Buyer::comments(int productId)
+{
+    Product* product = api->getProduct(productId);
+    vector< pair<User*, string> > comments = product->getComments();
+
+    cout << product->getName() << '\n';
+    for(pair<User*, string> comment : comments)
+    {
+        User* user = comment.first;
+        string commentMessage = comment.second;
+        cout << user->getUsername() << OUTPUT_SEPARATOR << commentMessage << '\n';
+    }
 }

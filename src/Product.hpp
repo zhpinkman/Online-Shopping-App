@@ -27,6 +27,7 @@ public:
     Offer* getOffer(int offerId);
     std::vector<Offer*> getOffers();
     static bool compareById(Product* first, Product* second);
+    std::vector< std::pair<User*, std::string> > getComments();
 
 protected:
     std::string name;
@@ -34,8 +35,8 @@ protected:
 private:
     int id;
     std::vector<Offer*> offers;
-    std::vector<std::pair<User *, std::string>> comments;
-    std::vector<std::pair<User *, int>> rates;
+    std::vector< std::pair<User*, std::string> > comments;
+    std::vector< std::pair<User*, int> > rates;
 };
 
 #endif

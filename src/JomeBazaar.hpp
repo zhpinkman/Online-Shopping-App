@@ -22,6 +22,7 @@ public:
     void offers(std::string order, std::string field);
     void offersOnProduct(int productId);
     void productDetail(int productId);
+    void comments(int productId);
 
 private:
     API* api;

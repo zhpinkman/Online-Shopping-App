@@ -11,6 +11,11 @@ User::User(API*_api, int _id, std::string _username, std::string _email, std::st
     password = _password;
 }
 
+std::string User::getUsername()
+{
+    return username;
+}
+
 bool User::checkAuthorization(std::string endpointID)
 {
     // TODO
@@ -69,4 +74,9 @@ void User::printOffersOnProduct(int productId)
 void User::productDetail(int productId)
 {
     throw Permission_Exception();
+}
+
+void User::comments(int productId)
+{
+    throw Permission_Exception();void comments(int productId);
 }

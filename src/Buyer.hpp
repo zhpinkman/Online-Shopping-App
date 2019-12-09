@@ -24,6 +24,7 @@ public:
     void printProducts();
     void printOffersOnProduct(int productId);
     void productDetail(int productId);
+    void comments(int productId);
 
 private:
     Wallet *wallet;

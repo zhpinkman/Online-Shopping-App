@@ -117,3 +117,9 @@ void JomeBazaar::productDetail(int productId)
     checkLoggedIn();
     loggedInUser->productDetail(productId);
 }
+
+void JomeBazaar::comments(int productId)
+{
+    checkLoggedIn();
+    loggedInUser->comments(productId);
+}
