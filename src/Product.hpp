@@ -8,6 +8,9 @@ class Comment;
 class User;
 class Seller;
 class Offer;
+class Mobile;
+class TV;
+class Car;
 
 class Product
 {
@@ -29,6 +32,10 @@ public:
     std::vector<Offer*> getOffers();
     static bool compareById(Product* first, Product* second);
     std::vector< Comment* > getComments();
+    virtual std::string compare(Product* otherProduct);
+    virtual std::string compare(Mobile* mobile);
+    virtual std::string compare(TV* tv);
+    virtual std::string compare(Car* car);
 
 protected:
     std::string name;

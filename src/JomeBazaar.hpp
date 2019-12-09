@@ -29,6 +29,7 @@ public:
     void cart();
     void chargeWallet(double amount);
     void comment(int productId, std::string comment);
+    void compare(int productId1, int productId2);
 
 private:
     API* api;

@@ -11,6 +11,8 @@ public:
     TV(int _id, const std::vector<std::string> &info);
     bool operator<(const TV &t);
     std::string getProductInfo();
+    virtual std::string compare(Product* otherProduct);
+    virtual std::string compare(TV* tv);
 
 private:
     int screenSize;

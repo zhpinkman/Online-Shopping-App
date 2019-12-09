@@ -80,7 +80,8 @@ UserHeaderSensitivities = $(SRC_DIR)/User.hpp \
 ProductHeaderSensitivities = $(SRC_DIR)/Product.hpp \
 						     $(SRC_DIR)/Offer.hpp \
 							 $(SRC_DIR)/Seller.hpp \
-							 $(SRC_DIR)/Comment.hpp
+							 $(SRC_DIR)/Comment.hpp \
+							 $(SRC_DIR)/Exceptions.hpp
 
 UserRepositoryHeaderSensitivities = $(SRC_DIR)/UserRepository.hpp \
 									$(SRC_DIR)/User.hpp \
@@ -144,13 +145,16 @@ AdminHeaderSensitivities = $(SRC_DIR)/Admin.hpp \
 						   $(SRC_DIR)/Offer.hpp \
 						   $(SRC_DIR)/PrintTools.hpp
 
-MobileHeaderSensitivities = $(SRC_DIR)/Mobile.hpp
+MobileHeaderSensitivities = $(SRC_DIR)/Mobile.hpp \
+							$(SRC_DIR)/constants.hpp
 
-AdminHeaderSensitivities = $(SRC_DIR)/TV.hpp \
-						   $(SRC_DIR)/Tools.hpp
+TVHeaderSensitivities = $(SRC_DIR)/TV.hpp \
+						$(SRC_DIR)/Tools.hpp \
+						$(SRC_DIR)/constants.hpp
 
 CarHeaderSensitivities = $(SRC_DIR)/Car.hpp \
-						 $(SRC_DIR)/Tools.hpp
+						 $(SRC_DIR)/Tools.hpp \
+						 $(SRC_DIR)/constants.hpp
 
 PrintToolsHeaderSensitivities = $(SRC_DIR)/PrintTools.hpp \
 								$(SRC_DIR)/Offer.hpp \

@@ -1,6 +1,7 @@
 #include <sstream>
 #include "TV.hpp"
 #include "Tools.hpp"
+#include "constants.hpp"
 using namespace std;
 
 TV::TV(int _id, const std::vector<std::string> &info) : Product(_id, info[0])
@@ -23,4 +24,22 @@ string TV::getProductInfo()
     infoStream << HDR;
 
     return infoStream.str();
+}
+
+string TV::compare(Product* otherProduct)
+{
+    return otherProduct->compare(this);
+}
+
+string TV::compare(TV* tv)
+{
+    ostringstream result;
+
+    result << tv->name << OUTPUT_SEPARATOR << name << '\n';
+    result << tv->screenSize << OUTPUT_SEPARATOR << screenSize << '\n';
+    result << tv->screenType << OUTPUT_SEPARATOR << screenType << '\n';
+    result << tv->_3D << OUTPUT_SEPARATOR << _3D<< '\n';
+    result << tv->HDR << OUTPUT_SEPARATOR << HDR;
+
+    return result.str();
 }

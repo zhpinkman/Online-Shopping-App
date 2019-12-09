@@ -159,3 +159,9 @@ void JomeBazaar::comment(int productId, std::string comment)
     checkLoggedIn();
     loggedInUser->addComment(productId, comment);
 }
+
+void JomeBazaar::compare(int productId1, int productId2)
+{
+    checkLoggedIn();
+    loggedInUser->compare(productId1, productId2);
+}

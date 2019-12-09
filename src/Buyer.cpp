@@ -133,3 +133,12 @@ void Buyer::addComment(int productId, std::string comment)
 
     product->addComment(this, comment);
 }
+
+void Buyer::compare(int productId1, int productId2)
+{
+    Product* product1 = api->getProduct(productId1);
+    Product* product2 = api->getProduct(productId2);
+
+    string compareResult = product1->compare(product2);
+    cout << compareResult << '\n';
+}

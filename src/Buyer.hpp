@@ -29,6 +29,7 @@ public:
     void printCart();
     void showWallet(int count);
     void addComment(int productId, std::string comment);
+    void compare(int productId1, int productId2);
 
 
 private:

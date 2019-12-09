@@ -1,5 +1,6 @@
 #include <sstream>
 #include "Mobile.hpp"
+#include "constants.hpp"
 using namespace std;
 
 Mobile::Mobile(int _id, const std::vector<std::string> &info) : Product(_id, info[0])
@@ -27,4 +28,24 @@ string Mobile::getProductInfo()
     infoStream << os;
 
     return infoStream.str();
+}
+
+string Mobile::compare(Product* otherProduct)
+{
+    return otherProduct->compare(this);
+}
+
+string Mobile::compare(Mobile* mobile)
+{
+    ostringstream result;
+
+    result << mobile->name << OUTPUT_SEPARATOR << name << '\n';
+    result << mobile->weight << OUTPUT_SEPARATOR << weight << '\n';
+    result << mobile->cpuFrequency << OUTPUT_SEPARATOR << cpuFrequency << '\n';
+    result << mobile->ram << OUTPUT_SEPARATOR << ram << '\n';
+    result << mobile->displaySize << OUTPUT_SEPARATOR << displaySize << '\n';
+    result << mobile->cameraResolution << OUTPUT_SEPARATOR << cameraResolution << '\n';
+    result << mobile->os << OUTPUT_SEPARATOR << os;
+
+    return result.str();
 }

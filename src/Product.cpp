@@ -1,6 +1,7 @@
 #include "Product.hpp"
 #include "Offer.hpp"
 #include "Comment.hpp"
+#include "Exceptions.hpp"
 using namespace std;
 
 Product::Product(int _id, std::string _name) : id(_id), name(_name) {}
@@ -72,4 +73,24 @@ bool Product::compareById(Product* first, Product* second)
 vector<Comment*> Product::getComments()
 {
     return comments;
+}
+
+string Product::compare(Product* otherProduct)
+{
+    throw Bad_Request_Exception();
+}
+
+string Product::compare(Mobile* mobile)
+{
+    throw Bad_Request_Exception();
+}
+
+string Product::compare(TV* tv)
+{
+    throw Bad_Request_Exception();
+}
+
+string Product::compare(Car* car)
+{
+    throw Bad_Request_Exception();
 }

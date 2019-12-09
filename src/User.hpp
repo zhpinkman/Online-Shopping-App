@@ -29,6 +29,7 @@ public:
     virtual void printCart();
     virtual void chargeWallet(double amount);
     virtual void addComment(int productId, std::string comment);
+    virtual void compare(int productId1, int productId2);
 
 private:
     int id;

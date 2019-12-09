@@ -110,3 +110,8 @@ void User::addComment(int productId, string comment)
 {
     throw Permission_Exception();
 }
+
+void User::compare(int productId1, int productId2)
+{
+    throw Permission_Exception();
+}

@@ -107,6 +107,8 @@ void Interface::runCommand(const vector<string> &commandWords)
         runChangeOfferCommand(commandWords);
     else if(order == COMMENT)
         runCommentCommand(commandWords);
+    else if(order == COMPARE)
+        runCompareCommand(commandWords);
     else
         throw Not_Found_Exception();
 }
@@ -247,4 +249,12 @@ void Interface::runCommentCommand(const std::vector<std::string> &commandWords)
         comment += commandWords[i];
 
     jomeBazaar.comment(productId, comment);
+}
+
+void Interface::runCompareCommand(const std::vector<std::string> &commandWords)
+{
+    int productId1 = stoi(commandWords[4]);
+    int productId2 = stoi(commandWords[6]);
+
+    jomeBazaar.compare(productId1, productId2);
 }

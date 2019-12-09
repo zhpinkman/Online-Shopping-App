@@ -38,6 +38,7 @@ private:
     void runCartCommand(const std::vector<std::string> &commandWords);
     void runChargeWalletCommand(const std::vector<std::string> &commandWords);
     void runCommentCommand(const std::vector<std::string> &commandWords);
+    void runCompareCommand(const std::vector<std::string> &commandWords);
 };
 
 #endif
