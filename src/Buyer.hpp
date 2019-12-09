@@ -5,6 +5,7 @@
 #include "Wallet.hpp"
 #include "Offer.hpp"
 #include "Factor.hpp"
+#include "Cart.hpp"
 
 class CartItem;
 class API;
@@ -25,11 +26,12 @@ public:
     void productDetail(int productId);
     void comments(int productId);
     void addToCart(int offerId, int amount, std::string discountCode);
+    void printCart();
 
 private:
-    Wallet *wallet;
-    std::vector<CartItem *> cart;
-    std::vector<std::pair<Offer *, CartItem *>> orders;
+    Wallet* wallet;
+    Cart* cart;
+    std::vector<Cart*> orders;
 };
 
 #endif

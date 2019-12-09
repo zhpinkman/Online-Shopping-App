@@ -9,6 +9,8 @@ using namespace std;
 
 Buyer::Buyer(API *api, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, userId, username, email, password)
 {
+    wallet = new Wallet(walletId);
+    cart = new Cart();
 }
 
 void Buyer::addToCart(int offerId, int amount, string discountCode = "")
@@ -21,36 +23,37 @@ void Buyer::addToCart(int offerId, int amount, string discountCode = "")
         if (discountCode != "")
             discountPercentage = api->useDiscountCode(discountCode);
         CartItem* cartItem = new CartItem(offer, amount, discountPercentage);
-        cart.push_back(cartItem);
+        cart->addCartItem(cartItem);
     }
     else
     {
        throw Bad_Request_Exception();
     }
 }
+
 bool Buyer::submitCart()
 {
-    Factor *factor = new Factor(cart);
-    double finalPrice = factor->getFinalPrice();
-    if (wallet->withdraw(finalPrice))
-    {
-        std::cout << OK << std::endl;
-        return SUCCESS;
-    }
-    else
-    {
-        std::cout << BAD_REQUEST << std::endl;
-        return FAILED;
-    }
+    // Factor *factor = new Factor(cart);
+    // double finalPrice = factor->getFinalPrice();
+    // if (wallet->withdraw(finalPrice))
+    // {
+    //     std::cout << OK << std::endl;
+    //     return SUCCESS;
+    // }
+    // else
+    // {
+    //     std::cout << BAD_REQUEST << std::endl;
+    //     return FAILED;
+    // }
 }
 std::vector<std::string> Buyer::getOrdersHistory(int bound)
 {
-    for (int i = 0; i < orders.size(); i++)
-    {
-        std::cout << orders[i].first->getProductId() << SEPERATOR << orders[i].first->getProductName() << SEPERATOR;
-        std::cout << orders[i].first->getId() << SEPERATOR << orders[i].first->getSellerId() << SEPERATOR;
-        std::cout << orders[i].second->getSoldPrice() << std::endl;
-    }
+    // for (int i = 0; i < orders.size(); i++)
+    // {
+    //     std::cout << orders[i].first->getProductId() << SEPERATOR << orders[i].first->getProductName() << SEPERATOR;
+    //     std::cout << orders[i].first->getId() << SEPERATOR << orders[i].first->getSellerId() << SEPERATOR;
+    //     std::cout << orders[i].second->getSoldPrice() << std::endl;
+    // }
 }
 std::vector<std::string> Buyer::getTransactionHistory(int bound)
 {
@@ -104,4 +107,9 @@ void Buyer::comments(int productId)
         string commentMessage = comment.second;
         cout << user->getUsername() << OUTPUT_SEPARATOR << commentMessage << '\n';
     }
+}
+
+void Buyer::printCart()
+{
+
 }
