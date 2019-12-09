@@ -10,8 +10,8 @@ public:
     Wallet(int id);
     std::vector<double> getHistory(int bound);
     void charge(double amount);
-    bool withdraw(double amount);
-    
+    void withdraw(double amount);
+
 private:
     int id;
     double balance;

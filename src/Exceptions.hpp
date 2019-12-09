@@ -3,22 +3,26 @@
 
 #include "Exception.hpp"
 
-class Not_Found_Exception : public Exception 
+#define NOT_FOUND "Not Found"
+#define BAD_REQUEST "Bad Request"
+#define PERMISSION_DENIED "Permission Denied"
+
+class Not_Found_Exception : public Exception
 {
 public:
-    Not_Found_Exception() : Exception("Not Found") {}
+    Not_Found_Exception() : Exception(NOT_FOUND) {}
 };
 
-class Bad_Request_Exception : public Exception 
+class Bad_Request_Exception : public Exception
 {
 public:
-    Bad_Request_Exception() : Exception("Bad Request") {}
+    Bad_Request_Exception() : Exception(BAD_REQUEST) {}
 };
 
-class Permission_Exception : public Exception 
+class Permission_Exception : public Exception
 {
 public:
-    Permission_Exception() : Exception("Permission Denied") {}
+    Permission_Exception() : Exception(PERMISSION_DENIED) {}
 };
 
 #endif

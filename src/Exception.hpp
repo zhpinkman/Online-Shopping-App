@@ -10,7 +10,7 @@ public:
 	Exception(const std::string _msg) : msg(_msg) {}
 	virtual ~Exception() throw() {}
 
-	virtual const char* what() const throw()
+	virtual const char *what() const throw()
 	{
 		return msg.c_str();
 	}

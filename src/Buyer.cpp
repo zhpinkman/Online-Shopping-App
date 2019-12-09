@@ -32,20 +32,12 @@ void Buyer::addToCart(int offerId, int amount, string discountCode = "")
     }
 }
 
-bool Buyer::submitCart()
+void Buyer::submitCart()
 {
     Factor *factor = new Factor(cart);
     double finalPrice = factor->getFinalPrice();
-    if (wallet->withdraw(finalPrice))
-    {
-        cout << OK << endl;
-        return SUCCESS;
-    }
-    else
-    {
-        cout << BAD_REQUEST << endl;
-        return FAILED;
-    }
+    wallet->withdraw(finalPrice);
+    cout << OK << endl;
 }
 void Buyer::getOrdersHistory(int bound)
 {
@@ -68,8 +60,6 @@ void Buyer::chargeWallet(double amount)
 {
     wallet->charge(amount);
 }
-
-bool Buyer::payFactor(Factor *factor) {}
 
 void Buyer::printProducts()
 {
@@ -107,11 +97,6 @@ void Buyer::comments(int productId)
         string commentMessage = comment->getText();
         cout << user->getUsername() << OUTPUT_SEPARATOR << commentMessage << '\n';
     }
-}
-
-void Buyer::printCart()
-{
-    //TODO
 }
 
 void Buyer::showWallet(int count)

@@ -35,18 +35,16 @@ void Wallet::charge(double amount)
     }
 }
 
-bool Wallet::withdraw(double amount)
+void Wallet::withdraw(double amount)
 {
     if (amount >= balance)
     {
         balance -= amount;
         history.push_back(balance);
         cout << OK << endl;
-        return SUCCESS;
     }
     else
     {
-        cout << BAD_REQUEST << endl;
-        return FAILED;
+        throw Bad_Request_Exception();
     }
 }

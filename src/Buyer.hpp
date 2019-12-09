@@ -15,17 +15,15 @@ class Buyer : public User
 {
 public:
     Buyer(API *api, int userId, int walletId, std::string username, std::string email, std::string password);
-    bool submitCart();
+    void submitCart();
     void getOrdersHistory(int bound);
     std::vector<std::string> getTransactionHistory(int bound);
     void chargeWallet(double amount);
-    bool payFactor(Factor *factor);
     void printProducts();
     void printOffersOnProduct(int productId);
     void productDetail(int productId);
     void comments(int productId);
     void addToCart(int offerId, int amount, std::string discountCode);
-    void printCart();
     void showWallet(int count);
     void addComment(int productId, std::string comment);
     void compare(int productId1, int productId2);
