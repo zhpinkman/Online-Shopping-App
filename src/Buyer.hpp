@@ -22,6 +22,7 @@ public:
     bool payFactor(Factor *factor);
     bool checkAuthorization(std::string endpointID);
     void printProducts();
+    void printOffersOnProduct(int productId);
 
 private:
     Wallet *wallet;

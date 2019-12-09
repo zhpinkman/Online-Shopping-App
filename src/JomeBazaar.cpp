@@ -105,3 +105,9 @@ void JomeBazaar::offers(std::string order, std::string field)
     checkLoggedIn();
     loggedInUser->printAllOffers(order, field);
 }
+
+void JomeBazaar::offersOnProduct(int productId)
+{
+    checkLoggedIn();
+    loggedInUser->printOffersOnProduct(productId);
+}

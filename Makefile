@@ -127,7 +127,8 @@ BuyerHeaderSensitivities = $(SRC_DIR)/Buyer.hpp \
 						   $(SRC_DIR)/Offer.hpp \
 						   $(SRC_DIR)/Factor.hpp \
 						   $(SRC_DIR)/CartItem.hpp \
-						   $(SRC_DIR)/constants.hpp
+						   $(SRC_DIR)/constants.hpp \
+						   $(SRC_DIR)/PrintTools.hpp
 
 AdminHeaderSensitivities = $(SRC_DIR)/Admin.hpp \
 						   $(SRC_DIR)/User.hpp \

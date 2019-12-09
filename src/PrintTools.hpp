@@ -9,6 +9,8 @@ class PrintTools
 public:
     static void printOffersInit();
     static void printOfferInfo(Offer* offer);
+    static void printOffersInitBuyer();
+    static void printOfferInfoBuyer(Offer* offer);
     static void printProductsInit();
     static void printProductInfo(Product* product);
 };

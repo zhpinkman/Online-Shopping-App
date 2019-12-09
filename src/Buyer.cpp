@@ -2,6 +2,8 @@
 #include "Buyer.hpp"
 #include "CartItem.hpp"
 #include "constants.hpp"
+#include "PrintTools.hpp"
+using namespace std;
 
 Buyer::Buyer(API *api, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, userId, username, email, password)
 {
@@ -68,4 +70,15 @@ bool Buyer::checkAuthorization(std::string endpointID) {}
 void Buyer::printProducts()
 {
     api->printProducts();
+}
+
+void Buyer::printOffersOnProduct(int productId)
+{
+    Product* product = api->getProduct(productId);
+    vector <Offer*> offers = product->getOffers();
+
+    PrintTools::printOffersInitBuyer();
+
+    for(Offer* offer : offers)
+        PrintTools::printOfferInfoBuyer(offer);
 }

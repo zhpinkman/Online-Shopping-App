@@ -60,3 +60,8 @@ void User::printAllOffers(std::string order, std::string field)
 {
     throw Permission_Exception();
 }
+
+void User::printOffersOnProduct(int productId)
+{
+    throw Permission_Exception();
+}
