@@ -21,6 +21,7 @@ public:
     std::vector<std::string> getCoupons();
     bool payFactor(Factor *factor);
     bool checkAuthorization(std::string endpointID);
+    void printProducts();
 
 private:
     Wallet *wallet;

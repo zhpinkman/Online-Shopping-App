@@ -64,3 +64,8 @@ bool Buyer::chargeWallet(double amount)
 std::vector<std::string> Buyer::getCoupons() {}
 bool Buyer::payFactor(Factor *factor) {}
 bool Buyer::checkAuthorization(std::string endpointID) {}
+
+void Buyer::printProducts()
+{
+    api->printProducts();
+}
