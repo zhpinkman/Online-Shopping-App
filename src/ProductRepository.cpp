@@ -87,9 +87,9 @@ void ProductRepository::addProduct(string type, const vector<string> &info)
     if(type == MOBILE_TYPE)
         newProduct = new Mobile(getNextProductId(), info);
     else if(type == TV_TYPE)
-        newProduct = new Mobile(getNextProductId(), info);
+        newProduct = new TV(getNextProductId(), info);
     else if(type == CAR_TYPE)
-        newProduct = new Mobile(getNextProductId(), info);
+        newProduct = new Car(getNextProductId(), info);
     else
         throw Bad_Request_Exception();
 
