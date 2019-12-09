@@ -41,7 +41,7 @@ void Wallet::withdraw(double amount)
     {
         balance -= amount;
         history.push_back(balance);
-        cout << OK << endl;
+        cout << OK << '\n';
     }
     else
     {

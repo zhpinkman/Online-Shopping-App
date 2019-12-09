@@ -37,7 +37,7 @@ void Buyer::submitCart()
     Factor *factor = new Factor(cart);
     double finalPrice = factor->getFinalPrice();
     wallet->withdraw(finalPrice);
-    cout << OK << endl;
+    cout << OK << '\n';
 }
 void Buyer::getOrdersHistory(int bound)
 {
@@ -52,7 +52,7 @@ vector<string> Buyer::getTransactionHistory(int bound)
     vector<double> transactionHistory = wallet->getHistory(bound);
     for (double transaction : transactionHistory)
     {
-        cout << transaction << endl;
+        cout << transaction << '\n';
     }
 }
 

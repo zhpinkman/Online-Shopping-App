@@ -24,5 +24,5 @@ double CartItem::getInitialPrice()
 void CartItem::printCartItem()
 {
     cout << offer->getProductId() << SEPERATOR << offer->getProductName() << SEPERATOR
-         << offer->getId() << SEPERATOR << offer->getSellerId() << SEPERATOR << getSoldPrice() << endl;
+         << offer->getId() << SEPERATOR << offer->getSellerId() << SEPERATOR << getSoldPrice() << '\n';
 }
