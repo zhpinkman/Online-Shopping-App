@@ -10,6 +10,8 @@ public:
     double getSoldPrice();
     double getInitialPrice();
     void printCartItem();
+    void returnOffer();
+    void addCreditToSeller();
 
 private:
     Offer *offer;

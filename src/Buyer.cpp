@@ -18,13 +18,15 @@ void Buyer::addToCart(int offerId, int amount, string discountCode = "")
 {
     Offer *offer = api->getOffer(offerId);
 
-    if ((api->isValidDiscountCode(offer, discountCode) || discountCode == "") && api->canBeAddedToCart(offer, amount))
+    if (api->isValidDiscountCode(offer, discountCode) || discountCode == "")
     {
+        api->checkAvailability(offer, amount);
         int discountPercentage = 0;
         if (discountCode != "")
             discountPercentage = api->useDiscountCode(discountCode);
         CartItem *cartItem = new CartItem(offer, amount, discountPercentage);
         cart->addCartItem(cartItem);
+        cout << OK << '\n';
     }
     else
     {
@@ -36,8 +38,18 @@ void Buyer::submitCart()
 {
     Factor *factor = new Factor(cart);
     double finalPrice = factor->getFinalPrice();
-    wallet->withdraw(finalPrice);
-    cout << OK << '\n';
+    if (wallet->hasEnoughMoney(finalPrice))
+    {
+        wallet->withdraw(finalPrice);
+        orders.push_back(cart);
+        cart->addCreditToSellers();
+        cart->restartCart();
+        cout << OK << '\n';
+    }
+    else
+    {
+        throw Bad_Request_Exception();
+    }
 }
 void Buyer::getOrdersHistory(int bound)
 {
@@ -123,4 +135,9 @@ void Buyer::compare(int productId1, int productId2)
 
     string compareResult = product1->compare(product2);
     cout << compareResult << '\n';
+}
+
+void Buyer::logout()
+{
+    cart->removeCartItems();
 }

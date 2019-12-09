@@ -11,6 +11,7 @@ public:
     std::vector<double> getHistory(int bound);
     void charge(double amount);
     void withdraw(double amount);
+    bool hasEnoughMoney(double money);
 
 private:
     int id;

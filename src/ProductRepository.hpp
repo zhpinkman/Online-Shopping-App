@@ -13,24 +13,24 @@ class ProductRepository
 {
 public:
     ProductRepository();
-    Product* getProduct(int productId);
+    Product *getProduct(int productId);
     bool isDiscountCodeUnique(std::string code);
     bool isDiscountCodeValid(Offer *offer, std::string code);
     int getNextOfferId();
     int useDiscountCode(std::string discountCode);
-    bool canBeAddedToCart(Offer *offer, int amount);
+    void checkOfferAvailability(Offer *offer, int amount);
     void addProduct(std::string type, const std::vector<std::string> &info);
     void printProducts();
-    std::vector<Offer*> getOffers(Seller* seller);
-    Offer* getOffer(int offerId);
-    std::vector<Offer*> getOffers();
+    std::vector<Offer *> getOffers(Seller *seller);
+    Offer *getOffer(int offerId);
+    std::vector<Offer *> getOffers();
 
 private:
     std::vector<Product *> products;
     std::vector<Discount *> discounts;
     int maxOfferId;
     int maxProductId;
-        
+
     int getNextProductId();
 };
 

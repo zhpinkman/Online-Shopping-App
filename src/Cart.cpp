@@ -24,3 +24,25 @@ void Cart::printCart()
         cartItems[i]->printCartItem();
     }
 }
+
+void Cart::removeCartItems()
+{
+    for (int i = 0; i < cartItems.size(); i++)
+    {
+        cartItems[i]->returnOffer();
+    }
+    cartItems.clear();
+}
+
+void Cart::restartCart()
+{
+    cartItems.clear();
+}
+
+void Cart::addCreditToSellers()
+{
+    for (int i = 0; i < cartItems.size(); i++)
+    {
+        cartItems[i]->addCreditToSeller();
+    }
+}

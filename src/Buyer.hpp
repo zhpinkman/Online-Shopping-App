@@ -27,6 +27,7 @@ public:
     void showWallet(int count);
     void addComment(int productId, std::string comment);
     void compare(int productId1, int productId2);
+    void logout();
 
 private:
     Cart *cart;

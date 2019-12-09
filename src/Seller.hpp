@@ -18,6 +18,7 @@ public:
     void printOffers();
     void changeOffer(int offerId, double offerUnitPrice, int offerAmount);
     void generateDiscountCard(int offerId, int discountPercent, int discountNumber);
+    void chargeWallet(double credit);
 
 private:
     Wallet *wallet;

@@ -17,23 +17,23 @@ void Interface::processCommands()
 {
     string command;
 
-    while(getline(cin, command))
+    while (getline(cin, command))
         processCommand(command);
 }
 
 void Interface::processCommand(string command)
 {
     try
-	{
+    {
         vector<string> commandWords = Tools::splitByChar(command, SPACE);
-		validateCommand(commandWords);
+        validateCommand(commandWords);
         runCommand(commandWords);
         printSuccess();
-	}		
-	catch(const exception &e)
-	{
-		cerr << e.what() << '\n';
-	}
+    }
+    catch (const exception &e)
+    {
+        cerr << e.what() << '\n';
+    }
 }
 
 void Interface::validateCommand(const vector<string> &commandWords)
@@ -45,14 +45,14 @@ void Interface::validateCommand(const vector<string> &commandWords)
 
 void Interface::validateCommandSize(const vector<string> &commandWords)
 {
-    if(commandWords.size() < MIN_COMMAND_SIZE)
+    if (commandWords.size() < MIN_COMMAND_SIZE)
         throw Bad_Request_Exception();
 }
 
 void Interface::validateCommandType(const vector<string> &commandWords)
 {
-    if(commandWords[0] != POST && commandWords[0] != GET)
-        throw Not_Found_Exception();
+    if (commandWords[0] != POST && commandWords[0] != GET)
+        throw Bad_Request_Exception();
 }
 
 void Interface::validateCommandOrder(const vector<string> &commandWords)
@@ -69,43 +69,43 @@ void Interface::runCommand(const vector<string> &commandWords)
 {
     string order = commandWords[1];
 
-    if(order == SIGNUP)
+    if (order == SIGNUP)
         runSignupCommand(commandWords);
-    else if(order == LOGIN)
+    else if (order == LOGIN)
         runLoginCommand(commandWords);
-    else if(order == LOGOUT)
+    else if (order == LOGOUT)
         runLogoutCommand(commandWords);
-    else if(order == IMPORT_PRODUCT)
+    else if (order == IMPORT_PRODUCT)
         runImportProductCommand(commandWords);
-    else if(order == GET_PRODUCTS)
+    else if (order == GET_PRODUCTS)
         runGetProductsCommand(commandWords);
-    else if(order == OFFER)
+    else if (order == OFFER)
         runOfferCommand(commandWords);
-    else if(order == MY_OFFERS)
+    else if (order == MY_OFFERS)
         runMyOffersCommand(commandWords);
-    else if(order == CHANGE_OFFER)
+    else if (order == CHANGE_OFFER)
         runChangeOfferCommand(commandWords);
-    else if(order == OFFERS)
+    else if (order == OFFERS)
         runOffersCommand(commandWords);
-    else if(order == OFFERS_ON_PRODUCT)
+    else if (order == OFFERS_ON_PRODUCT)
         runOffersOnProductCommand(commandWords);
-    else if(order == PRODUCT_DETAIL)
+    else if (order == PRODUCT_DETAIL)
         runProductDetailCommand(commandWords);
-    else if(order == COMMENTS)
+    else if (order == COMMENTS)
         runCommentsCommand(commandWords);
-    else if(order == ADD_TO_CART)
+    else if (order == ADD_TO_CART)
         runAddToCartCommand(commandWords);
-    else if(order == GENERATE_DISCOUNT_CODE)
+    else if (order == GENERATE_DISCOUNT_CODE)
         runGenerateDiscountCode(commandWords);
-    else if(order == WALLET)
+    else if (order == WALLET)
         runWalletCommand(commandWords);
-    else if(order == CART)
+    else if (order == CART)
         runCartCommand(commandWords);
-    else if(order == CHANGE_WALLET)
+    else if (order == CHANGE_WALLET)
         runChangeOfferCommand(commandWords);
-    else if(order == COMMENT)
+    else if (order == COMMENT)
         runCommentCommand(commandWords);
-    else if(order == COMPARE)
+    else if (order == COMPARE)
         runCompareCommand(commandWords);
     else
         throw Not_Found_Exception();
@@ -118,12 +118,11 @@ void Interface::runSignupCommand(const vector<string> &commandWords)
     string password = commandWords[8];
     UserType userType = BUYER;
 
-    if(commandWords.size() == SIGNUP_MAX_SIZE)
+    if (commandWords.size() == SIGNUP_MAX_SIZE)
         userType = (commandWords[10] == BUYER_STR ? BUYER : SELLER);
-    
+
     jomeBazaar.signup(email, username, password, userType);
 }
-
 
 void Interface::runLoginCommand(const vector<string> &commandWords)
 {
@@ -241,10 +240,10 @@ void Interface::runChargeWalletCommand(const vector<string> &commandWords)
 void Interface::runCommentCommand(const vector<string> &commandWords)
 {
     int productId = stoi(commandWords[4]);
-    
+
     string comment = commandWords[6];
 
-    for(int i = 7; i < commandWords.size(); i++)
+    for (int i = 7; i < commandWords.size(); i++)
         comment += (SPACE + commandWords[i]);
 
     jomeBazaar.comment(productId, comment);

@@ -2,7 +2,7 @@
 #include "Product.hpp"
 using namespace std;
 
-Offer::Offer(Product* _product, int _id, Seller *_seller, int _amount, double _unitPrice)
+Offer::Offer(Product *_product, int _id, Seller *_seller, int _amount, double _unitPrice)
 {
     product = _product;
     id = _id;
@@ -53,7 +53,7 @@ bool Offer::hasDiscountCode(string code)
     return false;
 }
 
-bool Offer::sellerMatches(Seller* _seller)
+bool Offer::sellerMatches(Seller *_seller)
 {
     return (seller == _seller);
 }
@@ -74,12 +74,31 @@ void Offer::changeOffer(int _amount, double _unitPrice)
     unitPrice = _unitPrice;
 }
 
-bool Offer::compareByOfferPrice(Offer* first, Offer* second)
+bool Offer::compareByOfferPrice(Offer *first, Offer *second)
 {
     return (first->unitPrice == second->unitPrice ? compareByOfferId(first, second) : (first->unitPrice < second->unitPrice));
 }
 
-bool Offer::compareByOfferId(Offer* first, Offer* second)
+bool Offer::compareByOfferId(Offer *first, Offer *second)
 {
     return (first->id < second->id);
+}
+bool Offer::hasEnoughAmount(int _amount)
+{
+    return _amount < amount;
+}
+
+void Offer::removeAmounts(int _amount)
+{
+    amount -= _amount;
+}
+
+void Offer::addAmounts(int _amount)
+{
+    amount += _amount;
+}
+
+void Offer::addCreditToSeller(double credit)
+{
+    seller->chargeWallet(credit);
 }

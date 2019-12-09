@@ -7,8 +7,8 @@
 class User
 {
 public:
-    User(API* _api, int _id, std::string _username, std::string _email, std::string _password);
-    
+    User(API *_api, int _id, std::string _username, std::string _email, std::string _password);
+
     int getId();
     std::string getUsername();
 
@@ -32,6 +32,7 @@ public:
     virtual void chargeWallet(double amount);
     virtual void addComment(int productId, std::string comment);
     virtual void compare(int productId1, int productId2);
+    virtual void logout();
 
 private:
     int id;
@@ -40,7 +41,7 @@ private:
     std::string email;
 
 protected:
-    API* api;
+    API *api;
 };
 
 #endif

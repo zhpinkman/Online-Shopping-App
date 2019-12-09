@@ -16,7 +16,7 @@ ProductRepository::ProductRepository()
     maxProductId = 1;
 }
 
-Product* ProductRepository::getProduct(int productId)
+Product *ProductRepository::getProduct(int productId)
 {
     Product *product = nullptr;
     for (Product *currProduct : products)
@@ -75,20 +75,23 @@ bool ProductRepository::isDiscountCodeValid(Offer *offer, string code)
     return false;
 }
 
-bool ProductRepository::canBeAddedToCart(Offer *offer, int amount)
+void ProductRepository::checkOfferAvailability(Offer *offer, int amount)
 {
-    // TODO
+    if (!offer->hasEnoughAmount(amount))
+    {
+        throw Bad_Request_Exception();
+    }
 }
 
 void ProductRepository::addProduct(string type, const vector<string> &info)
 {
-    Product* newProduct;
+    Product *newProduct;
 
-    if(type == MOBILE_TYPE)
+    if (type == MOBILE_TYPE)
         newProduct = new Mobile(getNextProductId(), info);
-    else if(type == TV_TYPE)
+    else if (type == TV_TYPE)
         newProduct = new TV(getNextProductId(), info);
-    else if(type == CAR_TYPE)
+    else if (type == CAR_TYPE)
         newProduct = new Car(getNextProductId(), info);
     else
         throw Bad_Request_Exception();
@@ -102,43 +105,43 @@ void ProductRepository::printProducts()
 
     sort(products.begin(), products.end(), Product::compareById);
 
-    for(Product* product : products)
+    for (Product *product : products)
         PrintTools::printProductInfo(product);
 }
 
-vector<Offer*> ProductRepository::getOffers(Seller* seller)
+vector<Offer *> ProductRepository::getOffers(Seller *seller)
 {
-    vector<Offer*> result;
+    vector<Offer *> result;
 
-    for(Product* product : products)
+    for (Product *product : products)
     {
-        Offer* offer = product->getOffer(seller);
-        if(offer != nullptr)
+        Offer *offer = product->getOffer(seller);
+        if (offer != nullptr)
             result.push_back(offer);
     }
 
     return result;
 }
 
-Offer* ProductRepository::getOffer(int offerId)
+Offer *ProductRepository::getOffer(int offerId)
 {
-    for(Product* product : products)
+    for (Product *product : products)
     {
-        Offer* offer = product->getOffer(offerId);
-        if(offer != nullptr)
+        Offer *offer = product->getOffer(offerId);
+        if (offer != nullptr)
             return offer;
     }
 
     return nullptr;
 }
 
-vector<Offer*> ProductRepository::getOffers()
+vector<Offer *> ProductRepository::getOffers()
 {
-    vector<Offer*> offers;
+    vector<Offer *> offers;
 
-    for(Product* product : products)
+    for (Product *product : products)
     {
-        vector<Offer*> productOffers = product->getOffers();
+        vector<Offer *> productOffers = product->getOffers();
         offers.insert(offers.end(), productOffers.begin(), productOffers.end());
     }
 

@@ -10,6 +10,9 @@ public:
     void addCartItem(CartItem *cartItem);
     void printCart();
     double getFinalPrice();
+    void removeCartItems();
+    void restartCart();
+    void addCreditToSellers();
 
 private:
     std::vector<CartItem *> cartItems;

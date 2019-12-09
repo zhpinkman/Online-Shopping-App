@@ -3,7 +3,7 @@
 #include "Exceptions.hpp"
 using namespace std;
 
-User::User(API*_api, int _id, string _username, string _email, string _password)
+User::User(API *_api, int _id, string _username, string _email, string _password)
 {
     api = _api;
     username = _username;
@@ -114,4 +114,8 @@ void User::addComment(int productId, string comment)
 void User::compare(int productId1, int productId2)
 {
     throw Permission_Exception();
+}
+
+void User::logout()
+{
 }

@@ -24,7 +24,7 @@ void Seller::showWallet(int count)
 
 void Seller::generateDiscountCard(int offerId, int discountPercent, int discountNumber)
 {
-    Offer* offer = api->getOffer(offerId);
+    Offer *offer = api->getOffer(offerId);
     vector<Discount *> generatedDiscounts;
     string code;
 
@@ -50,32 +50,39 @@ void Seller::printProducts()
 
 void Seller::addOffer(int productId, double offerUnitPrice, int offerAmount)
 {
-    Product* product = api->getProduct(productId);
-    if(product == nullptr)
+    Product *product = api->getProduct(productId);
+    if (product == nullptr)
         throw Bad_Request_Exception();
-    else if(product->getOffer(this) != nullptr)
+    else if (product->getOffer(this) != nullptr)
         throw Bad_Request_Exception();
-    
+
     int offerId = api->getOfferId();
     Offer *newOffer = new Offer(product, offerId, this, offerAmount, offerUnitPrice);
     product->addOffer(newOffer);
+    cout << OK << '\n';
 }
 
 void Seller::printOffers()
 {
     PrintTools::printOffersInit();
 
-    vector<Offer*> offers = api->getOffers(this);
-    
-    for(Offer* offer : offers)
+    vector<Offer *> offers = api->getOffers(this);
+
+    for (Offer *offer : offers)
         PrintTools::printOfferInfo(offer);
 }
 
 void Seller::changeOffer(int offerId, double offerUnitPrice, int offerAmount)
 {
-    Offer* offer = api->getOffer(offerId);
-    if(offer == nullptr)
+    Offer *offer = api->getOffer(offerId);
+    if (offer == nullptr)
         throw Bad_Request_Exception();
-    
+
     offer->changeOffer(offerUnitPrice, offerAmount);
+    cout << OK << '\n';
+}
+
+void Seller::chargeWallet(double credit)
+{
+    wallet->charge(credit);
 }

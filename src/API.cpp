@@ -29,9 +29,9 @@ bool API::isValidDiscountCode(Offer *offer, string code)
     return productRepository->isDiscountCodeValid(offer, code);
 }
 
-bool API::canBeAddedToCart(Offer *offer, int amount)
+void API::checkAvailability(Offer *offer, int amount)
 {
-    return productRepository->canBeAddedToCart(offer, amount);
+    productRepository->checkOfferAvailability(offer, amount);
 }
 
 void API::addProduct(string type, const vector<string> &info)
@@ -44,22 +44,22 @@ void API::printProducts()
     productRepository->printProducts();
 }
 
-Product* API::getProduct(int productId)
+Product *API::getProduct(int productId)
 {
     return productRepository->getProduct(productId);
 }
 
-vector<Offer*> API::getOffers(Seller* seller)
+vector<Offer *> API::getOffers(Seller *seller)
 {
     return productRepository->getOffers(seller);
 }
 
-Offer* API::getOffer(int offerId)
+Offer *API::getOffer(int offerId)
 {
     return productRepository->getOffer(offerId);
 }
 
-vector<Offer*> API::getOffers()
+vector<Offer *> API::getOffers()
 {
     return productRepository->getOffers();
 }

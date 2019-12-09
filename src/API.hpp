@@ -17,13 +17,13 @@ public:
     bool isValidDiscountCode(Offer *offer, std::string code);
     int useDiscountCode(std::string discountCode);
     int getOfferId();
-    bool canBeAddedToCart(Offer *offer, int amount);
+    void checkAvailability(Offer *offer, int amount);
     void addProduct(std::string type, const std::vector<std::string> &info);
     void printProducts();
-    std::vector<Offer*> getOffers(Seller* seller);
-    Product* getProduct(int productId);
-    Offer* getOffer(int offerId);
-    std::vector<Offer*> getOffers();
+    std::vector<Offer *> getOffers(Seller *seller);
+    Product *getProduct(int productId);
+    Offer *getOffer(int offerId);
+    std::vector<Offer *> getOffers();
 
 private:
     UserRepository *userRepository;

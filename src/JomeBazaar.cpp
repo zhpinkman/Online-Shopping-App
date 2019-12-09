@@ -18,32 +18,33 @@ JomeBazaar::JomeBazaar()
 
 void JomeBazaar::checkLoggedIn()
 {
-    if(loggedInUser == nullptr)
+    if (loggedInUser == nullptr)
         throw Permission_Exception();
 }
 
 void JomeBazaar::signup(string email, string username, string password, UserType userType)
 {
-    User* newUser;
-    User* user = userRepository->getUser(email);
+    User *newUser;
+    User *user = userRepository->getUser(email);
     if (user == nullptr)
     {
         int newUserId = userRepository->getNextUserId();
         int newWalletId = userRepository->getNextWalletId();
         switch (userType)
         {
-            case BUYER:
-                newUser = new Buyer(api, newUserId, newWalletId, username, email, password);
-                userRepository->addUser(newUser);
-                break;
-            case SELLER:
-                newUser = new Seller(api, newUserId, newWalletId, username, email, password);
-                userRepository->addUser(newUser);
-                break;
-            default:
-                throw Bad_Request_Exception();
+        case BUYER:
+            newUser = new Buyer(api, newUserId, newWalletId, username, email, password);
+            userRepository->addUser(newUser);
+            break;
+        case SELLER:
+            newUser = new Seller(api, newUserId, newWalletId, username, email, password);
+            userRepository->addUser(newUser);
+            break;
+        default:
+            throw Bad_Request_Exception();
         }
         loggedInUser = newUser;
+        cout << OK << '\n';
     }
     else
         throw Bad_Request_Exception();
@@ -53,18 +54,31 @@ void JomeBazaar::login(string email, string password)
 {
     User *user = userRepository->getUser(email);
     if (user != nullptr)
+    {
         if (user->passwordMatches(password))
+        {
             loggedInUser = user;
+            cout << OK << '\n';
+        }
         else
+        {
             throw Bad_Request_Exception();
+        }
+    }
     else
+    {
         throw Bad_Request_Exception();
+    }
 }
 
 void JomeBazaar::logout()
 {
     if (loggedInUser != nullptr)
+    {
+        loggedInUser->logout();
         loggedInUser = nullptr;
+        cout << OK << '\n';
+    }
     else
         throw Permission_Exception();
 }
@@ -72,7 +86,7 @@ void JomeBazaar::logout()
 void JomeBazaar::importProduct(string type, string filePath)
 {
     checkLoggedIn();
-    loggedInUser->importProductsFromCSV(type, filePath);    
+    loggedInUser->importProductsFromCSV(type, filePath);
 }
 
 void JomeBazaar::getProducts()
