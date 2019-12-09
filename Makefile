@@ -146,7 +146,7 @@ CarHeaderSensitivities = $(SRC_DIR)/Car.hpp \
 PrintToolsHeaderSensitivities = $(SRC_DIR)/PrintTools.hpp \
 								$(SRC_DIR)/Offer.hpp \
 						 		$(SRC_DIR)/constants.hpp \
-								$(SRC_DIR)/Product.hpp \ 
+								$(SRC_DIR)/Product.hpp
 
 
 mainSensitivityList = $(SRC_DIR)/main.cpp \

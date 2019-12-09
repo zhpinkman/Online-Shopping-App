@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "ProductRepository.hpp"
 #include "Offer.hpp"
 #include "constants.hpp"
@@ -98,6 +99,8 @@ void ProductRepository::addProduct(std::string type, const std::vector<std::stri
 void ProductRepository::printProducts()
 {
     PrintTools::printProductsInit();
+
+    sort(products.begin(), products.end(), Product::compareById);
 
     for(Product* product : products)
         PrintTools::printProductInfo(product);
