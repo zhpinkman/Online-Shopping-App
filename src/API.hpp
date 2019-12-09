@@ -23,6 +23,7 @@ public:
 
     void addProduct(std::string type, const std::vector<std::string> &info);
     void printProducts();
+    std::vector<Offer*> getOffers(Seller* seller);
 
     Product* getProduct(int productId);
 

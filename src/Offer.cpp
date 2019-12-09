@@ -1,11 +1,12 @@
 #include "Offer.hpp"
 #include "Product.hpp"
 
-Offer::Offer(int _id, Seller *_seller, int _count, double _unitPrice)
+Offer::Offer(Product* _product, int _id, Seller *_seller, int _amount, double _unitPrice)
 {
+    product = _product;
     id = _id;
     seller = _seller;
-    count = _count;
+    amount = _amount;
     unitPrice = _unitPrice;
 }
 
@@ -54,4 +55,9 @@ bool Offer::hasDiscountCode(std::string code)
 bool Offer::sellerMatches(Seller* _seller)
 {
     return (seller == _seller);
+}
+
+int Offer::getAmount()
+{
+    return amount;
 }

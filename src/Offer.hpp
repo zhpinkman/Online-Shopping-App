@@ -11,7 +11,7 @@ class Product;
 class Offer
 {
 public:
-    Offer(int _id, Seller *_seller, int _count, double _unitPrice);
+    Offer(Product* _product, int _id, Seller *_seller, int _amount, double _unitPrice);
     void addDiscount(std::vector<Discount *> discounts);
     int getProductId();
     std::string getProductName();
@@ -20,11 +20,12 @@ public:
     double getUnitPrice();
     bool hasDiscountCode(std::string code);
     bool sellerMatches(Seller* _seller);
+    int getAmount();
 
 private:
     int id;
     Seller *seller;
-    int count;
+    int amount;
     double unitPrice;
     std::vector<Discount *> discounts;
     Product *product;

@@ -16,6 +16,7 @@ public:
     bool checkAuthorization(std::string endpointID);
     void printProducts();
     void addOffer(int productId, double offerUnitPrice, int offerAmount);
+    void printOffers();
 
 private:
     Wallet *wallet;

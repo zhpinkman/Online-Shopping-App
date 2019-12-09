@@ -96,11 +96,25 @@ void ProductRepository::addProduct(std::string type, const std::vector<std::stri
 
 void ProductRepository::printProducts()
 {
-    cout << PRODUCT_ID << SPACE << OUTPUT_SEPARATOR << SPACE << PRODUCT_NAME << '\n';
+    cout << PRODUCT_ID <<  OUTPUT_SEPARATOR << PRODUCT_NAME << '\n';
     for(Product* product : products)
     {
         int productId = product->getId();
         string productName = product->getName();
         cout << productId << SPACE << productName << '\n';
     }
+}
+
+vector<Offer*> ProductRepository::getOffers(Seller* seller)
+{
+    vector<Offer*> result;
+
+    for(Product* product : products)
+    {
+        Offer* offer = product->getOffer(seller);
+        if(offer != nullptr)
+            result.push_back(offer);
+    }
+
+    return result;
 }

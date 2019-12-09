@@ -48,3 +48,8 @@ Product* API::getProduct(int productId)
 {
     return productRepository->getProduct(productId);
 }
+
+vector<Offer*> API::getOffers(Seller* seller)
+{
+    return productRepository->getOffers(seller);
+}

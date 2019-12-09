@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Seller.hpp"
 #include "Product.hpp"
 #include "API.hpp"
@@ -6,6 +7,7 @@
 #include "Discount.hpp"
 #include "Offer.hpp"
 #include "Exceptions.hpp"
+using namespace std;
 
 Seller::Seller(API *api, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, userId, username, email, password)
 {
@@ -51,6 +53,21 @@ void Seller::addOffer(int productId, double offerUnitPrice, int offerAmount)
         throw Bad_Request_Exception();
     
     int offerId = api->getOfferId();
-    Offer *newOffer = new Offer(offerId, this, offerAmount, offerUnitPrice);
+    Offer *newOffer = new Offer(product, offerId, this, offerAmount, offerUnitPrice);
     product->addOffer(newOffer);
+}
+
+void Seller::printOffers()
+{
+    cout << PRODUCT_DETAIL << OUTPUT_SEPARATOR << OFFER_ID << OUTPUT_SEPARATOR << OFFER_UNIT_PRICE << OUTPUT_SEPARATOR << OFFER_AMOUNT << '\n';
+
+    vector<Offer*> offers = api->getOffers(this);
+    for(Offer* offer : offers)
+    {
+        int productId = offer->getProductId();
+        int offerId = offer->getId();
+        double unitPrice = offer->getUnitPrice();
+        int amount = offer->getAmount();
+        cout << productId << OUTPUT_SEPARATOR << offerId << OUTPUT_SEPARATOR << unitPrice << OUTPUT_SEPARATOR << amount << '\n';
+    }
 }

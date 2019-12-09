@@ -7,6 +7,7 @@
 #include "Discount.hpp"
 
 class Offer;
+class Seller;
 
 class ProductRepository
 {
@@ -20,6 +21,7 @@ public:
     bool canBeAddedToCart(Offer *offer, int amount);
     void addProduct(std::string type, const std::vector<std::string> &info);
     void printProducts();
+    std::vector<Offer*> getOffers(Seller* seller);
 
 private:
     std::vector<Product *> products;
