@@ -1,5 +1,6 @@
 #include "Product.hpp"
 #include "Offer.hpp"
+#include "Comment.hpp"
 using namespace std;
 
 Product::Product(int _id, std::string _name) : id(_id), name(_name) {}
@@ -21,8 +22,16 @@ bool Product::productIdMatches(int productId)
     return (id == productId);
 }
 
-std::vector<User *> Product::getProductSellers() {}
-void Product::addComment(User *user, std::string comment) {}
+std::vector<User *> Product::getProductSellers() {
+
+}
+
+void Product::addComment(User *user, std::string comment)
+{
+    Comment* newComment = new Comment(user, comment);
+    comments.push_back(newComment);
+}
+
 void Product::addRate(User *user, int rate) {}
 int Product::getOverallRating() {}
 std::vector<Offer *> Product::sortOffersBy(std::string info) {}

@@ -105,6 +105,8 @@ void Interface::runCommand(const vector<string> &commandWords)
         runCartCommand(commandWords);
     else if(order == CHANGE_WALLET)
         runChangeOfferCommand(commandWords);
+    else if(order == COMMENT)
+        runCommentCommand(commandWords);
     else
         throw Not_Found_Exception();
 }
@@ -232,6 +234,17 @@ void Interface::runCartCommand(const std::vector<std::string> &commandWords)
 
 void Interface::runChargeWalletCommand(const std::vector<std::string> &commandWords)
 {
-    int amount = stoi(commandWords[4]);
+    double amount = stod(commandWords[4]);
     jomeBazaar.chargeWallet(amount);
+}
+
+void Interface::runCommentCommand(const std::vector<std::string> &commandWords)
+{
+    int productId = stoi(commandWords[4]);
+    
+    string comment = "";
+    for(int i = 6; i < commandWords.size(); i++)
+        comment += commandWords[i];
+
+    jomeBazaar.comment(productId, comment);
 }

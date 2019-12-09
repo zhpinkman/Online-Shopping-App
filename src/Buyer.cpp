@@ -117,11 +117,19 @@ void Buyer::printCart()
     //TODO
 }
 
-
 void Buyer::showWallet(int count)
 {
     cout << CREDIT << '\n';
     vector<double> transactionHistory = wallet->getHistory(count);
     for (double transaction : transactionHistory)
         cout << transaction << '\n';
+}
+
+void Buyer::addComment(int productId, std::string comment)
+{
+    Product* product = api->getProduct(productId);
+    if(product == nullptr)
+        throw Not_Found_Exception();
+
+    product->addComment(this, comment);
 }

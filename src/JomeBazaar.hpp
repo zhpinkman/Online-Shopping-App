@@ -27,7 +27,8 @@ public:
     void generateDiscountCard(int offerId, int discountPercent, int discountNumber);
     void wallet(int count);
     void cart();
-    void chargeWallet(int amount);
+    void chargeWallet(double amount);
+    void comment(int productId, std::string comment);
 
 private:
     API* api;

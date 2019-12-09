@@ -105,3 +105,8 @@ void User::chargeWallet(double amount)
 {
     throw Permission_Exception();
 }
+
+void User::addComment(int productId, string comment)
+{
+    throw Permission_Exception();
+}

@@ -148,8 +148,14 @@ void JomeBazaar::cart()
     loggedInUser->printCart();
 }
 
-void JomeBazaar::chargeWallet(int amount)
+void JomeBazaar::chargeWallet(double amount)
 {
     checkLoggedIn();
     loggedInUser->chargeWallet(amount);
+}
+
+void JomeBazaar::comment(int productId, std::string comment)
+{
+    checkLoggedIn();
+    loggedInUser->addComment(productId, comment);
 }
