@@ -63,10 +63,12 @@ std::vector<std::string> Buyer::getTransactionHistory(int bound)
         std::cout << transaction << std::endl;
     }
 }
-bool Buyer::chargeWallet(double amount)
+
+void Buyer::chargeWallet(double amount)
 {
     wallet->charge(amount);
 }
+
 std::vector<std::string> Buyer::getCoupons() {}
 bool Buyer::payFactor(Factor *factor) {}
 bool Buyer::checkAuthorization(std::string endpointID) {}

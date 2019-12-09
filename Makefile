@@ -117,7 +117,9 @@ SellerHeaderSensitivities = $(SRC_DIR)/Seller.hpp \
 CartItemHeaderSensitivities = $(SRC_DIR)/CartItem.hpp \
 							  $(SRC_DIR)/Offer.hpp
 
-WalletHeaderSensitivities = $(SRC_DIR)/Wallet.hpp
+WalletHeaderSensitivities = $(SRC_DIR)/Wallet.hpp \
+							$(SRC_DIR)/Exceptions.hpp \
+							$(SRC_DIR)/constants.hpp
 
 FactorHeaderSensitivities = $(SRC_DIR)/Factor.hpp \
 							$(SRC_DIR)/CartItem.hpp

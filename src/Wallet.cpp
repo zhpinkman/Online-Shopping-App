@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Wallet.hpp"
 #include "constants.hpp"
+#include "Exceptions.hpp"
+using namespace std;
 
 Wallet::Wallet(int _id)
 {
@@ -19,20 +21,17 @@ std::vector<double> Wallet::getHistory(int bound)
     return walletHistory;
 }
 
-bool Wallet::charge(double amount)
+void Wallet::charge(double amount)
 {
     if (amount > 0)
     {
         balance += amount;
         history.push_back(balance);
-        std::cout
-            << OK << std::endl;
-        return SUCCESS;
+        cout << OK << '\n';
     }
     else
     {
-        std::cout << BAD_REQUEST << std::endl;
-        return FAILED;
+        throw Bad_Request_Exception();
     }
 }
 

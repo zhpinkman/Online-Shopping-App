@@ -14,7 +14,7 @@ private:
 public:
     Wallet(int id);
     std::vector<double> getHistory(int bound);
-    bool charge(double amount);
+    void charge(double amount);
     bool withdraw(double amount);
 };
 

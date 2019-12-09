@@ -100,3 +100,8 @@ void User::printCart()
 {
     throw Permission_Exception();
 }
+
+void User::chargeWallet(double amount)
+{
+    throw Permission_Exception();
+}

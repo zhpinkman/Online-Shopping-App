@@ -27,6 +27,7 @@ public:
     virtual void generateDiscountCard(int offerId, int discountPercent, int discountNumber);
     virtual void showWallet(int count);
     virtual void printCart();
+    virtual void chargeWallet(double amount);
 
 private:
     int id;

@@ -36,6 +36,7 @@ private:
     void runGenerateDiscountCode(const std::vector<std::string> &commandWords);
     void runWalletCommand(const std::vector<std::string> &commandWords);
     void runCartCommand(const std::vector<std::string> &commandWords);
+    void runChargeWalletCommand(const std::vector<std::string> &commandWords);
 };
 
 #endif

@@ -147,3 +147,9 @@ void JomeBazaar::cart()
     checkLoggedIn();
     loggedInUser->printCart();
 }
+
+void JomeBazaar::chargeWallet(int amount)
+{
+    checkLoggedIn();
+    loggedInUser->chargeWallet(amount);
+}

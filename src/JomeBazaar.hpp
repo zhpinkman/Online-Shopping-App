@@ -27,6 +27,7 @@ public:
     void generateDiscountCard(int offerId, int discountPercent, int discountNumber);
     void wallet(int count);
     void cart();
+    void chargeWallet(int amount);
 
 private:
     API* api;

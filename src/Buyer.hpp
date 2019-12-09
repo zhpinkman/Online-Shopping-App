@@ -17,7 +17,7 @@ public:
     bool submitCart();
     std::vector<std::string> getOrdersHistory(int bound);
     std::vector<std::string> getTransactionHistory(int bound);
-    bool chargeWallet(double amount);
+    void chargeWallet(double amount);
     std::vector<std::string> getCoupons();
     bool payFactor(Factor *factor);
     bool checkAuthorization(std::string endpointID);
