@@ -91,7 +91,8 @@ ProductRepositoryHeaderSensitivities =  $(SRC_DIR)/ProductRepository.hpp \
 										$(SRC_DIR)/Exceptions.hpp \
 										$(SRC_DIR)/Mobile.hpp \
 										$(SRC_DIR)/TV.hpp \
-										$(SRC_DIR)/Car.hpp
+										$(SRC_DIR)/Car.hpp \
+										$(SRC_DIR)/PrintTools.hpp
 
 OfferHeaderSensitivities = $(SRC_DIR)/Offer.hpp \
 						   $(SRC_DIR)/Discount.hpp \
@@ -144,7 +145,8 @@ CarHeaderSensitivities = $(SRC_DIR)/Car.hpp \
 
 PrintToolsHeaderSensitivities = $(SRC_DIR)/PrintTools.hpp \
 								$(SRC_DIR)/Offer.hpp \
-						 		$(SRC_DIR)/constants.hpp
+						 		$(SRC_DIR)/constants.hpp \
+								$(SRC_DIR)/Product.hpp \ 
 
 
 mainSensitivityList = $(SRC_DIR)/main.cpp \

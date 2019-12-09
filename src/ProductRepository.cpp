@@ -6,6 +6,7 @@
 #include "Mobile.hpp"
 #include "TV.hpp"
 #include "Car.hpp"
+#include "PrintTools.hpp"
 using namespace std;
 
 ProductRepository::ProductRepository()
@@ -96,13 +97,10 @@ void ProductRepository::addProduct(std::string type, const std::vector<std::stri
 
 void ProductRepository::printProducts()
 {
-    cout << PRODUCT_ID <<  OUTPUT_SEPARATOR << PRODUCT_NAME << '\n';
+    PrintTools::printProductsInit();
+
     for(Product* product : products)
-    {
-        int productId = product->getId();
-        string productName = product->getName();
-        cout << productId << SPACE << productName << '\n';
-    }
+        PrintTools::printProductInfo(product);
 }
 
 vector<Offer*> ProductRepository::getOffers(Seller* seller)
@@ -134,7 +132,7 @@ Offer* ProductRepository::getOffer(int offerId)
 vector<Offer*> ProductRepository::getOffers()
 {
     vector<Offer*> offers;
-    
+
     for(Product* product : products)
     {
         vector<Offer*> productOffers = product->getOffers();

@@ -16,3 +16,15 @@ void PrintTools::printOfferInfo(Offer* offer)
     int amount = offer->getAmount();
     cout << productId << OUTPUT_SEPARATOR << offerId << OUTPUT_SEPARATOR << unitPrice << OUTPUT_SEPARATOR << amount << '\n';
 }
+
+void PrintTools::printProductsInit()
+{
+    cout << PRODUCT_ID <<  OUTPUT_SEPARATOR << PRODUCT_NAME << '\n';
+}
+
+void PrintTools::printProductInfo(Product* product)
+{
+    int productId = product->getId();
+    string productName = product->getName();
+    cout << productId << OUTPUT_SEPARATOR << productName << '\n';
+}

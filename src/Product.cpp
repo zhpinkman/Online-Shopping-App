@@ -55,3 +55,8 @@ vector<Offer*> Product::getOffers()
 {
     return offers;
 }
+
+bool Product::compareById(Product* first, Product* second)
+{
+    return first->id < second->id;
+}

@@ -63,6 +63,7 @@ void Seller::printOffers()
     PrintTools::printOffersInit();
 
     vector<Offer*> offers = api->getOffers(this);
+    
     for(Offer* offer : offers)
         PrintTools::printOfferInfo(offer);
 }

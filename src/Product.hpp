@@ -26,7 +26,8 @@ public:
     Offer* getOffer(Seller* seller);
     Offer* getOffer(int offerId);
     std::vector<Offer*> getOffers();
-    
+    static bool compareById(Product* first, Product* second);
+
 private:
     int id;
     std::string name;
