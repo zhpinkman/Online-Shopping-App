@@ -97,6 +97,8 @@ void Interface::runCommand(const vector<string> &commandWords)
         runCommentsCommand(commandWords);
     else if(order == ADD_TO_CART)
         runAddToCartCommand(commandWords);
+    else if(order == GENERATE_DISCOUNT_CODE)
+        runGenerateDiscountCode(commandWords);
     else
         throw Not_Found_Exception();
 }
@@ -200,4 +202,13 @@ void Interface::runAddToCartCommand(const std::vector<std::string> &commandWords
     string discountCode = (commandWords.size() == ADD_TO_CARD_MAX_SIZE ? commandWords[8] : "");
 
     jomeBazaar.addToCart(offerId, amount, discountCode);
+}
+
+void Interface::runGenerateDiscountCode(const std::vector<std::string> &commandWords)
+{
+    int offerId = stoi(commandWords[4]);
+    int discountPercent = stoi(commandWords[6]);
+    int discountNumber = stoi(commandWords[8]);
+
+    jomeBazaar.generateDiscountCard(offerId, discountPercent, discountNumber);
 }

@@ -85,3 +85,8 @@ void User::addToCart(int offerId, int amount, string discountCode)
 {
     throw Permission_Exception();
 }
+
+void User::generateDiscountCard(int offerId, int discountPercent, int discountNumber)
+{
+    throw Permission_Exception();
+}

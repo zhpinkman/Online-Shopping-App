@@ -129,3 +129,9 @@ void JomeBazaar::addToCart(int offerId, int amount, string discountCode)
     checkLoggedIn();
     loggedInUser->addToCart(offerId, amount, discountCode);
 }
+
+void JomeBazaar::generateDiscountCard(int offerId, int discountPercent, int discountNumber)
+{
+    checkLoggedIn();
+    loggedInUser->generateDiscountCard(offerId, discountPercent, discountNumber);
+}

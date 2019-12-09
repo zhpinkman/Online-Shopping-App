@@ -22,19 +22,23 @@ void Seller::getTransactionHistory(int bound)
         std::cout << transaction << std::endl;
     }
 }
-void Seller::generateDiscountCode(Offer *offer, int count, int percentage)
+
+void Seller::generateDiscountCard(int offerId, int discountPercent, int discountNumber)
 {
+    Offer* offer = api->getOffer(offerId);
     std::vector<Discount *> generatedDiscounts;
     std::string code;
-    for (int i = 0; i < count; i++)
+
+    for (int i = 0; i < discountNumber; i++)
     {
         do
         {
             code = Tools::generateRandomString();
         } while (!api->isValidDiscountCode(code));
-        Discount *discount = new Discount(code, percentage);
+        Discount *discount = new Discount(code, discountPercent);
         generatedDiscounts.push_back(discount);
     }
+
     offer->addDiscount(generatedDiscounts);
 }
 
