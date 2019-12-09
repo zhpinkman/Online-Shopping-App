@@ -23,6 +23,7 @@ public:
     bool checkAuthorization(std::string endpointID);
     void printProducts();
     void printOffersOnProduct(int productId);
+    void productDetail(int productId);
 
 private:
     Wallet *wallet;

@@ -30,6 +30,7 @@ private:
     void runChangeOfferCommand(const std::vector<std::string> &commandWords);
     void runOffersCommand(const std::vector<std::string> &commandWords);
     void runOffersOnProductCommand(const std::vector<std::string> &commandWords);
+    void runProductDetailCommand(const std::vector<std::string> &commandWords);
 };
 
 #endif

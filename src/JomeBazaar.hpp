@@ -21,6 +21,7 @@ public:
     void changeOffer(int offerId, double offerUnitPrice, int offerAmount);
     void offers(std::string order, std::string field);
     void offersOnProduct(int productId);
+    void productDetail(int productId);
 
 private:
     API* api;

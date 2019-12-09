@@ -10,7 +10,7 @@ class TV : public Product
 public:
     TV(int _id, const std::vector<std::string> &info);
     bool operator<(const TV &t);
-    void getProductInfo();
+    std::string getProductInfo();
 
 private:
     int screenSize;

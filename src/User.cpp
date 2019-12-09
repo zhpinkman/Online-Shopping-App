@@ -65,3 +65,8 @@ void User::printOffersOnProduct(int productId)
 {
     throw Permission_Exception();
 }
+
+void User::productDetail(int productId)
+{
+    throw Permission_Exception();
+}

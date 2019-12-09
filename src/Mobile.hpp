@@ -10,7 +10,7 @@ class Mobile : public Product
 public:
     Mobile(int _id, const std::vector<std::string> &info);
     bool operator<(const Mobile &m);
-    void getProductInfo();
+    std::string getProductInfo();
 
 private:
     double weight;

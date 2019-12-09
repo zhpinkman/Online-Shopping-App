@@ -10,7 +10,7 @@ class Car : public Product
 public:
     Car(int _id, const std::vector<std::string> &info);
     bool operator<(const Car &c);
-    void getProductInfo();
+    std::string getProductInfo();
 
 private:
     double weight;

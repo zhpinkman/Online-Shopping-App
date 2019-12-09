@@ -13,7 +13,7 @@ class Product
 public:
     Product(int _id, std::string _name);
     // virtual bool operator<(const Product &p) = 0;
-    // virtual void getProductInfo() = 0;
+    virtual std::string getProductInfo() = 0;
     int getId();
     std::string getName();
     bool productIdMatches(int productId);
@@ -28,9 +28,11 @@ public:
     std::vector<Offer*> getOffers();
     static bool compareById(Product* first, Product* second);
 
+protected:
+    std::string name;
+
 private:
     int id;
-    std::string name;
     std::vector<Offer*> offers;
     std::vector<std::pair<User *, std::string>> comments;
     std::vector<std::pair<User *, int>> rates;

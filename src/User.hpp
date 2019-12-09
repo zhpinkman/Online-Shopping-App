@@ -20,6 +20,7 @@ public:
     virtual void changeOffer(int offerId, double offerUnitPrice, int offerAmount);
     virtual void printAllOffers(std::string order, std::string field);
     virtual void printOffersOnProduct(int productId);
+    virtual void productDetail(int productId);
 
 private:
     int id;

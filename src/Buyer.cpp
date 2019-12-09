@@ -82,3 +82,11 @@ void Buyer::printOffersOnProduct(int productId)
     for(Offer* offer : offers)
         PrintTools::printOfferInfoBuyer(offer);
 }
+
+void Buyer::productDetail(int productId)
+{
+    Product* product = api->getProduct(productId);
+    string productInfo = product->getProductInfo();
+
+    cout << productInfo << '\n';
+}

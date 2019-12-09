@@ -111,3 +111,9 @@ void JomeBazaar::offersOnProduct(int productId)
     checkLoggedIn();
     loggedInUser->printOffersOnProduct(productId);
 }
+
+void JomeBazaar::productDetail(int productId)
+{
+    checkLoggedIn();
+    loggedInUser->productDetail(productId);
+}
