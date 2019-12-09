@@ -18,6 +18,7 @@ public:
     void getProducts();
     void offer(int productId, double offerUnitPrice, int offerAmount);
     void myOffers();
+    void changeOffer(int offerId, double offerUnitPrice, int offerAmount);
 
 private:
     API* api;

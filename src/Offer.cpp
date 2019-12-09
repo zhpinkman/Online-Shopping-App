@@ -61,3 +61,14 @@ int Offer::getAmount()
 {
     return amount;
 }
+
+bool Offer::idMatches(int _id)
+{
+    return (id == _id);
+}
+
+void Offer::changeOffer(int _amount, double _unitPrice)
+{
+    amount = _amount;
+    unitPrice = _unitPrice;
+}

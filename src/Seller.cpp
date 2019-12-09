@@ -71,3 +71,12 @@ void Seller::printOffers()
         cout << productId << OUTPUT_SEPARATOR << offerId << OUTPUT_SEPARATOR << unitPrice << OUTPUT_SEPARATOR << amount << '\n';
     }
 }
+
+void Seller::changeOffer(int offerId, double offerUnitPrice, int offerAmount)
+{
+    Offer* offer = api->getOffer(offerId);
+    if(offer == nullptr)
+        throw Bad_Request_Exception();
+    
+    offer->changeOffer(offerUnitPrice, offerAmount);
+}

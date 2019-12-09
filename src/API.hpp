@@ -27,6 +27,8 @@ public:
 
     Product* getProduct(int productId);
 
+    Offer* getOffer(int offerId);
+
 private:
     UserRepository *userRepository;
     ProductRepository *productRepository;

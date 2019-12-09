@@ -17,6 +17,7 @@ public:
     virtual void printProducts();
     virtual void addOffer(int productId, double offerUnitPrice, int offerAmount);
     virtual void printOffers();
+    virtual void changeOffer(int offerId, double offerUnitPrice, int offerAmount);
 
 private:
     int id;

@@ -20,7 +20,9 @@ public:
     double getUnitPrice();
     bool hasDiscountCode(std::string code);
     bool sellerMatches(Seller* _seller);
+    bool idMatches(int _id);
     int getAmount();
+    void changeOffer(int _amount, double _unitPrice);
 
 private:
     int id;

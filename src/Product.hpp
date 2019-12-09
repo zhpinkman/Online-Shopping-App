@@ -24,6 +24,7 @@ public:
     std::vector<Offer *> sortOffersBy(std::string info);
     void addOffer(Offer *offer);
     Offer* getOffer(Seller* seller);
+    Offer* getOffer(int offerId);
 
 private:
     int id;

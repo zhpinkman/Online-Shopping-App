@@ -50,3 +50,8 @@ void User::printOffers()
 {
     throw Permission_Exception();
 }
+
+void User::changeOffer(int offerId, double offerUnitPrice, int offerAmount)
+{
+    throw Permission_Exception();
+}

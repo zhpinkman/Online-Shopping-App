@@ -17,7 +17,8 @@ public:
     void printProducts();
     void addOffer(int productId, double offerUnitPrice, int offerAmount);
     void printOffers();
-
+    void changeOffer(int offerId, double offerUnitPrice, int offerAmount);
+    
 private:
     Wallet *wallet;
 };

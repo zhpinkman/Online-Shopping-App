@@ -93,3 +93,9 @@ void JomeBazaar::myOffers()
     checkLoggedIn();
     loggedInUser->printOffers();
 }
+
+void JomeBazaar::changeOffer(int offerId, double offerUnitPrice, int offerAmount)
+{
+    checkLoggedIn();
+    loggedInUser->changeOffer(offerId, offerUnitPrice, offerAmount);
+}

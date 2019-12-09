@@ -118,3 +118,15 @@ vector<Offer*> ProductRepository::getOffers(Seller* seller)
 
     return result;
 }
+
+Offer* ProductRepository::getOffer(int offerId)
+{
+    for(Product* product : products)
+    {
+        Offer* offer = product->getOffer(offerId);
+        if(offer != nullptr)
+            return offer;
+    }
+    
+    return nullptr;
+}

@@ -35,16 +35,18 @@ void Product::addOffer(Offer *offer)
 
 Offer* Product::getOffer(Seller* seller)
 {
-    Offer* selectedOffer = nullptr;
-
     for(Offer* offer : offers)
-    {
         if(offer->sellerMatches(seller))
-        {
-            selectedOffer = offer;
-            break;
-        }
-    }
+            return offer;
 
-    return selectedOffer;
+    return nullptr;
+}
+
+Offer* Product::getOffer(int offerId)
+{
+    for(Offer* offer : offers)
+        if(offer->idMatches(offerId))
+            return offer;
+
+    return nullptr;
 }
