@@ -108,7 +108,8 @@ SellerHeaderSensitivities = $(SRC_DIR)/Seller.hpp \
 							$(SRC_DIR)/Tools.hpp \
 							$(SRC_DIR)/Offer.hpp \
 							$(SRC_DIR)/Discount.hpp \
-							$(SRC_DIR)/Exceptions.hpp
+							$(SRC_DIR)/Exceptions.hpp \
+							$(SRC_DIR)/PrintTools.hpp
 
 
 CartItemHeaderSensitivities = $(SRC_DIR)/CartItem.hpp \

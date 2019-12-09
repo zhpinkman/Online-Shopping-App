@@ -7,6 +7,7 @@
 #include "Discount.hpp"
 #include "Offer.hpp"
 #include "Exceptions.hpp"
+#include "PrintTools.hpp"
 using namespace std;
 
 Seller::Seller(API *api, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, userId, username, email, password)
@@ -59,17 +60,11 @@ void Seller::addOffer(int productId, double offerUnitPrice, int offerAmount)
 
 void Seller::printOffers()
 {
-    cout << PRODUCT_DETAIL << OUTPUT_SEPARATOR << OFFER_ID << OUTPUT_SEPARATOR << OFFER_UNIT_PRICE << OUTPUT_SEPARATOR << OFFER_AMOUNT << '\n';
+    PrintTools::printOffersInit();
 
     vector<Offer*> offers = api->getOffers(this);
     for(Offer* offer : offers)
-    {
-        int productId = offer->getProductId();
-        int offerId = offer->getId();
-        double unitPrice = offer->getUnitPrice();
-        int amount = offer->getAmount();
-        cout << productId << OUTPUT_SEPARATOR << offerId << OUTPUT_SEPARATOR << unitPrice << OUTPUT_SEPARATOR << amount << '\n';
-    }
+        PrintTools::printOfferInfo(offer);
 }
 
 void Seller::changeOffer(int offerId, double offerUnitPrice, int offerAmount)
