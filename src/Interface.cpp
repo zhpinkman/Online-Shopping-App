@@ -242,9 +242,10 @@ void Interface::runCommentCommand(const vector<string> &commandWords)
 {
     int productId = stoi(commandWords[4]);
     
-    string comment = "";
-    for(int i = 6; i < commandWords.size(); i++)
-        comment += commandWords[i];
+    string comment = commandWords[6];
+
+    for(int i = 7; i < commandWords.size(); i++)
+        comment += (SPACE + commandWords[i]);
 
     jomeBazaar.comment(productId, comment);
 }

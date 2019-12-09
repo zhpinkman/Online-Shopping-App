@@ -78,7 +78,7 @@ void User::productDetail(int productId)
 
 void User::comments(int productId)
 {
-    throw Permission_Exception();void comments(int productId);
+    throw Permission_Exception();
 }
 
 void User::addToCart(int offerId, int amount, string discountCode)
