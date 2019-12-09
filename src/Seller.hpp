@@ -11,7 +11,7 @@ class Seller : public User
 {
 public:
     Seller(API *api, int userId, int walletId, std::string username, std::string email, std::string password);
-    void getTransactionHistory(int bound);
+    void showWallet(int count);
     bool checkAuthorization(std::string endpointID);
     void printProducts();
     void addOffer(int productId, double offerUnitPrice, int offerAmount);

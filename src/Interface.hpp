@@ -34,6 +34,7 @@ private:
     void runCommentsCommand(const std::vector<std::string> &commandWords);
     void runAddToCartCommand(const std::vector<std::string> &commandWords);
     void runGenerateDiscountCode(const std::vector<std::string> &commandWords);
+    void runWalletCommand(const std::vector<std::string> &commandWords);
 };
 
 #endif

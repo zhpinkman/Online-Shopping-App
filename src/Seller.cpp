@@ -14,13 +14,11 @@ Seller::Seller(API *api, int userId, int walletId, std::string username, std::st
 {
 }
 
-void Seller::getTransactionHistory(int bound)
+void Seller::showWallet(int count)
 {
-    std::vector<double> transactionHistory = wallet->getHistory(bound);
+    std::vector<double> transactionHistory = wallet->getHistory(count);
     for (double transaction : transactionHistory)
-    {
-        std::cout << transaction << std::endl;
-    }
+        cout << transaction << '\n';
 }
 
 void Seller::generateDiscountCard(int offerId, int discountPercent, int discountNumber)

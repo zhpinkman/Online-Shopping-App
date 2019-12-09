@@ -90,3 +90,8 @@ void User::generateDiscountCard(int offerId, int discountPercent, int discountNu
 {
     throw Permission_Exception();
 }
+
+void User::showWallet(int count)
+{
+    throw Permission_Exception();
+}

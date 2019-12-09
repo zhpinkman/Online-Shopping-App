@@ -25,6 +25,7 @@ public:
     void comments(int productId);
     void addToCart(int offerId, int amount, std::string discountCode);
     void generateDiscountCard(int offerId, int discountPercent, int discountNumber);
+    void wallet(int count);
 
 private:
     API* api;

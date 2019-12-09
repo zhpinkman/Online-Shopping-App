@@ -135,3 +135,9 @@ void JomeBazaar::generateDiscountCard(int offerId, int discountPercent, int disc
     checkLoggedIn();
     loggedInUser->generateDiscountCard(offerId, discountPercent, discountNumber);
 }
+
+void JomeBazaar::wallet(int count)
+{
+    checkLoggedIn();
+    loggedInUser->showWallet(count);
+}
