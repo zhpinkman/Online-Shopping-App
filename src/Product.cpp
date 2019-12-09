@@ -60,7 +60,7 @@ bool Product::compareById(Product* first, Product* second)
     return first->id < second->id;
 }
 
-vector< pair<User*, string> > Product::getComments()
+vector<Comment*> Product::getComments()
 {
     return comments;
 }

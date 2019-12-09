@@ -5,6 +5,7 @@
 #include "constants.hpp"
 #include "PrintTools.hpp"
 #include "Exceptions.hpp"
+#include "Comment.hpp"
 using namespace std;
 
 Buyer::Buyer(API *api, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, userId, username, email, password)
@@ -100,13 +101,13 @@ void Buyer::productDetail(int productId)
 void Buyer::comments(int productId)
 {
     Product* product = api->getProduct(productId);
-    vector< pair<User*, string> > comments = product->getComments();
+    vector<Comment*> comments = product->getComments();
 
     cout << product->getName() << '\n';
-    for(pair<User*, string> comment : comments)
+    for(Comment* comment : comments)
     {
-        User* user = comment.first;
-        string commentMessage = comment.second;
+        User* user = comment->getUser();
+        string commentMessage = comment->getText();
         cout << user->getUsername() << OUTPUT_SEPARATOR << commentMessage << '\n';
     }
 }

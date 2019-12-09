@@ -26,7 +26,8 @@ OBJECTS = $(BUILD_DIR)/main.o \
 		  $(BUILD_DIR)/TV.o \
 		  $(BUILD_DIR)/Car.o \
 		  $(BUILD_DIR)/PrintTools.o \
-		  $(BUILD_DIR)/Cart.o
+		  $(BUILD_DIR)/Cart.o \
+		  $(BUILD_DIR)/Comment.o
 
 
 .PHONY: all build_objects make_build_dir clean
@@ -78,7 +79,8 @@ UserHeaderSensitivities = $(SRC_DIR)/User.hpp \
 
 ProductHeaderSensitivities = $(SRC_DIR)/Product.hpp \
 						     $(SRC_DIR)/Offer.hpp \
-							 $(SRC_DIR)/Seller.hpp
+							 $(SRC_DIR)/Seller.hpp \
+							 $(SRC_DIR)/Comment.hpp
 
 UserRepositoryHeaderSensitivities = $(SRC_DIR)/UserRepository.hpp \
 									$(SRC_DIR)/User.hpp \
@@ -133,7 +135,8 @@ BuyerHeaderSensitivities = $(SRC_DIR)/Buyer.hpp \
 						   $(SRC_DIR)/constants.hpp \
 						   $(SRC_DIR)/PrintTools.hpp \
 						   $(SRC_DIR)/Exceptions.hpp \
-						   $(SRC_DIR)/Cart.hpp
+						   $(SRC_DIR)/Cart.hpp \
+						   $(SRC_DIR)/Comment.hpp \
 
 AdminHeaderSensitivities = $(SRC_DIR)/Admin.hpp \
 						   $(SRC_DIR)/User.hpp \
@@ -158,6 +161,8 @@ CartHeaderSensitivities =  $(SRC_DIR)/Cart.hpp \
 						   $(SRC_DIR)/CartItem.hpp \
 						   $(SRC_DIR)/constants.hpp
 
+CommentHeaderSensitivities =  $(SRC_DIR)/Comment.hpp \
+						   	  $(SRC_DIR)/User.hpp
 
 mainSensitivityList = $(SRC_DIR)/main.cpp \
 					  $(mainHeaderSensitivities)
@@ -225,6 +230,9 @@ PrintToolsSensitivityList = $(SRC_DIR)/PrintTools.cpp \
 CartSensitivityList = $(SRC_DIR)/Cart.cpp \
 					      $(CartHeaderSensitivities)
 
+CommentSensitivityList = $(SRC_DIR)/Comment.cpp \
+					      $(CommentHeaderSensitivities)
+
 $(BUILD_DIR)/main.o: $(mainSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.cpp -o $(BUILD_DIR)/main.o
 
@@ -290,3 +298,6 @@ $(BUILD_DIR)/PrintTools.o: $(PrintToolsSensitivityList)
 
 $(BUILD_DIR)/Cart.o: $(CartSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Cart.cpp -o $(BUILD_DIR)/Cart.o
+
+$(BUILD_DIR)/Comment.o: $(CommentSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/Comment.cpp -o $(BUILD_DIR)/Comment.o
