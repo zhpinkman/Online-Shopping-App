@@ -27,6 +27,8 @@ public:
     void comments(int productId);
     void addToCart(int offerId, int amount, std::string discountCode);
     void printCart();
+    void showWallet(int count);
+
 
 private:
     Wallet* wallet;

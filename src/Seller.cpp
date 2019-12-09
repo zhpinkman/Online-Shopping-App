@@ -16,7 +16,8 @@ Seller::Seller(API *api, int userId, int walletId, std::string username, std::st
 
 void Seller::showWallet(int count)
 {
-    std::vector<double> transactionHistory = wallet->getHistory(count);
+    cout << CREDIT << '\n';
+    vector<double> transactionHistory = wallet->getHistory(count);
     for (double transaction : transactionHistory)
         cout << transaction << '\n';
 }

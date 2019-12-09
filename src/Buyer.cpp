@@ -113,3 +113,12 @@ void Buyer::printCart()
 {
     //TODO
 }
+
+
+void Buyer::showWallet(int count)
+{
+    cout << CREDIT << '\n';
+    vector<double> transactionHistory = wallet->getHistory(count);
+    for (double transaction : transactionHistory)
+        cout << transaction << '\n';
+}

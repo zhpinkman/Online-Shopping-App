@@ -64,6 +64,8 @@
 #define SELLER_ID "sellerId"
 #define TOTAL_WITH_DISCOUNT "totalPriceConsideringDiscount"
 
+#define CREDIT "credit"
+
 enum UserType
 {
     BUYER,
