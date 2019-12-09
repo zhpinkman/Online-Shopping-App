@@ -28,6 +28,7 @@ private:
     void runOfferCommand(const std::vector<std::string> &commandWords);
     void runMyOffersCommand(const std::vector<std::string> &commandWords);
     void runChangeOfferCommand(const std::vector<std::string> &commandWords);
+    void runOffersCommand(const std::vector<std::string> &commandWords);
 };
 
 #endif

@@ -54,6 +54,10 @@
 #define OFFER_ID "offerId"
 #define OFFER_UNIT_PRICE "offerUnitPrice"
 #define OFFER_AMOUNT "offerAmount"
+#define OFFER_PRICE "offerPrice"
+
+#define ASCEND "ASCEND"
+#define DESCEND "DESCEND"
 
 enum UserType
 {

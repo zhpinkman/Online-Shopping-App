@@ -55,3 +55,8 @@ void User::changeOffer(int offerId, double offerUnitPrice, int offerAmount)
 {
     throw Permission_Exception();
 }
+
+void User::printAllOffers(std::string order, std::string field)
+{
+    throw Permission_Exception();
+}

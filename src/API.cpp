@@ -58,3 +58,8 @@ Offer* API::getOffer(int offerId)
 {
     return productRepository->getOffer(offerId);
 }
+
+vector<Offer*> API::getOffers()
+{
+    return productRepository->getOffers();
+}

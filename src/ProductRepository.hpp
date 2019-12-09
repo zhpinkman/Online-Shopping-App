@@ -23,6 +23,7 @@ public:
     void printProducts();
     std::vector<Offer*> getOffers(Seller* seller);
     Offer* getOffer(int offerId);
+    std::vector<Offer*> getOffers();
 
 private:
     std::vector<Product *> products;

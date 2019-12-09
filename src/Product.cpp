@@ -50,3 +50,8 @@ Offer* Product::getOffer(int offerId)
 
     return nullptr;
 }
+
+vector<Offer*> Product::getOffers()
+{
+    return offers;
+}

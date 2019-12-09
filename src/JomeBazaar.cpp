@@ -99,3 +99,9 @@ void JomeBazaar::changeOffer(int offerId, double offerUnitPrice, int offerAmount
     checkLoggedIn();
     loggedInUser->changeOffer(offerId, offerUnitPrice, offerAmount);
 }
+
+void JomeBazaar::offers(std::string order, std::string field)
+{
+    checkLoggedIn();
+    loggedInUser->printAllOffers(order, field);
+}

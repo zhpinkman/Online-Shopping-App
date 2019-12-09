@@ -72,3 +72,13 @@ void Offer::changeOffer(int _amount, double _unitPrice)
     amount = _amount;
     unitPrice = _unitPrice;
 }
+
+bool Offer::compareByOfferPrice(Offer* first, Offer* second)
+{
+    return (first->unitPrice == second->unitPrice ? compareByOfferId(first, second) : (first->unitPrice < second->unitPrice));
+}
+
+bool Offer::compareByOfferId(Offer* first, Offer* second)
+{
+    return (first->id < second->id);
+}

@@ -25,11 +25,12 @@ public:
     void addOffer(Offer *offer);
     Offer* getOffer(Seller* seller);
     Offer* getOffer(int offerId);
-
+    std::vector<Offer*> getOffers();
+    
 private:
     int id;
     std::string name;
-    std::vector<Offer *> offers;
+    std::vector<Offer*> offers;
     std::vector<std::pair<User *, std::string>> comments;
     std::vector<std::pair<User *, int>> rates;
 };

@@ -24,7 +24,8 @@ OBJECTS = $(BUILD_DIR)/main.o \
 		  $(BUILD_DIR)/Admin.o \
 		  $(BUILD_DIR)/Mobile.o \
 		  $(BUILD_DIR)/TV.o \
-		  $(BUILD_DIR)/Car.o
+		  $(BUILD_DIR)/Car.o \
+		  $(BUILD_DIR)/PrintTools.o
 
 
 .PHONY: all build_objects make_build_dir clean
@@ -128,7 +129,9 @@ BuyerHeaderSensitivities = $(SRC_DIR)/Buyer.hpp \
 
 AdminHeaderSensitivities = $(SRC_DIR)/Admin.hpp \
 						   $(SRC_DIR)/User.hpp \
-						   $(SRC_DIR)/constants.hpp
+						   $(SRC_DIR)/constants.hpp \
+						   $(SRC_DIR)/Offer.hpp \
+						   $(SRC_DIR)/PrintTools.hpp
 
 MobileHeaderSensitivities = $(SRC_DIR)/Mobile.hpp
 
@@ -137,6 +140,10 @@ AdminHeaderSensitivities = $(SRC_DIR)/TV.hpp \
 
 CarHeaderSensitivities = $(SRC_DIR)/Car.hpp \
 						 $(SRC_DIR)/Tools.hpp
+
+PrintToolsHeaderSensitivities = $(SRC_DIR)/PrintTools.hpp \
+								$(SRC_DIR)/Offer.hpp \
+						 		$(SRC_DIR)/constants.hpp
 
 
 mainSensitivityList = $(SRC_DIR)/main.cpp \
@@ -199,6 +206,9 @@ TVSensitivityList = $(SRC_DIR)/TV.cpp \
 CarSensitivityList = $(SRC_DIR)/Car.cpp \
 					      $(CarHeaderSensitivities)
 
+PrintToolsSensitivityList = $(SRC_DIR)/PrintTools.cpp \
+					      $(PrintToolsHeaderSensitivities)
+
 $(BUILD_DIR)/main.o: $(mainSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.cpp -o $(BUILD_DIR)/main.o
 
@@ -258,3 +268,6 @@ $(BUILD_DIR)/TV.o: $(TVSensitivityList)
 
 $(BUILD_DIR)/Car.o: $(CarSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Car.cpp -o $(BUILD_DIR)/Car.o
+
+$(BUILD_DIR)/PrintTools.o: $(PrintToolsSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/PrintTools.cpp -o $(BUILD_DIR)/PrintTools.o

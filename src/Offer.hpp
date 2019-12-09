@@ -23,6 +23,8 @@ public:
     bool idMatches(int _id);
     int getAmount();
     void changeOffer(int _amount, double _unitPrice);
+    static bool compareByOfferPrice(Offer* first, Offer* second);
+    static bool compareByOfferId(Offer* first, Offer* second);
 
 private:
     int id;

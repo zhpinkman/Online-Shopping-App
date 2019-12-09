@@ -29,6 +29,8 @@ public:
 
     Offer* getOffer(int offerId);
 
+    std::vector<Offer*> getOffers();
+
 private:
     UserRepository *userRepository;
     ProductRepository *productRepository;

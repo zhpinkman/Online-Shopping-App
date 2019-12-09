@@ -12,6 +12,7 @@ public:
     void addComment(std::string productName, std::string comment);
     void importCommentsFromCSV(std::string fileName);
     bool checkAuthorization(std::string endpointID);
+    void printAllOffers(std::string order, std::string field);
 };
 
 #endif

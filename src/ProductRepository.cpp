@@ -127,6 +127,19 @@ Offer* ProductRepository::getOffer(int offerId)
         if(offer != nullptr)
             return offer;
     }
-    
+
     return nullptr;
+}
+
+vector<Offer*> ProductRepository::getOffers()
+{
+    vector<Offer*> offers;
+    
+    for(Product* product : products)
+    {
+        vector<Offer*> productOffers = product->getOffers();
+        offers.insert(offers.end(), productOffers.begin(), productOffers.end());
+    }
+
+    return offers;
 }
