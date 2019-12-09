@@ -40,7 +40,7 @@ int ProductRepository::getNextProductId()
     return maxProductId++;
 }
 
-bool ProductRepository::isDiscountCodeUnique(std::string code)
+bool ProductRepository::isDiscountCodeUnique(string code)
 {
     for (Discount *discount : discounts)
     {
@@ -52,7 +52,7 @@ bool ProductRepository::isDiscountCodeUnique(std::string code)
     return true;
 }
 
-int ProductRepository::useDiscountCode(std::string discountCode)
+int ProductRepository::useDiscountCode(string discountCode)
 {
     for (Discount *discount : discounts)
     {
@@ -63,7 +63,7 @@ int ProductRepository::useDiscountCode(std::string discountCode)
     }
 }
 
-bool ProductRepository::isDiscountCodeValid(Offer *offer, std::string code)
+bool ProductRepository::isDiscountCodeValid(Offer *offer, string code)
 {
     for (Discount *discount : discounts)
     {
@@ -80,7 +80,7 @@ bool ProductRepository::canBeAddedToCart(Offer *offer, int amount)
     // TODO
 }
 
-void ProductRepository::addProduct(std::string type, const std::vector<std::string> &info)
+void ProductRepository::addProduct(string type, const vector<string> &info)
 {
     Product* newProduct;
 

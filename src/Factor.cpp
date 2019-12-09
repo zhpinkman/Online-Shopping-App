@@ -1,6 +1,7 @@
 #include "Factor.hpp"
+using namespace std;
 
-Factor::Factor(std::vector<CartItem *> _cart)
+Factor::Factor(vector<CartItem *> _cart)
 {
     cart = _cart;
 }
@@ -8,9 +9,9 @@ Factor::Factor(std::vector<CartItem *> _cart)
 double Factor::getFinalPrice()
 {
     double result;
+
     for (int i = 0; i < cart.size(); i++)
-    {
         result += cart[i]->getSoldPrice();
-    }
+    
     return result;
 }

@@ -12,7 +12,7 @@ void UserRepository::addUser(User *newUser)
     users.push_back(newUser);
 }
 
-User *UserRepository::getUser(std::string email)
+User *UserRepository::getUser(string email)
 {
     for (User* user : users)
     {

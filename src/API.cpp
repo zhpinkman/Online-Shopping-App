@@ -14,17 +14,17 @@ int API::getOfferId()
     return productRepository->getNextOfferId();
 }
 
-bool API::isValidDiscountCode(std::string code)
+bool API::isValidDiscountCode(string code)
 {
     return productRepository->isDiscountCodeUnique(code);
 }
 
-int API::useDiscountCode(std::string discountCode)
+int API::useDiscountCode(string discountCode)
 {
     return productRepository->useDiscountCode(discountCode);
 }
 
-bool API::isValidDiscountCode(Offer *offer, std::string code)
+bool API::isValidDiscountCode(Offer *offer, string code)
 {
     return productRepository->isDiscountCodeValid(offer, code);
 }

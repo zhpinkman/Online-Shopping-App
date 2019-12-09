@@ -10,9 +10,9 @@ Wallet::Wallet(int _id)
     id = _id;
 }
 
-std::vector<double> Wallet::getHistory(int bound)
+vector<double> Wallet::getHistory(int bound)
 {
-    std::vector<double> walletHistory;
+    vector<double> walletHistory;
     int historyIndex = 0;
     for (int i = 0; i < bound && i < history.size(); i++)
     {
@@ -41,12 +41,12 @@ bool Wallet::withdraw(double amount)
     {
         balance -= amount;
         history.push_back(balance);
-        std::cout << OK << std::endl;
+        cout << OK << endl;
         return SUCCESS;
     }
     else
     {
-        std::cout << BAD_REQUEST << std::endl;
+        cout << BAD_REQUEST << endl;
         return FAILED;
     }
 }

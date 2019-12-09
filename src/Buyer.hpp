@@ -1,14 +1,15 @@
 #ifndef _BUYER_H_
 #define _BUYER_H_
 
+#include <vector>
 #include "User.hpp"
 #include "Wallet.hpp"
 #include "Offer.hpp"
 #include "Factor.hpp"
 #include "Cart.hpp"
 
-class CartItem;
 class API;
+class CartItem;
 
 class Buyer : public User
 {
@@ -18,9 +19,7 @@ public:
     std::vector<std::string> getOrdersHistory(int bound);
     std::vector<std::string> getTransactionHistory(int bound);
     void chargeWallet(double amount);
-    std::vector<std::string> getCoupons();
     bool payFactor(Factor *factor);
-    bool checkAuthorization(std::string endpointID);
     void printProducts();
     void printOffersOnProduct(int productId);
     void productDetail(int productId);
@@ -31,10 +30,9 @@ public:
     void addComment(int productId, std::string comment);
     void compare(int productId1, int productId2);
 
-
 private:
-    Wallet* wallet;
     Cart* cart;
+    Wallet* wallet;
     std::vector<Cart*> orders;
 };
 

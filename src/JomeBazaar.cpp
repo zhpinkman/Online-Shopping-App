@@ -5,8 +5,6 @@
 #include "Admin.hpp"
 #include "Tools.hpp"
 #include "Exceptions.hpp"
-#include <iostream>
-
 using namespace std;
 
 JomeBazaar::JomeBazaar()
@@ -24,7 +22,7 @@ void JomeBazaar::checkLoggedIn()
         throw Permission_Exception();
 }
 
-void JomeBazaar::signup(std::string email, std::string username, std::string password, UserType userType)
+void JomeBazaar::signup(string email, string username, string password, UserType userType)
 {
     User* newUser;
     User* user = userRepository->getUser(email);
@@ -50,7 +48,8 @@ void JomeBazaar::signup(std::string email, std::string username, std::string pas
     else
         throw Bad_Request_Exception();
 }
-void JomeBazaar::login(std::string email, std::string password)
+
+void JomeBazaar::login(string email, string password)
 {
     User *user = userRepository->getUser(email);
     if (user != nullptr)
@@ -100,7 +99,7 @@ void JomeBazaar::changeOffer(int offerId, double offerUnitPrice, int offerAmount
     loggedInUser->changeOffer(offerId, offerUnitPrice, offerAmount);
 }
 
-void JomeBazaar::offers(std::string order, std::string field)
+void JomeBazaar::offers(string order, string field)
 {
     checkLoggedIn();
     loggedInUser->printAllOffers(order, field);
@@ -154,7 +153,7 @@ void JomeBazaar::chargeWallet(double amount)
     loggedInUser->chargeWallet(amount);
 }
 
-void JomeBazaar::comment(int productId, std::string comment)
+void JomeBazaar::comment(int productId, string comment)
 {
     checkLoggedIn();
     loggedInUser->addComment(productId, comment);

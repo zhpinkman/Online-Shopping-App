@@ -3,7 +3,7 @@
 #include "constants.hpp"
 using namespace std;
 
-Mobile::Mobile(int _id, const std::vector<std::string> &info) : Product(_id, info[0])
+Mobile::Mobile(int _id, const vector<string> &info) : Product(_id, info[0])
 {
     weight = stod(info[1]);
     cpuFrequency = stod(info[2]);

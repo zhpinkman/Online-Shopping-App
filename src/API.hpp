@@ -3,8 +3,6 @@
 
 #include <vector>
 #include <string>
-
-// #include "Offer.hpp"
 #include "Product.hpp"
 
 class Offer;
@@ -20,15 +18,11 @@ public:
     int useDiscountCode(std::string discountCode);
     int getOfferId();
     bool canBeAddedToCart(Offer *offer, int amount);
-
     void addProduct(std::string type, const std::vector<std::string> &info);
     void printProducts();
     std::vector<Offer*> getOffers(Seller* seller);
-
     Product* getProduct(int productId);
-
     Offer* getOffer(int offerId);
-
     std::vector<Offer*> getOffers();
 
 private:

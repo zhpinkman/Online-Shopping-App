@@ -6,7 +6,6 @@
 #include "Exceptions.hpp"
 #include "constants.hpp"
 #include "Tools.hpp"
-
 using namespace std;
 
 void Interface::start()
@@ -60,7 +59,6 @@ void Interface::validateCommandOrder(const vector<string> &commandWords)
 {
     //TODO
 }
-
 
 void Interface::printSuccess()
 {
@@ -135,12 +133,12 @@ void Interface::runLoginCommand(const vector<string> &commandWords)
     jomeBazaar.login(email, password);
 }
 
-void Interface::runLogoutCommand(const std::vector<std::string> &commandWords)
+void Interface::runLogoutCommand(const vector<string> &commandWords)
 {
     jomeBazaar.logout();
 }
 
-void Interface::runImportProductCommand(const std::vector<std::string> &commandWords)
+void Interface::runImportProductCommand(const vector<string> &commandWords)
 {
     string type = commandWords[4];
     string filePath = commandWords[6];
@@ -148,12 +146,12 @@ void Interface::runImportProductCommand(const std::vector<std::string> &commandW
     jomeBazaar.importProduct(type, filePath);
 }
 
-void Interface::runGetProductsCommand(const std::vector<std::string> &commandWords)
+void Interface::runGetProductsCommand(const vector<string> &commandWords)
 {
     jomeBazaar.getProducts();
 }
 
-void Interface::runOfferCommand(const std::vector<std::string> &commandWords)
+void Interface::runOfferCommand(const vector<string> &commandWords)
 {
     int productId = stoi(commandWords[4]);
     double offerUnitPrice = stod(commandWords[6]);
@@ -162,12 +160,12 @@ void Interface::runOfferCommand(const std::vector<std::string> &commandWords)
     jomeBazaar.offer(productId, offerUnitPrice, offerAmount);
 }
 
-void Interface::runMyOffersCommand(const std::vector<std::string> &commandWords)
+void Interface::runMyOffersCommand(const vector<string> &commandWords)
 {
     jomeBazaar.myOffers();
 }
 
-void Interface::runChangeOfferCommand(const std::vector<std::string> &commandWords)
+void Interface::runChangeOfferCommand(const vector<string> &commandWords)
 {
     int offerId = stoi(commandWords[4]);
     double offerUnitPrice = stod(commandWords[6]);
@@ -176,7 +174,7 @@ void Interface::runChangeOfferCommand(const std::vector<std::string> &commandWor
     jomeBazaar.changeOffer(offerId, offerUnitPrice, offerAmount);
 }
 
-void Interface::runOffersCommand(const std::vector<std::string> &commandWords)
+void Interface::runOffersCommand(const vector<string> &commandWords)
 {
     string order = commandWords[4];
     string field = commandWords[6];
@@ -184,28 +182,28 @@ void Interface::runOffersCommand(const std::vector<std::string> &commandWords)
     jomeBazaar.offers(order, field);
 }
 
-void Interface::runOffersOnProductCommand(const std::vector<std::string> &commandWords)
+void Interface::runOffersOnProductCommand(const vector<string> &commandWords)
 {
     int productId = stoi(commandWords[4]);
 
     jomeBazaar.offersOnProduct(productId);
 }
 
-void Interface::runProductDetailCommand(const std::vector<std::string> &commandWords)
+void Interface::runProductDetailCommand(const vector<string> &commandWords)
 {
     int productId = stoi(commandWords[4]);
 
     jomeBazaar.productDetail(productId);
 }
 
-void Interface::runCommentsCommand(const std::vector<std::string> &commandWords)
+void Interface::runCommentsCommand(const vector<string> &commandWords)
 {
     int productId = stoi(commandWords[4]);
 
     jomeBazaar.comments(productId);
 }
 
-void Interface::runAddToCartCommand(const std::vector<std::string> &commandWords)
+void Interface::runAddToCartCommand(const vector<string> &commandWords)
 {
     int offerId = stoi(commandWords[4]);
     int amount = stoi(commandWords[6]);
@@ -214,7 +212,7 @@ void Interface::runAddToCartCommand(const std::vector<std::string> &commandWords
     jomeBazaar.addToCart(offerId, amount, discountCode);
 }
 
-void Interface::runGenerateDiscountCode(const std::vector<std::string> &commandWords)
+void Interface::runGenerateDiscountCode(const vector<string> &commandWords)
 {
     int offerId = stoi(commandWords[4]);
     int discountPercent = stoi(commandWords[6]);
@@ -223,24 +221,24 @@ void Interface::runGenerateDiscountCode(const std::vector<std::string> &commandW
     jomeBazaar.generateDiscountCard(offerId, discountPercent, discountNumber);
 }
 
-void Interface::runWalletCommand(const std::vector<std::string> &commandWords)
+void Interface::runWalletCommand(const vector<string> &commandWords)
 {
     int count = stoi(commandWords[4]);
     jomeBazaar.wallet(count);
 }
 
-void Interface::runCartCommand(const std::vector<std::string> &commandWords)
+void Interface::runCartCommand(const vector<string> &commandWords)
 {
     jomeBazaar.cart();
 }
 
-void Interface::runChargeWalletCommand(const std::vector<std::string> &commandWords)
+void Interface::runChargeWalletCommand(const vector<string> &commandWords)
 {
     double amount = stod(commandWords[4]);
     jomeBazaar.chargeWallet(amount);
 }
 
-void Interface::runCommentCommand(const std::vector<std::string> &commandWords)
+void Interface::runCommentCommand(const vector<string> &commandWords)
 {
     int productId = stoi(commandWords[4]);
     
@@ -251,7 +249,7 @@ void Interface::runCommentCommand(const std::vector<std::string> &commandWords)
     jomeBazaar.comment(productId, comment);
 }
 
-void Interface::runCompareCommand(const std::vector<std::string> &commandWords)
+void Interface::runCompareCommand(const vector<string> &commandWords)
 {
     int productId1 = stoi(commandWords[4]);
     int productId2 = stoi(commandWords[6]);

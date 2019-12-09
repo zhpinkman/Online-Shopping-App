@@ -44,7 +44,7 @@ clean:
 	rm -rf $(BUILD_DIR) *.o *.out
 
 
-mainHeaderSensitivities = $(InterfaceHeaderSensitivities)
+mainHeaderSensitivities = $(SRC_DIR)/Interface.hpp
 
 InterfaceHeaderSensitivities = $(SRC_DIR)/Interface.hpp \
 							   $(SRC_DIR)/Exception.hpp \
@@ -143,7 +143,9 @@ AdminHeaderSensitivities = $(SRC_DIR)/Admin.hpp \
 						   $(SRC_DIR)/User.hpp \
 						   $(SRC_DIR)/constants.hpp \
 						   $(SRC_DIR)/Offer.hpp \
-						   $(SRC_DIR)/PrintTools.hpp
+						   $(SRC_DIR)/PrintTools.hpp \
+						   $(SRC_DIR)/Admin.hpp \
+						   $(SRC_DIR)/API.hpp
 
 MobileHeaderSensitivities = $(SRC_DIR)/Mobile.hpp \
 							$(SRC_DIR)/constants.hpp

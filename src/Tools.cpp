@@ -55,8 +55,8 @@ string Tools::generateRandomString()
 
 bool Tools::stringToBool(string word)
 {
-    std::istringstream is(word);
+    istringstream is(word);
     bool result;
-    is >> std::boolalpha >> result;
+    is >> boolalpha >> result;
     return result;
 }

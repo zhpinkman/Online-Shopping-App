@@ -8,7 +8,7 @@
 #include "Comment.hpp"
 using namespace std;
 
-Buyer::Buyer(API *api, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, userId, username, email, password)
+Buyer::Buyer(API *api, int userId, int walletId, string username, string email, string password) : User(api, userId, username, email, password)
 {
     wallet = new Wallet(walletId);
     cart = new Cart();
@@ -38,30 +38,31 @@ bool Buyer::submitCart()
     // double finalPrice = factor->getFinalPrice();
     // if (wallet->withdraw(finalPrice))
     // {
-    //     std::cout << OK << std::endl;
+    //     cout << OK << endl;
     //     return SUCCESS;
     // }
     // else
     // {
-    //     std::cout << BAD_REQUEST << std::endl;
+    //     cout << BAD_REQUEST << endl;
     //     return FAILED;
     // }
 }
-std::vector<std::string> Buyer::getOrdersHistory(int bound)
+vector<string> Buyer::getOrdersHistory(int bound)
 {
     // for (int i = 0; i < orders.size(); i++)
     // {
-    //     std::cout << orders[i].first->getProductId() << SEPERATOR << orders[i].first->getProductName() << SEPERATOR;
-    //     std::cout << orders[i].first->getId() << SEPERATOR << orders[i].first->getSellerId() << SEPERATOR;
-    //     std::cout << orders[i].second->getSoldPrice() << std::endl;
+    //     cout << orders[i].first->getProductId() << SEPERATOR << orders[i].first->getProductName() << SEPERATOR;
+    //     cout << orders[i].first->getId() << SEPERATOR << orders[i].first->getSellerId() << SEPERATOR;
+    //     cout << orders[i].second->getSoldPrice() << endl;
     // }
 }
-std::vector<std::string> Buyer::getTransactionHistory(int bound)
+
+vector<string> Buyer::getTransactionHistory(int bound)
 {
-    std::vector<double> transactionHistory = wallet->getHistory(bound);
+    vector<double> transactionHistory = wallet->getHistory(bound);
     for (double transaction : transactionHistory)
     {
-        std::cout << transaction << std::endl;
+        cout << transaction << endl;
     }
 }
 
@@ -70,9 +71,7 @@ void Buyer::chargeWallet(double amount)
     wallet->charge(amount);
 }
 
-std::vector<std::string> Buyer::getCoupons() {}
 bool Buyer::payFactor(Factor *factor) {}
-bool Buyer::checkAuthorization(std::string endpointID) {}
 
 void Buyer::printProducts()
 {
@@ -125,7 +124,7 @@ void Buyer::showWallet(int count)
         cout << transaction << '\n';
 }
 
-void Buyer::addComment(int productId, std::string comment)
+void Buyer::addComment(int productId, string comment)
 {
     Product* product = api->getProduct(productId);
     if(product == nullptr)

@@ -36,7 +36,6 @@ private:
     User* loggedInUser;
     UserRepository* userRepository;
     ProductRepository* productRepository;
-
     void checkLoggedIn();
 };
 

@@ -4,7 +4,7 @@
 #include "constants.hpp"
 using namespace std;
 
-TV::TV(int _id, const std::vector<std::string> &info) : Product(_id, info[0])
+TV::TV(int _id, const vector<string> &info) : Product(_id, info[0])
 {
     screenSize = stoi(info[1]);
     screenType = info[2];

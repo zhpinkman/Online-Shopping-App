@@ -4,7 +4,7 @@
 #include "constants.hpp"
 using namespace std;
 
-Car::Car(int _id, const std::vector<std::string> &info) : Product(_id, info[0])
+Car::Car(int _id, const vector<string> &info) : Product(_id, info[0])
 {
     weight = stod(info[1]);
     seatsNum = stoi(info[2]);

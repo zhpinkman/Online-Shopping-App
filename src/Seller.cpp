@@ -10,7 +10,7 @@
 #include "PrintTools.hpp"
 using namespace std;
 
-Seller::Seller(API *api, int userId, int walletId, std::string username, std::string email, std::string password) : User(api, userId, username, email, password)
+Seller::Seller(API *api, int userId, int walletId, string username, string email, string password) : User(api, userId, username, email, password)
 {
 }
 
@@ -25,8 +25,8 @@ void Seller::showWallet(int count)
 void Seller::generateDiscountCard(int offerId, int discountPercent, int discountNumber)
 {
     Offer* offer = api->getOffer(offerId);
-    std::vector<Discount *> generatedDiscounts;
-    std::string code;
+    vector<Discount *> generatedDiscounts;
+    string code;
 
     for (int i = 0; i < discountNumber; i++)
     {
@@ -41,7 +41,7 @@ void Seller::generateDiscountCard(int offerId, int discountPercent, int discount
     offer->addDiscount(generatedDiscounts);
 }
 
-bool Seller::checkAuthorization(std::string endpointID) {}
+bool Seller::checkAuthorization(string endpointID) {}
 
 void Seller::printProducts()
 {

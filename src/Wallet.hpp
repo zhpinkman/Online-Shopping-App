@@ -6,16 +6,16 @@
 
 class Wallet
 {
-private:
-    int id;
-    double balance;
-    std::vector<double> history;
-
 public:
     Wallet(int id);
     std::vector<double> getHistory(int bound);
     void charge(double amount);
     bool withdraw(double amount);
+    
+private:
+    int id;
+    double balance;
+    std::vector<double> history;
 };
 
 #endif

@@ -6,15 +6,15 @@
 
 class Discount
 {
-private:
-    std::string code;
-    DiscountStatus discountStatus;
-    int percentage;
-
 public:
     Discount(std::string code, int percentage);
     bool isValidDiscount(std::string code);
     int useDiscountCode();
+    
+private:
+    std::string code;
+    DiscountStatus discountStatus;
+    int percentage;
 };
 
 #endif

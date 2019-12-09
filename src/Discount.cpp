@@ -1,13 +1,14 @@
 #include "Discount.hpp"
+using namespace std;
 
-Discount::Discount(std::string _code, int _percentage)
+Discount::Discount(string _code, int _percentage)
 {
     code = _code;
     percentage = _percentage;
     discountStatus = UNUSED;
 }
 
-bool Discount::isValidDiscount(std::string _code)
+bool Discount::isValidDiscount(string _code)
 {
     return code == _code && discountStatus == UNUSED;
 }

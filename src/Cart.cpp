@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Cart.hpp"
 #include "constants.hpp"
 using namespace std;

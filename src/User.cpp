@@ -3,7 +3,7 @@
 #include "Exceptions.hpp"
 using namespace std;
 
-User::User(API*_api, int _id, std::string _username, std::string _email, std::string _password)
+User::User(API*_api, int _id, string _username, string _email, string _password)
 {
     api = _api;
     username = _username;
@@ -11,22 +11,22 @@ User::User(API*_api, int _id, std::string _username, std::string _email, std::st
     password = _password;
 }
 
-std::string User::getUsername()
+string User::getUsername()
 {
     return username;
 }
 
-bool User::checkAuthorization(std::string endpointID)
+bool User::checkAuthorization(string endpointID)
 {
     // TODO
 }
 
-bool User::passwordMatches(std::string _password)
+bool User::passwordMatches(string _password)
 {
     return password == _password;
 }
 
-bool User::emailMatches(std::string _email)
+bool User::emailMatches(string _email)
 {
     return email == _email;
 }
@@ -61,7 +61,7 @@ void User::changeOffer(int offerId, double offerUnitPrice, int offerAmount)
     throw Permission_Exception();
 }
 
-void User::printAllOffers(std::string order, std::string field)
+void User::printAllOffers(string order, string field)
 {
     throw Permission_Exception();
 }

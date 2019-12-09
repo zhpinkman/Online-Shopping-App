@@ -1,5 +1,6 @@
 #include "Offer.hpp"
 #include "Product.hpp"
+using namespace std;
 
 Offer::Offer(Product* _product, int _id, Seller *_seller, int _amount, double _unitPrice)
 {
@@ -10,7 +11,7 @@ Offer::Offer(Product* _product, int _id, Seller *_seller, int _amount, double _u
     unitPrice = _unitPrice;
 }
 
-void Offer::addDiscount(std::vector<Discount *> _discounts)
+void Offer::addDiscount(vector<Discount *> _discounts)
 {
     discounts = _discounts;
 }
@@ -20,7 +21,7 @@ int Offer::getProductId()
     return product->getId();
 }
 
-std::string Offer::getProductName()
+string Offer::getProductName()
 {
     return product->getName();
 }
@@ -40,7 +41,7 @@ double Offer::getUnitPrice()
     return unitPrice;
 }
 
-bool Offer::hasDiscountCode(std::string code)
+bool Offer::hasDiscountCode(string code)
 {
     for (Discount *discount : discounts)
     {

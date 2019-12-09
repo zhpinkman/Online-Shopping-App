@@ -11,7 +11,7 @@ using namespace std;
 
 Admin::Admin(API* _api) : User(_api, USER_ID_BEGIN, ADMIN_USERNAME, ADMIN_EMAIL, ADMIN_PASSWORD) {}
 
-void Admin::importProductsFromCSV(std::string type, std::string filePath)
+void Admin::importProductsFromCSV(string type, string filePath)
 {
     ifstream file = Tools::openCSVFile(filePath);
     vector< vector<string> > products = Tools::parseCSVFile(file);
@@ -21,7 +21,7 @@ void Admin::importProductsFromCSV(std::string type, std::string filePath)
         api->addProduct(type, products[i]);
 }
 
-void Admin::printAllOffers(std::string order, std::string field)
+void Admin::printAllOffers(string order, string field)
 {
     PrintTools::printOffersInit();
     
