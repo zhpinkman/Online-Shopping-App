@@ -7,10 +7,11 @@
 class Cart
 {
 public:
-    void addCartItem(CartItem* cartItem);
+    void addCartItem(CartItem *cartItem);
+    double getFinalPrice();
 
 private:
-    std::vector<CartItem*> cartItems;
+    std::vector<CartItem *> cartItems;
 };
 
 #endif

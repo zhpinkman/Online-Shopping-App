@@ -3,15 +3,16 @@
 
 #include <vector>
 #include "CartItem.hpp"
+#include "Cart.hpp"
 class Factor
 {
 public:
-    Factor(std::vector<CartItem *> cart);
+    Factor(Cart *cart);
     double getFinalPrice();
 
 private:
     double productsPrice;
-    std::vector<CartItem *> cart;
+    Cart *cart;
     double discountAmount;
     double postCost;
     enum status : int;
