@@ -26,6 +26,7 @@ public:
     virtual void addToCart(int offerId, int amount, std::string discountCode);
     virtual void generateDiscountCard(int offerId, int discountPercent, int discountNumber);
     virtual void showWallet(int count);
+    virtual void printCart();
 
 private:
     int id;

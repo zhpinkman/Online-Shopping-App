@@ -95,3 +95,8 @@ void User::showWallet(int count)
 {
     throw Permission_Exception();
 }
+
+void User::printCart()
+{
+    throw Permission_Exception();
+}

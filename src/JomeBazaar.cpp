@@ -141,3 +141,9 @@ void JomeBazaar::wallet(int count)
     checkLoggedIn();
     loggedInUser->showWallet(count);
 }
+
+void JomeBazaar::cart()
+{
+    checkLoggedIn();
+    loggedInUser->printCart();
+}

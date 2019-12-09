@@ -101,6 +101,8 @@ void Interface::runCommand(const vector<string> &commandWords)
         runGenerateDiscountCode(commandWords);
     else if(order == WALLET)
         runWalletCommand(commandWords);
+    else if(order == CART)
+        runCartCommand(commandWords);
     else
         throw Not_Found_Exception();
 }
@@ -219,4 +221,9 @@ void Interface::runWalletCommand(const std::vector<std::string> &commandWords)
 {
     int count = stoi(commandWords[4]);
     jomeBazaar.wallet(count);
+}
+
+void Interface::runCartCommand(const std::vector<std::string> &commandWords)
+{
+    jomeBazaar.cart();
 }

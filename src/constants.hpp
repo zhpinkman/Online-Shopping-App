@@ -61,6 +61,9 @@
 
 #define ADD_TO_CARD_MAX_SIZE 9
 
+#define SELLER_ID "sellerId"
+#define TOTAL_WITH_DISCOUNT "totalPriceConsideringDiscount"
+
 enum UserType
 {
     BUYER,
