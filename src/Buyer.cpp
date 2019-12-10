@@ -141,3 +141,8 @@ void Buyer::logout()
 {
     cart->removeCartItems();
 }
+
+void Buyer::printCart()
+{
+    cart->printCart();
+}

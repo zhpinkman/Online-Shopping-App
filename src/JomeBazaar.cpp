@@ -178,3 +178,15 @@ void JomeBazaar::compare(int productId1, int productId2)
     checkLoggedIn();
     loggedInUser->compare(productId1, productId2);
 }
+
+void JomeBazaar::submitCart()
+{
+    checkLoggedIn();
+    loggedInUser->submitCart();
+}
+
+void JomeBazaar::getOrdersHistory(int count)
+{
+    checkLoggedIn();
+    loggedInUser->getOrdersHistory(count);
+}

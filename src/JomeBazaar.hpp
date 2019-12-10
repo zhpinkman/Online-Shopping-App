@@ -30,12 +30,14 @@ public:
     void chargeWallet(double amount);
     void comment(int productId, std::string comment);
     void compare(int productId1, int productId2);
+    void submitCart();
+    void getOrdersHistory(int count);
 
 private:
-    API* api;
-    User* loggedInUser;
-    UserRepository* userRepository;
-    ProductRepository* productRepository;
+    API *api;
+    User *loggedInUser;
+    UserRepository *userRepository;
+    ProductRepository *productRepository;
     void checkLoggedIn();
 };
 

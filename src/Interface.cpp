@@ -107,6 +107,10 @@ void Interface::runCommand(const vector<string> &commandWords)
         runCommentCommand(commandWords);
     else if (order == COMPARE)
         runCompareCommand(commandWords);
+    else if (order == SUBMIT_CART)
+        runSubmitCartCommand(commandWords);
+    else if (order == ORDERS)
+        runOrdersCommand();
     else
         throw Not_Found_Exception();
 }
@@ -255,4 +259,15 @@ void Interface::runCompareCommand(const vector<string> &commandWords)
     int productId2 = stoi(commandWords[6]);
 
     jomeBazaar.compare(productId1, productId2);
+}
+
+void Interface::runSubmitCartCommand(const std::vector<std::string> &commandWords)
+{
+    jomeBazaar.submitCart();
+}
+
+void Interface::runOrdersCommand(const std::vector<std::string> &commandWords)
+{
+    int count = stoi(commandWords[4]);
+    jomeBazaar.getOrdersHistory(count);
 }
