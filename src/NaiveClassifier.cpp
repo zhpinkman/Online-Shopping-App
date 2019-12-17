@@ -59,7 +59,7 @@ bool NaiveClassifier::isGoodComment(std::string comment)
         }
         else if(wordGoodProb == 0 && wordBadProb != 0)
             return false;
-        else
+        else if(wordGoodProb != 0 && wordBadProb == 0)
             return true;
     }
 
