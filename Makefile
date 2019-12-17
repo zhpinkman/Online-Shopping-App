@@ -27,7 +27,8 @@ OBJECTS = $(BUILD_DIR)/main.o \
 		  $(BUILD_DIR)/Car.o \
 		  $(BUILD_DIR)/PrintTools.o \
 		  $(BUILD_DIR)/Cart.o \
-		  $(BUILD_DIR)/Comment.o
+		  $(BUILD_DIR)/Comment.o \
+		  $(BUILD_DIR)/NaiveClassifier.o
 
 
 .PHONY: all build_objects make_build_dir clean
@@ -170,6 +171,10 @@ CartHeaderSensitivities =  $(SRC_DIR)/Cart.hpp \
 CommentHeaderSensitivities =  $(SRC_DIR)/Comment.hpp \
 						   	  $(SRC_DIR)/User.hpp
 
+NaiveClassifierHeaderSensitivities = $(SRC_DIR)/NaiveClassifier.hpp \
+								     $(SRC_DIR)/Tools.hpp \
+									 $(SRC_DIR)/constants.hpp
+
 mainSensitivityList = $(SRC_DIR)/main.cpp \
 					  $(mainHeaderSensitivities)
 
@@ -237,7 +242,10 @@ CartSensitivityList = $(SRC_DIR)/Cart.cpp \
 					      $(CartHeaderSensitivities)
 
 CommentSensitivityList = $(SRC_DIR)/Comment.cpp \
-					      $(CommentHeaderSensitivities)
+					     $(CommentHeaderSensitivities)
+
+NaiveClassifierSensitivityList = $(SRC_DIR)/NaiveClassifier.cpp \
+								 $(NaiveClassifierHeaderSensitivities)
 
 $(BUILD_DIR)/main.o: $(mainSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.cpp -o $(BUILD_DIR)/main.o
@@ -307,3 +315,6 @@ $(BUILD_DIR)/Cart.o: $(CartSensitivityList)
 
 $(BUILD_DIR)/Comment.o: $(CommentSensitivityList)
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Comment.cpp -o $(BUILD_DIR)/Comment.o
+
+$(BUILD_DIR)/NaiveClassifier.o: $(NaiveClassifierSensitivityList)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/NaiveClassifier.cpp -o $(BUILD_DIR)/NaiveClassifier.o
