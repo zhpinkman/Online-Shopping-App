@@ -1,6 +1,7 @@
 #include <sstream>
 #include "Mobile.hpp"
 #include "constants.hpp"
+#include <iostream>
 using namespace std;
 
 Mobile::Mobile(int _id, const vector<string> &info) : Product(_id, info[0])
@@ -11,7 +12,7 @@ Mobile::Mobile(int _id, const vector<string> &info) : Product(_id, info[0])
     ram = stoi(info[4]);
     displaySize = stod(info[5]);
     cameraResolution = stod(info[6]);
-    string os = info[7];
+    os = info[7];
 }
 
 string Mobile::getProductInfo()

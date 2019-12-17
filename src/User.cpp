@@ -116,6 +116,17 @@ void User::compare(int productId1, int productId2)
     throw Permission_Exception();
 }
 
+void User::submitCart()
+{
+    throw Permission_Exception();
+}
+
+void User::getOrdersHistory(int count)
+{
+    throw Permission_Exception();
+}
+
 void User::logout()
 {
+    
 }

@@ -110,7 +110,7 @@ void Interface::runCommand(const vector<string> &commandWords)
     else if (order == SUBMIT_CART)
         runSubmitCartCommand(commandWords);
     else if (order == ORDERS)
-        runOrdersCommand();
+        runOrdersCommand(commandWords);
     else
         throw Not_Found_Exception();
 }

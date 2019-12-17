@@ -17,7 +17,7 @@
 #define SIGNUP "signup"
 #define LOGIN "login"
 #define LOGOUT "logout"
-#define IMPORT_PRODUCT "importProduct"
+#define IMPORT_PRODUCT "importProducts"
 #define OFFERS "offers"
 #define GET_PRODUCTS "getProducts"
 #define OFFER "offer"

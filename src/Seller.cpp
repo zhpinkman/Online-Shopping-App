@@ -78,7 +78,7 @@ void Seller::changeOffer(int offerId, double offerUnitPrice, int offerAmount)
     if (offer == nullptr)
         throw Bad_Request_Exception();
 
-    offer->changeOffer(offerUnitPrice, offerAmount);
+    offer->changeOffer(offerAmount, offerUnitPrice);
     cout << OK << '\n';
 }
 
