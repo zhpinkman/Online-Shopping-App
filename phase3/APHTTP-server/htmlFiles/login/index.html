@@ -1,0 +1,270 @@
+<html style="background-color: #e0f2f1;">
+<head>
+	<title>
+		JEEKJEEK Login
+	</title>
+	
+	<meta property="og:title" content="JEEKJEEK"/>
+	<meta property="og:description" content="JEEKJEEK"/>
+	<meta property="og:site_name" content="JEEKJEEK"/>
+	<meta property="og:image" content="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-256.png" />
+
+	<link rel="shortcut icon" href="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-256.png">
+	<link rel="apple-touch-icon" href="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-256.png">
+	
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+	<link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.7/angular-material.css'>
+  <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.7/docs.css'>
+  
+	<link rel="stylesheet" href="http://mahfell.com/more/jeekjeek/signup/css/style.css">
+	<link rel="stylesheet" type="text/css" href="http://mahfell.com/more/jeekjeek/signup/style.css"/>
+<style>
+.toast {
+  padding: 15px 20px;
+  color: #fff;
+  background: rgba(0,0,10,0.7);
+  display: block;
+  position: fixed !important;
+  top: -100px;
+  right: 15px;
+  opacity: 0;
+  z-index: 10;
+  width: auto;
+  transition: all 0.4s ease-out;
+}
+</style>
+</head>
+
+<body style="background-color: #e0f2f1;">
+
+  <div id="html_element"></div>
+    <div class="ctrlqFormContentWrapper" style="background-color: #e0f2f1;">
+    	<div class="ctrlqHeaderMast"></div>
+		  <div class="ctrlqCenteredContent">
+		  	<div class="ctrlqFormCard">
+		    	<div class="ctrlqAccent"></div>
+          <div class="ctrlqFormContent">
+
+            <form dir="auto">  
+				
+              <div class="row">
+                <div class="input-field col s12">
+                  <center><h4>JEEKJEEK Login</h4></center>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="username" name="username" type="text" class="validate" data-error="#e1" required>
+                  <label for="username">Username</label>
+                  <div id="e1"></div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" name="password" type="password" class="validate" data-error="#e3" required>
+                  <label for="password" dir="auto">Password</label>
+                  <div id="e3"></div>
+                </div>
+              </div>
+			  
+              <div class="row" style="float: none;">
+                <div class="input-field col m6 s12">
+			        		<button type="submit" onClick="submit_login(username, password)" class="waves-effect waves-light btn-large"><i class="material-icons right">backup</i>Submit</button>
+				        	<img src="http://mahfell.com/more/jeekjeek/signup/img/loading.gif" class="loading_img" id="loadimg" width="30px" height="30" >
+			        	</div>
+              </div>
+
+            </form>
+            <br>
+            New to JeekJeek? <a href="signup_page"> start here </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  	<br><br>
+	
+	
+    <div class="ctrlqFormContentWrapper" style="background-color: #e0f2f1; display:none ;" id="success">
+		  <div class="ctrlqCenteredContent">
+		  	<div class="ctrlqFormCard">
+		    	<div class="ctrlqAccent" style="background-color: #8dff7c;"></div>
+          <div class="ctrlqFormContent">
+		      	<center>
+		        	You are successfully logedin ✔️
+		      	</center>
+	      	</div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.min.js"></script>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-aria.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-messages.min.js'></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
+    <script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.7/angular-material.js'></script>
+
+    <script src="http://mahfell.com/more/jeekjeek/signup/js/index.js"></script>
+
+
+  </body>
+
+  </html>
+  
+  <script>
+  $(document).ready(function() {
+  $('select').material_select();
+  $('.datepicker').pickadate({
+    selectMonths: true, 
+    selectYears: 15
+  });
+  $.validator.setDefaults({
+    ignore: []
+  });
+  $("form").validate({
+    submitHandler: function(form) {
+      console.log(form);
+      return;
+    },
+    errorElement: 'div',
+    errorPlacement: function(error, element) {
+      var placement = $(element).data('error');
+      if (placement) {
+        $(placement).append(error)
+      } else {
+        error.insertAfter(element);
+      }
+    }
+  });
+
+});
+
+
+//---<submit>
+function submit_login(username, password){
+	loadimg.style.visibility="visible";
+	var xmlhttp;
+	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	}else {// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.open("POST","/login",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	postdata="username="+username.value+"&password="+password.value;
+	xmlhttp.send(postdata);
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			if(xmlhttp.responseText.trim()=="OK"){
+				showtoast("You are successfully logedin ✔️");
+				document.getElementById('success').style.display = "block";
+        
+        window.setTimeout(function(){window.location.href = "/home_page";}, 2000);
+
+			}else{
+				showtoast(xmlhttp.responseText.trim()+" ⚠️ ");
+			}
+			loadimg.style.visibility="hidden";
+		}
+	}
+}
+//---</submit>
+
+
+
+// requires jQuery ... for now
+
+function ToastBuilder(options) {
+  // options are optional
+  var opts = options || {};
+  
+  // setup some defaults
+  opts.defaultText = opts.defaultText || 'default text';
+  opts.displayTime = opts.displayTime || 3000;
+  opts.target = opts.target || 'body';
+
+  return function (text) {
+    $('<div/>')
+      .addClass('toast')
+      .prependTo($(opts.target))
+      .text(text || opts.defaultText)
+      .queue(function(next) {
+        $(this).css({
+          'opacity': 1
+        });
+        var topOffset = 15;
+        $('.toast').each(function() {
+          var $this = $(this);
+          var height = $this.outerHeight();
+          var offset = 15;
+          $this.css('top', topOffset + 'px');
+
+          topOffset += height + offset;
+        });
+        next();
+      })
+      .delay(opts.displayTime)
+      .queue(function(next) {
+        var $this = $(this);
+        var width = $this.outerWidth() + 20;
+        $this.css({
+          'right': '-' + width + 'px',
+          'opacity': 0
+        });
+        next();
+      })
+      .delay(600)
+      .queue(function(next) {
+        $(this).remove();
+        next();
+      });
+  };
+}
+
+// customize it with your own options
+var myOptions = {
+  defaultText: 'Toast, yo!',
+  displayTime: 3000,
+  target: 'body'
+};
+  //position: 'top right',   /* TODO: make this */
+  //bgColor: 'rgba(0,0,0,0.5)', /* TODO: make this */
+
+// to get it started, instantiate a copy of
+// ToastBuilder passing our custom options
+var showtoast = new ToastBuilder(myOptions);
+
+// now you can fire off a toast just calling
+// our new instance passing a string, like this:
+// showtoast('hello, world!');
+
+
+// wire it up
+$('#toast-btn').click(function() {
+  showtoast($('#textbox').val());
+});
+
+// fires off a toast when you hit enter
+$('#textbox').keypress(function(e) {
+  if (e.which == 13) {
+    showtoast($('#textbox').val());
+    return false;
+  }
+});
+
+</script>

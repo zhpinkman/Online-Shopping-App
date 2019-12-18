@@ -1,0 +1,70 @@
+<div data-modal="#MODAL_ID" class="modal__trigger"><b>DISPLAY_NAME</b> <span style=\"font-size:20px;color:rgb(130,130,130)\">USERNAME</span><br> JEEK_TEXT_SMALL </div>
+<div id="MODAL_ID" class="modal modal__bg" role="dialog" aria-hidden="true">
+	<div class="modal__dialog">
+		<div class="modal__content">
+			<h1> <b>DISPLAY_NAME</b>  <span style="font-size:24px; color:rgb(130,130,130);">USERNAME</span></h1>
+			<p> JEEK_TEXT <br><br>HASHTAGS<br>MENTIONS</p>
+
+			<a href="" class="modal__close demo-close">
+				<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+			</a>
+
+			<hr><b> NUM_OF_REJEEKS </b> Rejeeks  |    <b id="NUM_OF_LIKES_PLACE_JEEK_ID">NUM_OF_LIKES </b> Likes<hr>
+
+			<div style="width: 200px;"> <!-- LIKE BUTTON -->
+				<input type="checkbox" id="checkboxJEEK_ID" onclick="like(this, 'JEEK_ID', 'NUM_OF_LIKES_PLACE_JEEK_ID')" class="checkbox" CHECKSTATE/>
+				<label for="checkboxJEEK_ID" >
+					<svg class="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+						<g class="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+							<path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" class="heart" fill="#AAB8C2"/>
+							<circle class="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
+			
+							<g class="grp7" opacity="0" transform="translate(7 6)">
+								<circle class="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
+								<circle class="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
+							</g>
+			
+							<g class="grp6" opacity="0" transform="translate(0 28)">
+								<circle class="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
+								<circle class="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
+							</g>
+			
+							<g class="grp3" opacity="0" transform="translate(52 28)">
+								<circle class="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
+								<circle class="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
+							</g>
+			
+							<g class="grp2" opacity="0" transform="translate(44 6)">
+								<circle class="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"/>
+								<circle class="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"/>
+							</g>
+			
+							<g class="grp5" opacity="0" transform="translate(14 50)">
+								<circle class="oval1" fill="#91D2FA" cx="6" cy="5" r="2"/>
+								<circle class="oval2" fill="#91D2FA" cx="2" cy="2" r="2"/>
+							</g>
+			
+							<g class="grp4" opacity="0" transform="translate(35 50)">
+								<circle class="oval1" fill="#F48EA7" cx="6" cy="5" r="2"/>
+								<circle class="oval2" fill="#F48EA7" cx="2" cy="2" r="2"/>
+							</g>
+			
+							<g class="grp1" opacity="0" transform="translate(24)">
+								<circle class="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
+								<circle class="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
+							</g>
+						</g>
+					</svg>
+				</label>
+			</div>
+			<!-- LIKE BUTTON -->
+			
+			<a class='button' onclick="rejeek('JEEK_ID')">
+				<i class='fa fa-twitter'></i>
+				<p>Rejeek</p>
+			</a>
+			
+
+		</div>
+	</div>
+</div>
